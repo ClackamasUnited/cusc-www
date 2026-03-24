@@ -1,5 +1,5 @@
 const newsData = [
-    { date: "2026-04-01", title: "Seabee Construction", img: "/sponsors/seabee.png", excerpt: "Seabee Construction sponsors Clackamas United!", author: "Tony Stevenson", slug: "seabee-constrcution" },
+    { date: "2026-04-01", title: "Seabee Construction", img: "/sponsors/seabee.png", excerpt: "Seabee Construction sponsors Clackamas United!", author: "Tony Stevenson", slug: "seabee-construction" },
     { date: "2026-02-20", title: "Spring Break Rec Camp", img: "/news/images/springbreak2026.png", excerpt: "Registration is now open for our annual Spring camp!", author: "Tony Stevenson", slug: "spring-break-rec-camp" },
     { date: "2026-02-19", title: "2025-26 Scholarship Program Summary", img: "/news/images/cusc.png", excerpt: "A summary of the 2025-26 season's scholarship program, which provided over $56,000 in aid to 85 families.", author: "Tony Stevenson", slug: "2025-26-scholarship-program-summary" },
     { date: "2026-02-18", title: "We Are Hiring - Club Administrator", img: "/news/images/were-hiring-red.png", excerpt: "Clackamas United Soccer Club (CUSC) is seeking an organized and dedicated Club Administrator to support our club's operations.", author: "Tony Stevenson", slug: "we-are-hiring-club-administrator" },

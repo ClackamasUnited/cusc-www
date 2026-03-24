@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>News | Clackamas United</title>
+</head>
+<body class="bg-white">
+
+    <div id="page-content">
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-display font-bold uppercase mb-12 italic">Latest <span class="text-[#E21E26]">News</span></h2>
+                <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- News items will be inserted here -->
+                </div>
+                <div class="text-center mt-12">
+                    <button id="show-more" class="bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-black transition-all">Show More</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="theme.js"></script>
+    <script src="news-data.js"></script>
+    <script src="sponsors-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            siteTheme.init("");
+
+            const newsGrid = document.getElementById('news-grid');
+            const showMoreButton = document.getElementById('show-more');
+            let visibleItems = 6;
+
+              function displayNews() {
+                  newsGrid.innerHTML = newsData.slice(0, visibleItems).map(item => `
+                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.33%-16px)] bg-white border-t-4 border-[#E21E26] shadow-xl group">
+                        <div class="overflow-hidden h-52">
+                            <img src="${item.img}" class="h-full w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
+                        </div>
+                        <div class="p-8">
+                            <p class="text-xs italic">By ${item.author}</p>
+                            <span class="text-[10px] font-black text-[#E21E26] uppercase tracking-[0.2em]">${item.date}</span>
+                            <h3 class="text-xl font-display font-bold uppercase mt-2 group-hover:text-[#E21E26] transition leading-tight">${item.title}</h3>
+                            <p class="text-sm text-gray-600 mt-4 leading-relaxed line-clamp-2 italic">"${item.excerpt}"</p>
+                            <a href="news/${item.date}-${item.slug}.html" class="inline-block mt-6 text-xs font-black uppercase border-b-2 border-black pb-1 hover:border-[#E21E26] hover:text-[#E21E26] transition">Read Story</a>
+                        </div>
+                    </div>`).join('');
+              }
+
+            function updateShowMoreButton() {
+                if (visibleItems >= newsData.length) {
+                    showMoreButton.style.display = 'none';
+                }
+            }
+
+            showMoreButton.addEventListener('click', () => {
+                visibleItems += 6;
+                displayNews();
+                updateShowMoreButton();
+            });
+
+            displayNews();
+            updateShowMoreButton();
+        });
+    </script>
+</body>
+</html>

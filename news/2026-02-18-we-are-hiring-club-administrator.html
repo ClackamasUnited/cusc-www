@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>We're Hiring: Club Administrator | Clackamas United</title>
+</head>
+<body class="bg-slate-50">
+
+    <article class="max-w-4xl mx-auto my-20 p-10 bg-white shadow-xl border-t-8 border-cu-red">
+        <h1 class="text-5xl font-display font-bold uppercase mb-4 italic">We're Hiring: Club Administrator</h1>
+        <p class="text-gray-500 mb-8 font-bold uppercase tracking-widest text-xs">Feb 18, 2026 <span class="font-normal normal-case">  by Tony Stevenson</span></p>
+        <img src="/news/images/were-hiring-grey.png" alt="We're Hiring: Club Administrator" class="w-full mx-auto mb-8">
+        <br />
+        <div class="text-gray-700 leading-relaxed text-lg">
+            <p class="mb-4">Clackamas United Soccer Club (CUSC) is seeking an organized and dedicated Club Administrator to support our club's operations and ensure a smooth experience for our members. This is a key role for a detail-oriented professional who is passionate about youth sports.</p>
+            
+            <h2 class="text-3xl font-display font-bold uppercase mb-4 italic mt-8">About the Role</h2>
+            <p class="mb-4">The Club Administrator will be responsible for managing the day-to-day administrative tasks of the club. This role involves handling member communications, managing registrations, coordinating schedules, and providing support to the board and coaching staff.</p>
+
+            <h2 class="text-3xl font-display font-bold uppercase mb-4 italic mt-8">Key Responsibilities</h2>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li>Manage player registration and payment processes.</li>
+                <li>Serve as the primary point of contact for member inquiries.</li>
+                <li>Coordinate field and game scheduling with leagues and facilities.</li>
+                <li>Maintain club records and manage administrative databases.</li>
+                <li>Provide administrative support for club events, tryouts, and meetings.</li>
+            </ul>
+
+            <h2 class="text-3xl font-display font-bold uppercase mb-4 italic mt-8">How to Apply</h2>
+            <p>Interested candidates should submit a resume and cover letter to <a href="mailto:president@clackamasunited.com" class="text-cu-red hover:underline">president@clackamasunited.com</a>. Applications will be reviewed on a rolling basis until the position is filled.</p>
+        </div>
+
+        <!-- Post Navigation -->
+        <div class="flex justify-between items-center mt-12 pt-6 border-t border-gray-200">
+            <a id="prev-post-link" href="#" class="text-cu-red hover:text-cu-red-dark font-bold uppercase tracking-widest text-sm invisible">
+                <i class="fas fa-arrow-left mr-2"></i> Previous Post
+            </a>
+            <a id="next-post-link" href="#" class="text-cu-red hover:text-cu-red-dark font-bold uppercase tracking-widest text-sm invisible">
+                Next Post <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </article>
+
+    <script src="../theme.js"></script>
+    <script src="../sponsors-data.js"></script>
+    <script src="../news-data.js"></script>
+    <script>
+        // Start the theme. "../" means go up one level to find assets.
+        siteTheme.init("../");
+
+        // --- Dynamic Post Navigation ---
+        window.addEventListener('DOMContentLoaded', () => {
+            const currentPath = window.location.pathname;
+            const createSlug = (title) => title.toLowerCase().replace(/ /g, "-").replace(/:/g, "");
+            const currentIndex = newsData.findIndex(item => `/news/${item.date}-${createSlug(item.title)}.html` === currentPath);
+
+            if (currentIndex === -1) return;
+
+            if (currentIndex > 0) {
+                const prevPost = newsData[currentIndex - 1];
+                const prevLink = document.getElementById('prev-post-link');
+                prevLink.href = `/news/${prevPost.date}-${createSlug(prevPost.title)}.html`;
+                prevLink.classList.remove('invisible');
+            }
+
+            if (currentIndex < newsData.length - 1) {
+                const nextPost = newsData[currentIndex + 1];
+                const nextLink = document.getElementById('next-post-link');
+                nextLink.href = `/news/${nextPost.date}-${createSlug(nextPost.title)}.html`;
+                nextLink.classList.remove('invisible');
+            }
+        });
+    </script>
+</body>
+</html>

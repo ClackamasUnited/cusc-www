@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Competitive Program | Clackamas United</title>
+    <style>
+        [data-registration-status="open"] .show-when-closed, [data-registration-status="closed"] .show-when-open { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50" data-registration-status="open"> <!-- <-- EDIT THIS: "open" or "closed" -->
+
+    <main class="max-w-7xl mx-auto my-20 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-display font-bold uppercase italic">Competitive <span class="text-cu-red">Program</span></h1>
+            <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">Our Classic program is for 10-18 year old players. <br /><br />
+                    <ul>
+                        <li>The program is aimed at players focused on learning and playing soccer in a fun, competitive and highly educational environment. </li>
+                        <li>Geared towards developing talented players able to compete in high school soccer.</li>
+                        <li>players in the 15-18 year old group develop and have the opportunity to play soccer at high school.</li>
+                        <li>This is the final chapter of their youth soccer experience, and is an important stepping stone into the adult game.</li>
+                    </ul>
+            </p>
+        </div>
+
+        <!-- Program at a Glance -->
+        <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
+            <h2 class="text-4xl font-display font-bold uppercase mb-8 italic">Program at a <span class="text-cu-red">Glance</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-lg">
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Ages:</strong> <span class="text-gray-700">U11-U19</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Level:</strong> <span class="text-gray-700">Competitive</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Season:</strong> <span class="text-gray-700">Year-round (Fall & Spring)</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Training:</strong> <span class="text-gray-700">2-3 times per week</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Coaching:</strong> <span class="text-gray-700">Licensed, professional coaches</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Focus:</strong> <span class="text-gray-700">Advanced skill & tactical development</span></div>
+            </div>
+        </div>
+
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-display font-bold uppercase italic">Program <span class="text-cu-red">Breakdown</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- Juniors Card -->
+            <div id="juniors" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+                <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">5th - 6th Grade</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 flex-grow">The first step into our competitive program, focusing on advanced technical skills and tactical understanding in a fun, challenging environment.</p>
+                <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                <span class="show-when-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration Closed</span>
+            </div>
+
+            <!-- Seniors Card -->
+            <div id="seniors" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+                <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">7th - 8th Grade</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 flex-grow">This phase is crucial for long-term player development, preparing athletes for the high school level with a focus on physical conditioning and team tactics.</p>
+                <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                <span class="show-when-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration Closed</span>
+            </div>
+
+            <!-- Goalkeeper Card -->
+            <div id="goalkeepers" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+                <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">9th - 12th Grade</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 flex-grow">Catering to high school players, this program emphasizes tactical proficiency, positional play, and preparation for collegiate or higher-level soccer.</p>
+                <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                <span class="show-when-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration Closed</span>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../theme.js"></script>
+    <script src="../sponsors-data.js"></script>
+    <script src="../news-data.js"></script>
+    <script>
+        siteTheme.init("../");
+    </script>
+</body>
+</html>

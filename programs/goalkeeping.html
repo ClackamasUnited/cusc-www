@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Goalkeeper Training | Clackamas United</title>
+    <style>
+        [data-registration-status="open"] .show-when-closed, [data-registration-status="closed"] .show-when-open { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50" data-registration-status="open"> <!-- <-- EDIT THIS: "open" or "closed" -->
+
+    <main class="max-w-7xl mx-auto my-20 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-display font-bold uppercase italic">Goalkeeper <span class="text-cu-red">Training</span></h1>
+            <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">Specialized training for the most unique position on the field. Our program is designed to develop technically sound and tactically aware goalkeepers.</p>
+        </div>
+
+        <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
+            <h2 class="text-4xl font-display font-bold uppercase mb-8 italic">Program <span class="text-cu-red">Details</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                <div>
+                    <h3 class="text-2xl font-display font-bold uppercase mb-2 italic">Curriculum</h3>
+                    <p class="text-gray-700 leading-relaxed">Our dedicated goalkeeper coaches provide position-specific training covering handling, footwork, shot-stopping, distribution, and tactical awareness within the game.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-display font-bold uppercase mb-2 italic">Who Can Join?</h3>
+                    <p class="text-gray-700 leading-relaxed">This specialized training is ideally suited for players looking to develop their skills and those who are long-term keepers. Players should be nominated by their coach to attend. To ensure quality instruction, a maximum of two players from each team should attend.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="/programs/competitive.html" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">View Competitive Program &rarr;</a>
+                <span class="show-when-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-10 py-4 font-bold uppercase text-sm cursor-not-allowed">Registration Closed</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="../theme.js"></script>
+    <script src="../sponsors-data.js"></script>
+    <script src="../news-data.js"></script>
+    <script>
+        siteTheme.init("../");
+    </script>
+</body>
+</html>

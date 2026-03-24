@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Soccer Programs | Clackamas United</title>
+</head>
+<body class="bg-slate-50">
+
+    <main class="max-w-7xl mx-auto my-20 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-display font-bold uppercase italic">Our Soccer <span class="text-cu-red">Programs</span></h1>
+            <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">From first-time players to dedicated athletes, we have a program to match your passion for the beautiful game.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- PDP Card -->
+            <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+                <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Player Development (PDP)</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 flex-grow">Our PDP is for younger players focusing on fundamental skills, ball mastery, and a love for the game in a positive, fun, and age-appropriate environment.</p>
+                <a href="/programs/pdp.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">Learn More &rarr;</a>
+            </div>
+
+            <!-- Competitive Card -->
+            <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+                <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Competitive (Classic)</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 flex-grow">For dedicated players seeking a higher level of competition and coaching. Our teams compete in OYSA leagues, focusing on tactical development, teamwork, and sportsmanship.</p>
+                <a href="/programs/competitive.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">Learn More &rarr;</a>
+            </div>
+
+            <!-- Recreational Card -->
+            <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+                <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Recreational</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 flex-grow">The heart of our club, our recreational program is open to all players, regardless of experience. The focus is on fun, participation, and learning the basics of soccer.</p>
+                <a href="/programs/recreational.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">Learn More &rarr;</a>
+            </div>
+
+            <!-- Camps Card -->
+            <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+                <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Camps &amp; Clinics</h2>
+                <p class="text-gray-700 leading-relaxed mb-6 flex-grow">We offer a variety of camps and clinics throughout the year, including Spring Break and Summer camps, designed to improve skills in a fun and engaging setting.</p>
+                <a href="/camps/overview.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">View Camps &rarr;</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="../theme.js"></script>
+    <script src="../sponsors-data.js"></script>
+    <script src="../news-data.js"></script>
+    <script>
+        // Start the theme. "../" means assets are at the root level.
+        siteTheme.init("../");
+    </script>
+</body>
+</html>

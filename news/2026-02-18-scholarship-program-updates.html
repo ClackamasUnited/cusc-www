@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>News Item | Clackamas United</title>
+</head>
+<body class="bg-slate-50">
+
+    <article class="max-w-4xl mx-auto my-20 p-10 bg-white shadow-xl border-t-8 border-cu-red">
+        <h1 class="text-5xl font-display font-bold uppercase mb-4 italic">Scholarship Program Updates</h1>
+        <p class="text-gray-500 mb-8 font-bold uppercase tracking-widest text-xs">Feb 18, 2026 <span class="font-normal normal-case"> by Tony Stevenson</span></p>
+        <img src="/news/images/cusc.png" alt="News Image" class="w-[65%] mx-auto mb-8">
+        <br />
+        <div class="text-gray-700 leading-relaxed text-lg">
+            <p class="mb-4">Clackamas United Soccer Club is committed to making soccer accessible to all youth in our community, regardless of their financial circumstances. We believe that every child deserves the opportunity to play, learn, and grow through the beautiful game.</p>
+            <p class="mb-4">Our scholarship program is designed to provide financial assistance to families who demonstrate a clear need, helping to cover registration fees for our recreational and competitive programs.</p>
+            <h2 class="text-3xl font-display font-bold uppercase mb-4 italic mt-8">How to Apply</h2>
+            <p class="mb-4">Applying for a scholarship is a straightforward process. Families interested in financial aid should:</p>
+            <ol class="list-decimal list-inside mb-4 space-y-2">
+                <li class="mb-2">Complete the online scholarship application form, available on our website under the "Registration" section.</li>
+                <li class="mb-2">Provide proof of income or other documentation demonstrating financial need (e.g., eligibility for free or reduced lunch programs, recent tax returns, or other relevant financial statements).</li>
+                <li class="mb-2">Submit all required documents by the application deadline for the upcoming season to ensure timely review.</li>
+            </ol>
+            <h2 class="text-3xl font-display font-bold uppercase mb-4 italic mt-8">Important Dates</h2>
+            <ul class="list-disc list-inside mb-4 space-y-2">
+                <li class="mb-2"><strong>Spring Season 2026:</strong> Scholarship applications open January 15th, 2026 and close February 28th, 2026.</li>
+                <li class="mb-2"><strong>Fall Season 2026:</strong> Scholarship applications open June 1st, 2026 and close July 15th, 2026.</li>
+            </ul>
+            <p>For more detailed information about our scholarship program, including specific eligibility requirements and a list of frequently asked questions, please visit our official <a href="/scholarships.html" class="text-cu-red hover:underline">Scholarship Program page</a> or contact our club administrator directly at <a href="mailto:info@clackamasunited.com" class="text-cu-red hover:underline">info@clackamasunited.com</a>.</p>
+        </div>
+
+        <!-- Post Navigation -->
+        <div class="flex justify-between items-center mt-12 pt-6 border-t border-gray-200">
+            <a id="prev-post-link" href="#" class="text-cu-red hover:text-cu-red-dark font-bold uppercase tracking-widest text-sm invisible">
+                <i class="fas fa-arrow-left mr-2"></i> Previous Post
+            </a>
+            <a id="next-post-link" href="#" class="text-cu-red hover:text-cu-red-dark font-bold uppercase tracking-widest text-sm invisible">
+                Next Post <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </article>
+
+    <script src="../theme.js"></script>
+    <script src="../sponsors-data.js"></script>
+    <script src="../news-data.js"></script>
+    <script>
+        // Start the theme. "../" means go up one level to find assets.
+        siteTheme.init("../");
+
+        // --- Dynamic Post Navigation ---
+        window.addEventListener('DOMContentLoaded', () => {
+            // Assuming newsData is sorted from newest to oldest
+            if (typeof newsData === 'undefined' || !Array.isArray(newsData)) {
+                console.error("newsData is not available.");
+                return;
+            }
+
+            const currentPath = window.location.pathname;
+
+            // Helper to create a URL slug from a title
+            const createSlug = (title) => title.toLowerCase().replace(/ /g, "-");
+
+            // Find the index of the current article in the newsData array
+            const currentIndex = newsData.findIndex(item => {
+                const itemPath = `/news/${item.date}-${createSlug(item.title)}.html`;
+                return itemPath === currentPath;
+            });
+
+            if (currentIndex === -1) {
+                console.log("Current article not found in newsData.");
+                return;
+            }
+
+            // Set up the "Previous" (newer) post link
+            if (currentIndex > 0) {
+                const prevPost = newsData[currentIndex - 1];
+                const prevLink = document.getElementById('prev-post-link');
+                prevLink.href = `/news/${prevPost.date}-${createSlug(prevPost.title)}.html`;
+                prevLink.classList.remove('invisible');
+            }
+
+            // Set up the "Next" (older) post link
+            if (currentIndex < newsData.length - 1) {
+                const nextPost = newsData[currentIndex + 1];
+                const nextLink = document.getElementById('next-post-link');
+                nextLink.href = `/news/${nextPost.date}-${createSlug(nextPost.title)}.html`;
+                nextLink.classList.remove('invisible');
+            }
+        });
+    </script>
+</body>
+</html>

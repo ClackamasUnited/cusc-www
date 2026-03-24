@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Page Not Found | Clackamas United</title>
+</head>
+<body class="bg-slate-50">
+
+    <main class="max-w-4xl mx-auto my-20 p-10 text-center">
+        <h1 class="text-8xl font-display font-bold text-cu-red mb-4">404</h1>
+        <h2 class="text-4xl font-display font-bold uppercase mb-8 italic">Page Not Found</h2>
+        
+        <img src="/images/404-kickaball.png" 
+             alt="A child kicking a soccer ball on a field" 
+             class="w-full max-w-lg mx-auto rounded-lg shadow-xl my-8">
+
+        <p class="text-gray-700 leading-relaxed text-2xl mt-8">
+            Oops! We can't find that page right now...
+        </p>
+        <p class="text-gray-600 text-xl mt-2">
+            ...so why not go kick a soccer ball?
+        </p>
+    </main>
+
+    <script src="./theme.js"></script>
+    <script src="./sponsors-data.js"></script>
+    <script src="./news-data.js"></script>
+    <script>
+        // Start the theme. "./" means assets are at the root level.
+        siteTheme.init("./");
+    </script>
+</body>
+</html>

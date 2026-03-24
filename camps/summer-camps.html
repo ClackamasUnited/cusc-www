@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Summer Camps | Clackamas United</title>
+    <style>
+        [data-registration-status="open"] .show-when-closed, [data-registration-status="closed"] .show-when-open { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50" data-registration-status="closed"> <!-- <-- EDIT THIS: "open" or "closed" -->
+
+    <main class="max-w-4xl mx-auto my-20 bg-white shadow-xl border-t-8 border-cu-red overflow-hidden">
+        <img src="/camps/images/summercamp2026.png" alt="Players at a summer soccer camp" class="w-full h-auto">
+        <div class="p-10">
+            <h1 class="text-5xl font-display font-bold uppercase mb-4 italic">Summer Camps</h1>
+            <p class="text-gray-500 mb-8 font-bold uppercase tracking-widest text-xs">June - August 2026</p>
+            <div class="text-gray-700 leading-relaxed text-lg">
+                <p class="mb-4">Join us for a summer of soccer! We offer multiple camps for different age groups and skill levels, focusing on technical skills, teamwork, and fun under the sun.</p>
+                
+                <h2 class="text-3xl font-display font-bold uppercase mb-4 italic mt-8">Program Details</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-display font-bold uppercase mb-2 italic">Schedule &amp; Focus</h3>
+                        <ul class="list-disc list-inside mb-4 space-y-2">
+                            <li>Multiple week-long sessions available</li>
+                            <li>Camps designed for recreational players</li>
+                            <li>Focus on technical skills and small-sided games</li>
+                            <li>Professional coaching from CUSC staff</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-display font-bold uppercase mb-2 italic">What to Bring</h3>
+                        <ul class="list-disc list-inside mb-4 space-y-2">
+                            <li>Soccer ball</li>
+                            <li>Shin guards (required)</li>
+                            <li>Water bottle</li>
+                            <li>Sunscreen</li>
+                            <li>Lunch & snacks (for full-day campers)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                    <span class="show-when-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-10 py-4 font-bold uppercase text-sm cursor-not-allowed">Registration Opens Soon</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../theme.js"></script>
+    <script src="../sponsors-data.js"></script>
+    <script src="../news-data.js"></script>
+    <script>
+        // Start the theme. "../" means go up one level to find assets.
+        siteTheme.init("../");
+    </script>
+</body>
+</html>

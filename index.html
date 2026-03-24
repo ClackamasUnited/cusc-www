@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Clackamas United | Home</title>
+</head>
+<body class="bg-white">
+
+    <header class="relative h-[85vh] flex items-center bg-[#111111] text-white overflow-hidden" id="home-header">
+        <div class="absolute inset-0">
+            <img id="bg-image" src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80" class="w-full h-full object-cover opacity-40 grayscale-[0.5]">
+        </div>
+        <div class="relative max-w-7xl mx-auto px-6 w-full flex items-start">
+            <div class="w-[6px] h-[340px] md:h-[420px] bg-white mr-8 mt-2 shadow-2xl"></div>
+            <div>
+                <h1 class="font-display font-bold uppercase hero-title">
+                    <span class="block text-7xl md:text-[140px] text-white">COMMUNITY.</span>
+                    <span class="block text-7xl md:text-[140px] text-[#E21E26] italic">UNITED.</span>
+                    <span class="block text-7xl md:text-[140px] text-white">SUCCESS.</span>
+                    <span class="block text-7xl md:text-[140px] text-white">CHARACTER.</span>
+                </h1>
+                <div class="flex flex-wrap gap-4 mt-10">
+                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Join Tryouts</a>
+                    <a href="/programs/overview.html" class="bg-white/10 border border-white/40 px-10 py-5 font-black uppercase text-xs hover:bg-white/20 transition">Our Programs</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-display font-bold uppercase mb-12 italic">Latest <span class="text-[#E21E26]">News</span></h2>
+            <div id="news-track" class="flex flex-wrap gap-6"></div>
+        </div>
+    </section>
+
+
+    <script src="theme.js"></script>
+    <script src="news-data.js"></script>
+    <script src="sponsors-data.js"></script>
+    <script>
+        siteTheme.init("");
+
+        // Background image rotator
+        document.addEventListener('DOMContentLoaded', function() {            
+            // Sort a copy of the news data to avoid modifying the original array
+            const sortedNews = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
+             const images = [
+                "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80",
+                "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80"
+            ];
+            let currentImageIndex = 0;
+            const bgImage = document.getElementById('bg-image');
+
+            setInterval(() => {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                bgImage.src = images[currentImageIndex];
+            }, 10000); // Change every 10 seconds
+        });
+
+    </script>
+</body>
+</html>

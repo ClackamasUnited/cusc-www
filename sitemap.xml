@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://cusc.pctony.com/index.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/news.html</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/scholarships.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Program Pages -->
+  <url>
+    <loc>https://cusc.pctony.com/programs/overview.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/programs/competitive.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/programs/recreational.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/programs/pdp.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/programs/goalkeeping.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/programs/fees.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Camp Pages -->
+  <url>
+    <loc>https://cusc.pctony.com/camps/spring-break-rec-camp.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/camps/summer-camps.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- About Pages -->
+  <url>
+    <loc>https://cusc.pctony.com/about/administrative-staff.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/about/board-of-directors.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cusc.pctony.com/about/coaching-staff.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- News Article Pages -->
+  <url><loc>https://cusc.pctony.com/news/2026-02-20-spring-break-rec-camp.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2026-02-19-2025-26-scholarship-program-summary.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2026-02-18-we-are-hiring-club-administrator.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2026-02-15-2026-spring-recreational-registration.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2026-02-05-celebrating-girls-women-in-sports.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2026-01-29-us-youth-soccer-age-group-changes.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2026-01-26-upcoming-changes.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2025-11-13-2025-26-winter-academy-registration-now-open.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2025-11-01-2025-26-winter-academy-coming-soon.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2025-10-30-high-school-tryouts-registration-now-open.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2025-05-20-rangers-academy-summer-soccer-camp.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2025-05-18-scholarship-program-update.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2025-05-15-happy-valley-fun-run-2025.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2025-05-01-2025-26-classic-season-tryout-schedule.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2025-02-01-scholarship-program-updates.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://cusc.pctony.com/news/2025-08-13-2024-25-scholarship-program-summary.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+
+</urlset>

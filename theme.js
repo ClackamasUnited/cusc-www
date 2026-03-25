@@ -180,7 +180,11 @@ const siteTheme = {
             return;
         }
 
-        const visibleNews = newsData.filter(item => !item.hidden);
+        const now = new Date();
+        // A news item is visible if it's not hidden and its publish date is in the past.
+        const visibleNews = newsData.filter(item => 
+            !item.hidden && item.publishDateTime && new Date(item.publishDateTime) <= now
+        );
         const currentPath = window.location.pathname;
 
         const currentVisibleIndex = visibleNews.findIndex(item => `/news/${item.date}-${item.slug}.html` === currentPath);
@@ -212,7 +216,11 @@ const siteTheme = {
 
         const showMoreButton = document.getElementById('show-more');
         let visibleItems = 6;
-        const visibleNews = newsData.filter(item => !item.hidden);
+        const now = new Date();
+        // A news item is visible if it's not hidden and its publish date is in the past.
+        const visibleNews = newsData.filter(item => 
+            !item.hidden && item.publishDateTime && new Date(item.publishDateTime) <= now
+        );
 
         function displayNews() {
             newsGrid.innerHTML = visibleNews.slice(0, visibleItems).map(item => `
@@ -284,7 +292,11 @@ const siteTheme = {
         const track = document.getElementById('news-track');
         if (track && typeof newsData !== 'undefined') {
             track.classList.add('grid', 'gap-6', 'md:grid-cols-3');
-            const visibleNews = newsData.filter(item => !item.hidden);
+            const now = new Date();
+            // A news item is visible if it's not hidden and its publish date is in the past.
+            const visibleNews = newsData.filter(item => 
+                !item.hidden && item.publishDateTime && new Date(item.publishDateTime) <= now
+            );
             track.innerHTML = visibleNews.slice(0, 3).map(item => `                    
                 <div class="min-w-full bg-white border-t-4 border-[#E21E26] shadow-xl group">
                     <div class="overflow-hidden h-52">

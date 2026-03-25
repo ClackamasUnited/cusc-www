@@ -1,5 +1,5 @@
 const sponsorsData = [
-    { name: "Seabee Construction", logo: "/images/sponsors/seabee.png", url: "https://builtbyseabee.com" },
+    { name: "Seabee Construction", logo: "/images/sponsors/seabee.png", url: "https://builtbyseabee.com" }, // Already correct
     { name: "Nike Soccer", logo: "/images/sponsors/nike_soccer_72dpi_200px.png", url: "https://www.nike.com/soccer" },
     { name: "Rangers Soccer", logo: "/images/sponsors/rangers-soccer-academy-v2.png", url: "https://www.rangerssoccerschools.com/usa/" },
     { name: "Tursi Soccer", logo: "/images/sponsors/tursi_soccer_72dpi_200px.png", url: "https://tursissoccer.com/" },

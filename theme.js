@@ -22,7 +22,7 @@ const siteTheme = {
     },
 
     injectNav: function(basePath) {
-        const logoPath = basePath + "club-logo.png";
+        const logoPath = basePath + "images/club-logo.png";
         const navHTML = `
         <nav class="bg-[#111111] sticky top-0 z-[100] shadow-2xl border-b border-white/10">
             <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center w-full">

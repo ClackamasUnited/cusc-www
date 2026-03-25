@@ -183,7 +183,7 @@ const siteTheme = {
         const visibleNews = newsData.filter(item => !item.hidden);
         const currentPath = window.location.pathname;
 
-        const currentVisibleIndex = visibleNews.findIndex(item => `${basePath}news/${item.date}-${item.slug}.html` === currentPath);
+        const currentVisibleIndex = visibleNews.findIndex(item => `/news/${item.date}-${item.slug}.html` === currentPath);
 
         if (currentVisibleIndex === -1) {
             return; // Current page is not in the visible news list (it might be hidden)

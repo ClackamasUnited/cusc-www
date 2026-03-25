@@ -133,6 +133,7 @@ const siteTheme = {
                 <div>
                     <h4 class="text-white font-bold uppercase text-[10px] tracking-[0.3em] mb-8">Resources</h4>
                     <ul class="space-y-4 text-xs font-bold uppercase tracking-widest leading-loose">
+                        <li><a href="/resources/rangersfc.html" class="hover:text-[#E21E26] transition">Rangers FC Affiliation</a></li>
                         <li><a href="/resources/policies.html" class="hover:text-[#E21E26] transition">Club Policies</a></li>
                         <li><a href="/scholarships.html" class="hover:text-[#E21E26] transition">Scholarships</a></li>
                         <li><a href="/resources/uniforms.html" class="hover:text-[#E21E26] transition">Uniforms</a></li>

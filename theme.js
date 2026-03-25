@@ -46,7 +46,6 @@ const siteTheme = {
                                         <a href="${basePath}programs/goalkeeping.html" class="block px-6 py-4 hover:bg-[#E21E26]">Goalkeeper Training</a>
                                     </div>
                                 </div>
-                                <a href="${basePath}programs/fees.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Fees</a>
                                 <div class="relative sub-group">
                                     <a href="${basePath}programs/camps/overview.html" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Camps <i class="fas fa-chevron-right text-[10px]"></i></a>
                                     <div class="nav-submenu">                         
@@ -55,6 +54,7 @@ const siteTheme = {
                                         <a href="${basePath}programs/camps/winter-academy.html" class="block px-6 py-4 hover:bg-[#E21E26]">Winter Academy</a>
                                     </div>
                                 </div>
+                                <a href="${basePath}programs/fees.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Fees</a>
                                 <a href="${basePath}scholarships.html" class="block px-6 py-4 hover:bg-[#E21E26]">Scholarship Info</a>
                             </div>
                         </div>

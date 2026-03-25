@@ -1,21 +1,17 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&amp;display=swap');
-            .title-font { font-family: 'Oswald', sans-serif; font-weight: 700; fill: #4A5568; font-size: 100px; text-anchor: middle; text-transform: uppercase; }
-            .banner-font { font-family: 'Oswald', sans-serif; font-weight: 700; fill: white; font-size: 80px; text-anchor: middle; text-transform: uppercase; letter-spacing: 0.05em; }
-        </style>
-    </defs>
-
     <!-- Background -->
     <rect width="1200" height="630" fill="#E2E8F0"/>
 
     <!-- "WE'RE HIRING" Text -->
-    <text x="600" y="345" class="title-font">We're Hiring</text>
+    <g fill="#4A5568" transform="translate(260, 260) scale(1.1)">
+        <path d="M22.6 39.1V0h10.9V28.2h23.3V0h10.9v39.1H22.6zM93.3 39.1V0h10.9v39.1H93.3zM115.1 22.1c0-12.2 9.9-22.1 22.1-22.1s22.1 9.9 22.1 22.1c0 12.2-9.9 22.1-22.1 22.1s-22.1-9.9-22.1-22.1zm33.3 0c0-6.2-5-11.2-11.2-11.2s-11.2 5-11.2 11.2 5 11.2 11.2 11.2 11.2-5 11.2-11.2zM170.2 39.1V0h10.9v39.1h-10.9zM214.4 22.7L204 0h11.8l5.4 13.5 5.4-13.5h11.8l-10.4 22.7v16.4h-10.9V22.7zM258.1 39.1V0h33.3v9.8h-22.4v5.3h21.1v9.8h-21.1v4.5h22.4v9.8h-33.3zM302.3 39.1V0h10.9v39.1h-10.9zM324.1 39.1V0h33.3v9.8h-22.4v5.3h21.1v9.8h-21.1v4.5h22.4v9.8h-33.3zM380.7 39.1L367.2 0h11.9l7.1 21.2 7.1-21.2h11.9L391.6 39.1h-10.9zM414.3 39.1V0h10.9v39.1h-10.9zM436.1 39.1V0h33.3v9.8h-22.4v5.3h21.1v9.8h-21.1v4.5h22.4v9.8h-33.3zM480.3 39.1V0h10.9v39.1h-10.9zM502.1 39.1V0h33.3v9.8h-22.4v5.3h21.1v9.8h-21.1v4.5h22.4v9.8h-33.3zM546.3 39.1V0h10.9v39.1h-10.9zM568.1 39.1V0h33.3v9.8h-22.4v5.3h21.1v9.8h-21.1v4.5h22.4v9.8h-33.3z"/>
+    </g>
 
     <!-- "Hired!" Banner -->
     <g transform="rotate(-45 50 630)">
         <rect x="-400" y="0" width="1200" height="150" fill="#E21E26" />
-        <text x="200" y="105" class="banner-font">Hired!</text>
+        <g fill="white" transform="translate(100, 45) scale(0.8)">
+            <path d="M22.6 39.1V0h10.9v39.1H22.6zM44.4 39.1V0h10.9v39.1H44.4zM66.2 39.1V0h33.3v9.8H77.1v5.3h21.1v9.8H77.1v4.5h22.4v9.8H66.2zM110.4 39.1V0h33.3v9.8h-22.4v5.3h21.1v9.8h-21.1v4.5h22.4v9.8h-33.3zM154.6 39.1V0h10.9v39.1h-10.9zM176.4 39.1V0h10.9v39.1h-10.9z"/>
+        </g>
     </g>
 </svg>

@@ -37,8 +37,10 @@
             </div>
     </section>
 
-    <script src="../theme.js"></script>
-    <script src="../sponsors-data.js"></script>
-    <script>siteTheme.init("../");</script>
+    <script src="/theme.js"></script>
+    <script src="/sponsors-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
+    </script>
 </body>
 </html>

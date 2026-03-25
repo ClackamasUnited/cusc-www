@@ -42,10 +42,9 @@
     <script src="news-data.js"></script>
     <script src="sponsors-data.js"></script>
     <script>
-        siteTheme.init("");
-
         // Background image rotator
-        document.addEventListener('DOMContentLoaded', function() {            
+        document.addEventListener('DOMContentLoaded', function() {
+            siteTheme.init("/");
             // Sort a copy of the news data to avoid modifying the original array
             const sortedNews = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
              const images = [

@@ -94,8 +94,7 @@
     <script src="sponsors-data.js"></script>
     <script src="news-data.js"></script>
     <script>
-        // Start the theme. "" means assets are at the root level.
-        siteTheme.init("");
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
     </script>
 </body>
 </html>

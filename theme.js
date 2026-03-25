@@ -151,12 +151,19 @@ const siteTheme = {
         const sponsorsHTML = `<section class="bg-white py-12">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-3xl font-display font-bold uppercase mb-8 italic text-center">Our <span class="text-[#E21E26]">Sponsors</span><span class="text-[#111111]"> &amp; </span><span class="text-[#E21E26]">Partners</span></h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-                    ${sponsorsData.map(sponsor => `
-                        <div class="flex justify-center items-center h-[116.4px] grayscale-0">
-                            <img src="${basePath}${sponsor.logo}" alt="${sponsor.name}" class="h-[116.4px] w-auto object-contain">
-                        </div>
-                    `).join('')}
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8 items-center">
+                    ${sponsorsData.map(sponsor => {
+                        const imageHTML = `<img src="${basePath}${sponsor.logo}" alt="${sponsor.name}" class="h-auto w-full max-h-[100px] object-contain transition-opacity duration-300 group-hover:opacity-75">`;
+                        
+                        if (sponsor.url) {
+                            return `
+                                <a href="${sponsor.url}" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center group">
+                                    ${imageHTML}
+                                </a>`;
+                        }
+                        // If no URL, just display the image in a div
+                        return `<div class="flex justify-center items-center">${imageHTML}</div>`;
+                    }).join('')}
                 </div>
             </div>
         </section>`;

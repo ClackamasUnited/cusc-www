@@ -1,4 +1,5 @@
 const newsData = [
+    { date: "2026-04-03", publishDateTime: "2026-04-03T17:00:00Z", title: "New Jersey Designs", img: "/news/images/2627-jerseys.png", excerpt: "New Jersey designs for 2026/27!", author: "Tony Stevenson", slug: "new-jerseys-202627", hidden: true },
     { date: "2026-04-01", publishDateTime: "2026-04-01T17:00:00Z", title: "Seabee Construction", img: "/sponsors/seabee.png", excerpt: "Seabee Construction sponsors Clackamas United!", author: "Tony Stevenson", slug: "seabee-construction", hidden: false },
     { date: "2026-02-20", publishDateTime: "2099-02-20T17:00:00Z", title: "Spring Break Rec Camp", img: "/news/images/springbreak2026.png", excerpt: "Registration is now open for our annual Spring camp!", author: "Tony Stevenson", slug: "spring-break-rec-camp" },
     { date: "2026-02-19", publishDateTime: "2026-02-19T17:00:00Z", title: "2025-26 Scholarship Program Summary", img: "/news/images/cusc.png", excerpt: "A summary of the 2025-26 season's scholarship program, which provided over $56,000 in aid to 85 families.", author: "Tony Stevenson", slug: "2025-26-scholarship-program-summary" },

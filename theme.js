@@ -62,6 +62,7 @@ const siteTheme = {
                         <div class="relative group h-full py-4">
                             <button class="uppercase font-black hover:text-[#E21E26]">About <i class="fas fa-chevron-down ml-1 text-[#E21E26]"></i></button>
                             <div class="nav-dropdown shadow-2xl">
+                                <a href="${basePath}about/our-history.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Our History</a>
                                 <a href="${basePath}about/administrative-staff.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Administrative Staff</a>
                                 <a href="${basePath}about/board-of-directors.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Board of Directors</a>
                                 <a href="${basePath}about/coaching-staff.html" class="block px-6 py-4 hover:bg-[#E21E26]">Coaching Staff</a>
@@ -106,6 +107,7 @@ const siteTheme = {
                 <div class="border-b border-white/5">
                     <button class="w-full flex justify-between items-center py-4 accordion-trigger text-left">About <i class="fas fa-plus text-[#E21E26]"></i></button>
                     <div class="hidden pl-4 bg-white/5">
+                        <a href="${basePath}about/our-history.html" class="block py-3 text-xs opacity-70">Our History</a>
                         <a href="${basePath}about/administrative-staff.html" class="block py-3 text-xs opacity-70">Administrative Staff</a>
                         <a href="${basePath}about/board-of-directors.html" class="block py-3 text-xs opacity-70">Board of Directors</a>
                         <a href="${basePath}about/coaching-staff.html" class="block py-3 text-xs opacity-70">Coaching Staff</a>

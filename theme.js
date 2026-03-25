@@ -208,6 +208,27 @@ const siteTheme = {
         }
     },
 
+    injectPoliciesList: function(basePath) {
+        const policiesGrid = document.getElementById('policies-grid');
+        if (!policiesGrid || typeof policiesData === 'undefined') {
+            return;
+        }
+
+        const policiesHTML = policiesData.map(policy => `
+            <a href="${basePath}resources/policies/${policy.filename}" target="_blank" rel="noopener noreferrer" class="block bg-white p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-cu-red group">
+                <h3 class="text-xl font-display font-bold uppercase text-gray-900 group-hover:text-cu-red transition-colors">${policy.title}</h3>
+                <p class="text-sm text-gray-500 mt-2">Last Updated: ${policy.lastUpdated}</p>
+                <div class="mt-4 text-cu-red font-bold text-xs uppercase tracking-widest">
+                    View Policy <i class="fas fa-arrow-right ml-1"></i>
+                </div>
+            </a>
+        `).join('');
+
+        if (policiesHTML) {
+            policiesGrid.innerHTML = policiesHTML;
+        }
+    },
+
     injectNewsGrid: function(basePath) {
         const newsGrid = document.getElementById('news-grid');
         if (!newsGrid || typeof newsData === 'undefined') {
@@ -269,6 +290,11 @@ const siteTheme = {
         if (typeof newsData !== 'undefined') {
             this.injectPostNavigation(basePath);
             this.injectNewsGrid(basePath);
+        }
+
+        // Policies list is only needed if the data exists
+        if (typeof policiesData !== 'undefined') {
+            this.injectPoliciesList(basePath);
         }
 
         // Mobile Menu Toggle

@@ -47,12 +47,12 @@ const siteTheme = {
                                     </div>
                                 </div>
                                 <a href="${basePath}programs/fees.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Fees</a>
-                                 <div class="relative sub-group">
-                                    <a href="${basePath}camps/overview.html" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Camps <i class="fas fa-chevron-right text-[10px]"></i></a>
+                                <div class="relative sub-group">
+                                    <a href="${basePath}programs/camps/overview.html" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Camps <i class="fas fa-chevron-right text-[10px]"></i></a>
                                     <div class="nav-submenu">                         
-                                        <a href="${basePath}camps/spring-break-rec-camp.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Spring Break - Rec Camp</a>
-                                        <a href="${basePath}camps/summer-camps.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Summer Camps</a>
-                                        <a href="${basePath}camps/winter-academy.html" class="block px-6 py-4 hover:bg-[#E21E26]">Winter Academy</a>
+                                        <a href="${basePath}programs/camps/spring-break-rec-camp.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Spring Break - Rec Camp</a>
+                                        <a href="${basePath}programs/camps/summer-camps.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Summer Camps</a>
+                                        <a href="${basePath}programs/camps/winter-academy.html" class="block px-6 py-4 hover:bg-[#E21E26]">Winter Academy</a>
                                     </div>
                                 </div>
                                 <a href="${basePath}scholarships.html" class="block px-6 py-4 hover:bg-[#E21E26]">Scholarship Info</a>
@@ -94,12 +94,13 @@ const siteTheme = {
                             <a href="${basePath}programs/pdp.html" class="block py-3 text-[10px] text-[#E21E26]">Developmental (PDP)</a>
                             <a href="${basePath}programs/goalkeeping.html" class="block py-3 text-[10px] text-[#E21E26]">Goalkeeper Training</a>
                        </div>
-                        <a href="${basePath}programs/fees.html" class="block py-3 text-xs opacity-70">Fees</a>                                       
-                         <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger">Camps <i class="fas fa-plus"></i></button><div class="hidden pl-4 bg-black/20">
-                        <a href="${basePath}camps/summer-camps.html" class="block py-3 text-xs opacity-70">Summer Camps</a>
-                        <a href="${basePath}camps/spring-break-rec-camp.html" class="block py-3 text-xs opacity-70">Spring Break Rec Camp</a>
-                        <a href="${basePath}camps/winter-academy.html" class="block py-3 text-xs opacity-70">Winter Academy</a>
-                   </div>
+                        <a href="${basePath}programs/fees.html" class="block py-3 text-xs opacity-70">Fees</a>
+                        <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger">Camps <i class="fas fa-plus"></i></button>
+                        <div class="hidden pl-4 bg-black/20">
+                            <a href="${basePath}programs/camps/summer-camps.html" class="block py-3 text-xs opacity-70">Summer Camps</a>
+                            <a href="${basePath}programs/camps/spring-break-rec-camp.html" class="block py-3 text-xs opacity-70">Spring Break Rec Camp</a>
+                            <a href="${basePath}programs/camps/winter-academy.html" class="block py-3 text-xs opacity-70">Winter Academy</a>
+                        </div>
                         <a href="${basePath}scholarships.html" class="block py-3 text-xs opacity-70">Scholarship Info</a>
                 </div>
                 <div class="border-b border-white/5">

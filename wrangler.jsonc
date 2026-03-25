@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "cusc-www",
+  "name": "tiny-tree-c5ea",
   "compatibility_date": "2025-09-27",
   "observability": {
     "enabled": true

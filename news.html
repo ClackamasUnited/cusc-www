@@ -27,45 +27,7 @@
     <script src="news-data.js"></script>
     <script src="sponsors-data.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            siteTheme.init("");
-
-            const newsGrid = document.getElementById('news-grid');
-            const showMoreButton = document.getElementById('show-more');
-            let visibleItems = 6;
-
-            const visibleNews = newsData.filter(item => !item.hidden);
-              function displayNews() {
-                  newsGrid.innerHTML = visibleNews.slice(0, visibleItems).map(item => `
-                    <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.33%-16px)] bg-white border-t-4 border-[#E21E26] shadow-xl group">
-                        <div class="overflow-hidden h-52">
-                            <img src="${item.img}" class="h-full w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
-                        </div>
-                        <div class="p-8">
-                            <p class="text-xs italic">By ${item.author}</p>
-                            <span class="text-[10px] font-black text-[#E21E26] uppercase tracking-[0.2em]">${item.date}</span>
-                            <h3 class="text-xl font-display font-bold uppercase mt-2 group-hover:text-[#E21E26] transition leading-tight">${item.title}</h3>
-                            <p class="text-sm text-gray-600 mt-4 leading-relaxed line-clamp-2 italic">"${item.excerpt}"</p>
-                            <a href="news/${item.date}-${item.slug}.html" class="inline-block mt-6 text-xs font-black uppercase border-b-2 border-black pb-1 hover:border-[#E21E26] hover:text-[#E21E26] transition">Read Story</a>
-                        </div>
-                    </div>`).join('');
-              }
-
-            function updateShowMoreButton() {
-                if (visibleItems >= visibleNews.length) {
-                    showMoreButton.style.display = 'none';
-                }
-            }
-
-            showMoreButton.addEventListener('click', () => {
-                visibleItems += 6;
-                displayNews();
-                updateShowMoreButton();
-            });
-
-            displayNews();
-            updateShowMoreButton();
-        });
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init(""));
     </script>
 </body>
 </html>

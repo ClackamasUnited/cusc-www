@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Refereeing | Clackamas United</title>
+    <style>
+        [data-registration-status="open"] .show-when-closed, [data-registration-status="closed"] .show-when-open { display: none; }
+    </style>
+</head>
+<body class="bg-slate-50" data-registration-status="open"> <!-- <-- EDIT THIS: "open" or "closed" -->
+
+    <main class="max-w-7xl mx-auto my-20 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-display font-bold uppercase italic">Refereeing</h1>
+            <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">Referees are a vital part of our game.</p>
+        </div>
+
+        <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
+            <h2 class="text-4xl font-display font-bold uppercase mb-8 italic">What <span class="text-[#E21E26] underline">can I do?</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                <div>
+                    <h3 class="text-2xl font-display font-bold uppercase mb-2 italic">Training & Licensing</h3>
+                    <p class="text-gray-700 leading-relaxed">Do you want to <a href="https://www.ussoccer.com/refereeing">become a referee?</a> Do you want to earn some extra money while staying active?</p>
+                    <p class="text-gray-700 leading-relaxed">You can check the US Soccer training page for the <a href="https://learning.ussoccer.com/referee/courses/available/10000006/list"><span class="text-[#E21E26] underline">next class</span></a> in our area</p>
+                    <div class="mt-12 text-center">
+                        <a href="https://learning.ussoccer.com/referee/courses/available/10000006/list" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Become a referee &rarr;</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-display font-bold uppercase mb-2 italic">Sign up to referee games</h3>
+                    <p class="text-gray-700 leading-relaxed">Once you become a certified referee, you can use <a href="https://reftown.com"><span class="text-[#E21E26] underline">RefTown</span></a> to sign up for games</a>.</p>
+                    <div class="mt-12 text-center">
+                        <a href="https://reftown.com" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Find a game &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center">
+                <a href="https://learning.ussoccer.com/referee/courses/available/10000006/list" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Become a referee &rarr;</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="/theme.js"></script>
+    <script src="/sponsors-data.js"></script>
+    <script src="/news-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
+    </script>
+</body>
+</html>

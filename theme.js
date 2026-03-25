@@ -56,6 +56,7 @@ const siteTheme = {
                                 </div>
                                 <a href="${basePath}programs/fees.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Fees</a>
                                 <a href="${basePath}scholarships.html" class="block px-6 py-4 hover:bg-[#E21E26]">Scholarship Info</a>
+                                <a href="${basePath}programs/refereeing.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Refereeing</a>
                             </div>
                         </div>
 

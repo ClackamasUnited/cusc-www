@@ -53,31 +53,7 @@
     <script src="../sponsors-data.js"></script>
     <script src="../news-data.js"></script>
     <script>
-        // Start the theme. "../" means go up one level to find assets.
         siteTheme.init("../");
-
-        // --- Dynamic Post Navigation ---
-        window.addEventListener('DOMContentLoaded', () => {
-            const currentPath = window.location.pathname;
-            const createSlug = (title) => title.toLowerCase().replace(/ /g, "-").replace(/:/g, "");
-            const currentIndex = newsData.findIndex(item => `/news/${item.date}-${createSlug(item.title)}.html` === currentPath);
-
-            if (currentIndex === -1) return;
-
-            if (currentIndex > 0) {
-                const prevPost = newsData[currentIndex - 1];
-                const prevLink = document.getElementById('prev-post-link');
-                prevLink.href = `/news/${prevPost.date}-${createSlug(prevPost.title)}.html`;
-                prevLink.classList.remove('invisible');
-            }
-
-            if (currentIndex < newsData.length - 1) {
-                const nextPost = newsData[currentIndex + 1];
-                const nextLink = document.getElementById('next-post-link');
-                nextLink.href = `/news/${nextPost.date}-${createSlug(nextPost.title)}.html`;
-                nextLink.classList.remove('invisible');
-            }
-        });
     </script>
 </body>
 </html>

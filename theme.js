@@ -171,6 +171,39 @@ const siteTheme = {
         contentWrapper.insertAdjacentHTML('afterend', sponsorsHTML);
     },
 
+    injectPostNavigation: function(basePath) {
+        const prevLink = document.getElementById('prev-post-link');
+        const nextLink = document.getElementById('next-post-link');
+
+        // Only run if the navigation elements exist on the page
+        if (!prevLink || !nextLink || typeof newsData === 'undefined') {
+            return;
+        }
+
+        const visibleNews = newsData.filter(item => !item.hidden);
+        const currentPath = window.location.pathname;
+
+        const currentVisibleIndex = visibleNews.findIndex(item => `${basePath}news/${item.date}-${item.slug}.html` === currentPath);
+
+        if (currentVisibleIndex === -1) {
+            return; // Current page is not in the visible news list (it might be hidden)
+        }
+
+        // Set up the "Previous" (newer) post link
+        if (currentVisibleIndex > 0) {
+            const prevPost = visibleNews[currentVisibleIndex - 1];
+            prevLink.href = `${basePath}news/${prevPost.date}-${prevPost.slug}.html`;
+            prevLink.classList.remove('invisible');
+        }
+
+        // Set up the "Next" (older) post link
+        if (currentVisibleIndex < visibleNews.length - 1) {
+            const nextPost = visibleNews[currentVisibleIndex + 1];
+            nextLink.href = `${basePath}news/${nextPost.date}-${nextPost.slug}.html`;
+            nextLink.classList.remove('invisible');
+        }
+    },
+
     init: function(basePath = "") {
         // This function should be called after the DOM is ready.
         this.injectStyles();
@@ -180,6 +213,11 @@ const siteTheme = {
         // Sponsors are only needed if the data exists
         if (typeof sponsorsData !== 'undefined') {
             this.injectSponsors(basePath);
+        }
+
+        // Post Navigation is only needed if newsData exists
+        if (typeof newsData !== 'undefined') {
+            this.injectPostNavigation(basePath);
         }
 
         // Mobile Menu Toggle
@@ -203,7 +241,8 @@ const siteTheme = {
         const track = document.getElementById('news-track');
         if (track && typeof newsData !== 'undefined') {
             track.classList.add('grid', 'gap-6', 'md:grid-cols-3');
-            track.innerHTML = newsData.slice(0, 3).map(item => `                    
+            const visibleNews = newsData.filter(item => !item.hidden);
+            track.innerHTML = visibleNews.slice(0, 3).map(item => `                    
                 <div class="min-w-full bg-white border-t-4 border-[#E21E26] shadow-xl group">
                     <div class="overflow-hidden h-52">
                         <img src="${item.img}" class="h-full w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">

@@ -34,8 +34,9 @@
             const showMoreButton = document.getElementById('show-more');
             let visibleItems = 6;
 
+            const visibleNews = newsData.filter(item => !item.hidden);
               function displayNews() {
-                  newsGrid.innerHTML = newsData.slice(0, visibleItems).map(item => `
+                  newsGrid.innerHTML = visibleNews.slice(0, visibleItems).map(item => `
                     <div class="min-w-full md:min-w-[calc(50%-12px)] lg:min-w-[calc(33.33%-16px)] bg-white border-t-4 border-[#E21E26] shadow-xl group">
                         <div class="overflow-hidden h-52">
                             <img src="${item.img}" class="h-full w-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition duration-700">
@@ -51,7 +52,7 @@
               }
 
             function updateShowMoreButton() {
-                if (visibleItems >= newsData.length) {
+                if (visibleItems >= visibleNews.length) {
                     showMoreButton.style.display = 'none';
                 }
             }

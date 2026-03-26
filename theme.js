@@ -36,41 +36,50 @@ const siteTheme = {
                         <div class="relative group h-full py-4">
                             <button class="uppercase font-black hover:text-[#E21E26]">Soccer Programs<i class="fas fa-chevron-down ml-1 text-[#E21E26]"></i></button>
                             <div class="nav-dropdown shadow-2xl">
-                                <a href="${basePath}programs/overview.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Overview</a>
+                                <a href="${basePath}programs/overview.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Overview</a>
                                 <div class="relative sub-group">
                                     <a href="#" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Programs <i class="fas fa-chevron-right text-[10px]"></i></a>
                                     <div class="nav-submenu">
-                                        <a href="${basePath}programs/competitive.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Competitive</a>
-                                        <a href="${basePath}programs/recreational.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Recreational</a>
-                                        <a href="${basePath}programs/pdp.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Developmental (PDP)</a>
-                                        <a href="${basePath}programs/goalkeeping.html" class="block px-6 py-4 hover:bg-[#E21E26]">Goalkeeper Training</a>
+                                        <a href="${basePath}programs/competitive.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Competitive</a>
+                                        <a href="${basePath}programs/recreational.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Recreational</a>
+                                        <a href="${basePath}programs/pdp.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Developmental (PDP)</a>
+                                        <a href="${basePath}programs/goalkeeping.html" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Goalkeeper Training</a>
                                     </div>
                                 </div>
                                 <div class="relative sub-group">
                                     <a href="${basePath}programs/camps/overview.html" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Camps <i class="fas fa-chevron-right text-[10px]"></i></a>
                                     <div class="nav-submenu">                         
-                                        <a href="${basePath}programs/camps/spring-break-rec-camp.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Spring Break - Rec Camp</a>
-                                        <a href="${basePath}programs/camps/summer-camps.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Summer Camps</a>
-                                        <a href="${basePath}programs/camps/winter-academy.html" class="block px-6 py-4 hover:bg-[#E21E26]">Winter Academy</a>
+                                        <a href="${basePath}programs/camps/spring-break-rec-camp.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Spring Break - Rec Camp</a>
+                                        <a href="${basePath}programs/camps/summer-camps.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Summer Camps</a>
+                                        <a href="${basePath}programs/camps/winter-academy.html" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Winter Academy</a>
                                     </div>
                                 </div>
-                                <a href="${basePath}programs/fees.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Fees</a>
-                                <a href="${basePath}scholarships.html" class="block px-6 py-4 hover:bg-[#E21E26]">Scholarship Info</a>
-                                <a href="${basePath}programs/refereeing.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Refereeing</a>
+                                <a href="${basePath}programs/fees.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Fees</a>
+                                <a href="${basePath}scholarships.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Scholarship Info</a>
+                                <a href="${basePath}programs/refereeing.html" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Refereeing</a>
                             </div>
                         </div>
 
                         <div class="relative group h-full py-4">
                             <button class="uppercase font-black hover:text-[#E21E26]">About <i class="fas fa-chevron-down ml-1 text-[#E21E26]"></i></button>
                             <div class="nav-dropdown shadow-2xl">
-                                <a href="${basePath}about/our-history.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Our History</a>
-                                <a href="${basePath}about/administrative-staff.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Administrative Staff</a>
-                                <a href="${basePath}about/board-of-directors.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5">Board of Directors</a>
-                                <a href="${basePath}about/coaching-staff.html" class="block px-6 py-4 hover:bg-[#E21E26]">Coaching Staff</a>
+                                <a href="${basePath}about/our-history.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Our History</a>
+                                <a href="${basePath}about/administrative-staff.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Administrative Staff</a>
+                                <a href="${basePath}about/board-of-directors.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Board of Directors</a>
+                                <a href="${basePath}about/coaching-staff.html" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Coaching Staff</a>
                             </div>
                         </div>
 
-                        <a href="/news.html" class="hover:text-[#E21E26] transition font-black">News</a>
+                        <div class="relative group h-full py-4">
+                            <button class="uppercase font-black hover:text-[#E21E26]">Resources <i class="fas fa-chevron-down ml-1 text-[#E21E26]"></i></button>
+                            <div class="nav-dropdown shadow-2xl">
+                                <a href="${basePath}resources/rangersfc.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Rangers FC Affiliation</a>
+                                <a href="${basePath}resources/policies.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Club Policies</a>
+                                <a href="${basePath}resources/uniforms.html" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Uniforms</a>
+                            </div>
+                        </div>
+
+                        <a href="/news.html" class="hover:text-[#E21E26] transition font-black uppercase">News</a>
                         <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="bg-[#E21E26] px-8 py-3 hover:bg-white hover:text-black transition-all uppercase text-[11px] font-black">Register</a>
                     </div>
                     
@@ -84,37 +93,53 @@ const siteTheme = {
             </div>
 
             <div id="mobile-menu" class="hidden lg:hidden bg-[#111111] text-white p-6 uppercase font-bold text-sm border-t border-white/10 max-h-[80vh] overflow-y-auto">
-                <a href="${basePath}index.html" class="block py-4 border-b border-white/5">Home</a>
+                <a href="${basePath}index.html" class="block py-4 border-b border-white/5 uppercase">Home</a>
                 <div class="border-b border-white/5">
-                    <button class="w-full flex justify-between items-center py-4 accordion-trigger text-left">Soccer Programs <i class="fas fa-plus text-[#E21E26]"></i></button>
+                    <button class="w-full flex justify-between items-center py-4 accordion-trigger text-left uppercase">Soccer Programs <i class="fas fa-plus text-[#E21E26]"></i></button>
                     <div class="hidden pl-4 bg-white/5">
-                        <a href="${basePath}programs/overview.html" class="block py-3 text-xs opacity-70">Overview</a>
-                        <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger">Programs <i class="fas fa-plus"></i></button>
+                        <a href="${basePath}programs/overview.html" class="block py-3 text-xs opacity-70 uppercase">Overview</a>
+                        <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Programs <i class="fas fa-plus"></i></button>
                         <div class="hidden pl-4 bg-black/20">
-                            <a href="${basePath}programs/competitive.html" class="block py-3 text-[10px] text-[#E21E26]">Competitive</a>
-                            <a href="${basePath}programs/recreational.html" class="block py-3 text-[10px] text-[#E21E26]">Recreational</a>
-                            <a href="${basePath}programs/pdp.html" class="block py-3 text-[10px] text-[#E21E26]">Developmental (PDP)</a>
-                            <a href="${basePath}programs/goalkeeping.html" class="block py-3 text-[10px] text-[#E21E26]">Goalkeeper Training</a>
+                            <a href="${basePath}programs/competitive.html" class="block py-3 text-[10px] text-[#E21E26] uppercase">Competitive</a>
+                            <a href="${basePath}programs/recreational.html" class="block py-3 text-[10px] text-[#E21E26] uppercase">Recreational</a>
+                            <a href="${basePath}programs/pdp.html" class="block py-3 text-[10px] text-[#E21E26] uppercase">Developmental (PDP)</a>
+                            <a href="${basePath}programs/goalkeeping.html" class="block py-3 text-[10px] text-[#E21E26] uppercase">Goalkeeper Training</a>
                        </div>
-                        <a href="${basePath}programs/fees.html" class="block py-3 text-xs opacity-70">Fees</a>
-                        <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger">Camps <i class="fas fa-plus"></i></button>
+                        <a href="${basePath}programs/camps/overview.html" class="block py-3 text-xs opacity-70 uppercase">Camps Overview</a>
+                        <a href="${basePath}programs/fees.html" class="block py-3 text-xs opacity-70 uppercase">Fees</a>
+                        <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Camps <i class="fas fa-plus"></i></button>
                         <div class="hidden pl-4 bg-black/20">
-                            <a href="${basePath}programs/camps/summer-camps.html" class="block py-3 text-xs opacity-70">Summer Camps</a>
-                            <a href="${basePath}programs/camps/spring-break-rec-camp.html" class="block py-3 text-xs opacity-70">Spring Break Rec Camp</a>
-                            <a href="${basePath}programs/camps/winter-academy.html" class="block py-3 text-xs opacity-70">Winter Academy</a>
+                            <a href="${basePath}programs/camps/summer-camps.html" class="block py-3 text-xs opacity-70 uppercase">Summer Camps</a>
+                            <a href="${basePath}programs/camps/spring-break-rec-camp.html" class="block py-3 text-xs opacity-70 uppercase">Spring Break Rec Camp</a>
+                            <a href="${basePath}programs/camps/winter-academy.html" class="block py-3 text-xs opacity-70 uppercase">Winter Academy</a>
                         </div>
-                        <a href="${basePath}scholarships.html" class="block py-3 text-xs opacity-70">Scholarship Info</a>
+                        <a href="${basePath}scholarships.html" class="block py-3 text-xs opacity-70 uppercase">Scholarship Info</a>
+                        <a href="${basePath}programs/refereeing.html" class="block py-3 text-xs opacity-70 uppercase">Refereeing</a>
                 </div>
                 <div class="border-b border-white/5">
-                    <button class="w-full flex justify-between items-center py-4 accordion-trigger text-left">About <i class="fas fa-plus text-[#E21E26]"></i></button>
+                    <button class="w-full flex justify-between items-center py-4 accordion-trigger text-left uppercase">About <i class="fas fa-plus text-[#E21E26]"></i></button>
                     <div class="hidden pl-4 bg-white/5">
-                        <a href="${basePath}about/our-history.html" class="block py-3 text-xs opacity-70">Our History</a>
-                        <a href="${basePath}about/administrative-staff.html" class="block py-3 text-xs opacity-70">Administrative Staff</a>
-                        <a href="${basePath}about/board-of-directors.html" class="block py-3 text-xs opacity-70">Board of Directors</a>
-                        <a href="${basePath}about/coaching-staff.html" class="block py-3 text-xs opacity-70">Coaching Staff</a>
+                        <a href="${basePath}about/our-history.html" class="block py-3 text-xs opacity-70 uppercase">Our History</a>
+                        <a href="${basePath}about/administrative-staff.html" class="block py-3 text-xs opacity-70 uppercase">Administrative Staff</a>
+                        <a href="${basePath}about/board-of-directors.html" class="block py-3 text-xs opacity-70 uppercase">Board of Directors</a>
+                        <a href="${basePath}about/coaching-staff.html" class="block py-3 text-xs opacity-70 uppercase">Coaching Staff</a>
                     </div>
                 </div>
-                <a href="#" class="block bg-[#E21E26] p-4 text-center mt-6 font-black tracking-widest">Register Now</a>
+                <div class="border-b border-white/5">
+                    <button class="w-full flex justify-between items-center py-4 accordion-trigger text-left uppercase">Resources <i class="fas fa-plus text-[#E21E26]"></i></button>
+                    <div class="hidden pl-4 bg-white/5">
+                        <a href="${basePath}resources/rangersfc.html" class="block py-3 text-xs opacity-70 uppercase">Rangers FC Affiliation</a>
+                        <a href="${basePath}resources/policies.html" class="block py-3 text-xs opacity-70 uppercase">Club Policies</a>
+                        <a href="${basePath}resources/uniforms.html" class="block py-3 text-xs opacity-70 uppercase">Uniforms</a>
+                    </div>
+                </div>
+                <a href="/news.html" class="block py-4 border-b border-white/5 uppercase">News</a>
+                <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="block bg-[#E21E26] p-4 text-center mt-6 font-black tracking-widest">Register Now</a>
+                
+                <div class="flex items-center justify-center space-x-6 mt-8">
+                    <a href="https://www.facebook.com/clackamasunitedsoccerclub" class="text-white hover:text-cu-red transition text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/clackamasunitedsoccer/" class="text-white hover:text-cu-red transition text-2xl"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
         </nav>`;
         const contentWrapper = document.getElementById('page-content') || document.body;

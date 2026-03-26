@@ -280,6 +280,36 @@ const siteTheme = {
         updateShowMoreButton();
     },
 
+    initImageCarousel: function(basePath) {
+        const carousel = document.getElementById('rangers-carousel');
+        if (!carousel || typeof rangersGalleryData === 'undefined' || rangersGalleryData.length === 0) {
+            return;
+        }
+
+        const imageContainer = document.getElementById('carousel-image-container');
+        const prevButton = document.getElementById('carousel-prev');
+        const nextButton = document.getElementById('carousel-next');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const image = rangersGalleryData[index];
+            imageContainer.innerHTML = `<img src="${basePath}${image.src}" alt="${image.alt}" class="w-full h-full object-cover">`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + rangersGalleryData.length) % rangersGalleryData.length;
+            showImage(currentIndex);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % rangersGalleryData.length;
+            showImage(currentIndex);
+        });
+
+        // Show the first image initially
+        showImage(currentIndex);
+    },
+
     init: function(basePath = "") {
         // This function should be called after the DOM is ready.
         this.injectStyles();
@@ -300,6 +330,11 @@ const siteTheme = {
         // Policies list is only needed if the data exists
         if (typeof policiesData !== 'undefined') {
             this.injectPoliciesList(basePath);
+        }
+
+        // Rangers gallery is only needed if the data exists
+        if (typeof rangersGalleryData !== 'undefined') {
+            this.initImageCarousel(basePath);
         }
 
         // Mobile Menu Toggle

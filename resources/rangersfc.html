@@ -47,12 +47,17 @@
             <br />
             <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12">
                 <h2 class="text-3xl font-display font-bold uppercase mb-8 italic text-center">Camp Photo Gallery</h2>
-                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg mx-auto max-w-4xl">
-                    <iframe 
-                        src="https://photos.google.com/share/AF1QipNOjyoB2nRNDcM1MLCDUju2srkrEcmCT_5qzMAsv1-Xwyepb_mjq_p93zOVMboVxQ?key=QUZrS2VpTzVDOTNwXzdSN2xYZVZmZERjZDBhbVB3"
-                        class="w-full h-full"
-                        allowfullscreen>
-                    </iframe>
+                <div id="rangers-carousel" class="relative max-w-4xl mx-auto">
+                    <div id="carousel-image-container" class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                        <!-- Main image will be inserted here by JavaScript -->
+                    </div>
+                    <!-- Prev/Next Buttons -->
+                    <button id="carousel-prev" class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/75 transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="carousel-next" class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/50 text-white rounded-full w-10 h-10 flex items-center justify-center hover:bg-black/75 transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </main>
@@ -61,6 +66,7 @@
     <script src="/theme.js"></script>
     <script src="/sponsors-data.js"></script>
     <script src="/news-data.js"></script>
+    <script src="/resources/rangers-gallery-data.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
     </script>

@@ -287,23 +287,43 @@ const siteTheme = {
         }
 
         const imageContainer = document.getElementById('carousel-image-container');
+        const thumbnailsContainer = document.getElementById('carousel-thumbnails');
         const prevButton = document.getElementById('carousel-prev');
         const nextButton = document.getElementById('carousel-next');
         let currentIndex = 0;
 
+        // Generate thumbnails
+        thumbnailsContainer.innerHTML = rangersGalleryData.map((image, index) => `
+            <button data-index="${index}" class="carousel-thumbnail-btn h-16 w-16 p-1 border-2 border-transparent hover:border-cu-red transition focus:outline-none">
+                <img src="${basePath}${image.src}" alt="Thumbnail for ${image.alt}" class="w-full h-full object-cover pointer-events-none">
+            </button>
+        `).join('');
+
+        const thumbnailButtons = thumbnailsContainer.querySelectorAll('.carousel-thumbnail-btn');
+
         function showImage(index) {
             const image = rangersGalleryData[index];
             imageContainer.innerHTML = `<img src="${basePath}${image.src}" alt="${image.alt}" class="w-full h-full object-cover">`;
+            
+            // Update active thumbnail
+            thumbnailButtons.forEach((btn, btnIndex) => {
+                btn.classList.toggle('border-cu-red', btnIndex === index);
+            });
         }
 
         prevButton.addEventListener('click', () => {
             currentIndex = (currentIndex - 1 + rangersGalleryData.length) % rangersGalleryData.length;
             showImage(currentIndex);
         });
-
         nextButton.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % rangersGalleryData.length;
             showImage(currentIndex);
+        });
+        thumbnailButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentIndex = parseInt(btn.dataset.index);
+                showImage(currentIndex);
+            });
         });
 
         // Show the first image initially

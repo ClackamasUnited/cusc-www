@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Clackamas United | Registration</title>
+    <style>
+        /*
+         * Scalable Registration Status Display Logic
+         *
+         * 1. By default, hide all elements that are part of this conditional display system.
+         * 2. Explicitly show only the element that matches the current data-registration-status.
+         */
+        .show-classic-tryouts,
+        .show-classic-tryouts-closed,
+        .show-classic-reg,
+        .show-classic-reg-closed,
+        .show-pdp-tryouts,
+        .show-pdp-tryouts-closed,
+        .show-pdp-reg,
+        .show-pdp-reg-closed,
+        .show-rec-fall,
+        .show-rec-fall-closed,
+        .show-rec-spring,
+        .show-rec-spring-closed,
+        .show-camp-summer,
+        .show-camp-summer-closed,
+        .show-camp-spring,
+        .show-camp-spring-closed,
+        .show-winter-academy,
+        .show-winter-academy-closed { display: none; }
+
+        /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
+        /* Show the "open" button/link when the attribute is true */
+        [show-classic-tryouts="true"] .show-classic-tryouts { display: initial; }
+        [show-classic-reg="true"] .show-classic-reg { display: initial; }
+        [show-pdp-tryouts="true"] .show-pdp-tryouts { display: initial; }
+        [show-pdp-reg="true"] .show-pdp-reg { display: initial; }
+        [show-rec-fall="true"] .show-rec-fall { display: initial; }
+        [show-rec-spring="true"] .show-rec-spring { display: initial; }
+        [show-camp-summer="true"] .show-camp-summer { display: initial; }
+        [show-camp-spring="true"] .show-camp-spring { display: initial; }
+        [show-winter-academy="true"] .show-winter-academy { display: initial; }
+
+        /* Show the "closed" message when the attribute is false */
+        [show-classic-tryouts="false"] .show-classic-tryouts-closed { display: initial; }
+        [show-classic-reg="false"] .show-classic-reg-closed { display: initial; }
+        [show-pdp-tryouts="false"] .show-pdp-tryouts-closed { display: initial; }
+        [show-pdp-reg="false"] .show-pdp-reg-closed { display: initial; }
+        [show-rec-fall="false"] .show-rec-fall-closed { display: initial; }
+        [show-rec-spring="false"] .show-rec-spring-closed { display: initial; }
+        [show-camp-summer="false"] .show-camp-summer-closed { display: initial; }
+        [show-camp-spring="false"] .show-camp-spring-closed { display: initial; }
+        [show-winter-academy="false"] .show-winter-academy-closed { display: initial; }
+
+    </style>
+</head>
+<!--
+
+*** SET A PROGRAM to "true" below to show the registration link button"
+*** SET A PROGRAM to "false" below to hide the registraion button and show a 'closed'  message
+
+-->
+
+<body class="bg-slate-50" 
+    show-classic-tryouts="false"
+    show-classic-reg="true" 
+    show-pdp-tryouts="true" 
+    show-pdp-reg="true" 
+    show-rec-fall="true" 
+    show-rec-spring="true" 
+    show-camp-summer="true" 
+    show-camp-spring="true" 
+    show-winter-academy="true">
+
+    <main class="max-w-7xl mx-auto my-20 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-display font-bold uppercase italic">Clackamas United <span class="text-[#E21E26]">Registration</span></h1>
+            <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">Clackamas United is committed to making soccer accessible to all youth players in our community, regardless of financial circumstances.</p>
+        </div>
+
+        <div class="space-y-12">
+            <!-- Looking for help box -->
+            <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12">
+                <div class="max-w-3xl mx-auto text-gray-700 leading-relaxed text-lg">
+                    <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Looking for help?</h2>
+                    <p class="mb-4">If you are looking for help on how to register your player, you can use the table below that identifies the programs that are available</p>
+                    <p class="mb-4">You can visit our scholarship information page, if you would like to apply for a <a class="text-[#E21E26]" href="/scholarships.html">scholarship</a></p>
+                
+                    <div class="mt-6">
+                        <p class="mb-4">If you have a specific question or need assistance, please contact our club registrar directly using the contact information at the bottom of this page.</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Classic programs -->
+            <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
+                <h2 class="text-4xl font-display font-bold uppercase mb-8 italic">Competitive <span class="text-[#E21E26]">Programs</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-lg divide-y divide-gray-200">
+                    <!-- Classic Tryouts -->
+                    <div class="flex items-center pt-4"><strong class="w-48 shrink-0">Classic Tryouts:</strong> 
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-classic-tryouts bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Tryouts</a>
+                        <span class="show-classic-tryouts-closed text-gray-500 italic">Registration Closed</span>
+                    </div>
+                    <!-- Classic Program -->
+                    <div class="flex items-center pt-4"><strong class="w-48 shrink-0">Classic Program:</strong> 
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-classic-reg bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Classic</a>
+                        <span class="show-classic-reg-closed text-gray-500 italic">Registration Closed</span>
+                    </div>
+                    <!-- PDP Tryouts -->
+                    <div class="flex items-center pt-4"><strong class="w-48 shrink-0">PDP Tryouts:</strong> 
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-pdp-tryouts bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Tryouts</a>
+                        <span class="show-pdp-tryouts-closed text-gray-500 italic">Registration Closed</span>
+                    </div>
+                    <!-- PDP Program -->
+                    <div class="flex items-center pt-4"><strong class="w-48 shrink-0">PDP Program:</strong> 
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-pdp-reg bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Program</a>
+                        <span class="show-pdp-reg-closed text-gray-500 italic">Registration Closed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rec Programs -->
+                    <!-- Rec Fall -->
+                    <div class="flex items-center pt-4"><strong class="w-48 shrink-0">Rec (Fall):</strong> 
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-rec-fall bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Fall</a>
+                        <span class="show-rec-fall-closed text-gray-500 italic">Registration Closed</span>
+                    </div>
+                    <!-- Rec Spring -->
+                    <div class="flex items-center pt-4"><strong class="w-48 shrink-0">Rec (Spring):</strong> 
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-rec-spring bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Spring</a>
+                        <span class="show-rec-spring-closed text-gray-500 italic">Registration Closed</span>
+                    </div>
+                </div>
+            
+                    <!-- Summer Camp -->
+                    <div class="flex items-center pt-4"><strong class="w-48 shrink-0">Summer Camp:</strong> 
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-camp-summer bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Camp</a>
+                        <span class="show-camp-summer-closed text-gray-500 italic">Registration Closed</span>
+                    </div>
+                    <!-- Spring Camp -->
+                    <div class="flex items-center pt-4"><strong class="w-48 shrink-0">Spring Camp:</strong> 
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-camp-spring bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Camp</a>
+                        <span class="show-camp-spring-closed text-gray-500 italic">Registration Closed</span>
+                    </div>
+                    <!-- Winter Academy -->
+                    <div class="flex items-center pt-4"><strong class="w-48 shrink-0">Winter Academy:</strong> 
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-winter-academy bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Academy</a>
+                        <span class="show-winter-academy-closed text-gray-500 italic">Registration Closed</span>
+                    </div>
+                </div>
+                <br />
+                <p class="text-center text-gray-600 mt-4 text-med italic"><sup class="text-gray-500">*</sup>Many of our teams also attend summer tournaments and continue training throughout the summer to stay sharp and connected.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="theme.js"></script>
+    <script src="sponsors-data.js"></script>
+    <script src="news-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
+    </script>
+</body>
+</html>

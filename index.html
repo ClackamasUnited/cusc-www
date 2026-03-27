@@ -6,8 +6,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Clackamas United | Home</title>
+    <style>
+        /*
+         * Scalable Registration Status Display Logic
+         *
+         * 1. By default, hide all elements that are part of this conditional display system.
+         * 2. Explicitly show only the element that matches the current data-registration-status.
+         */
+        .show-program-button,
+        .show-reg-button,
+        .show-tryout-button { display: none; }
+
+        [show-reg-button="true"] .show-reg-button { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
+        [show-tryout-button="true"] .show-tryout-button { display: initial; }
+        [show-program-button="true"] .show-program-button { display: initial; }
+    </style>
 </head>
-<body class="bg-white">
+<body class="bg-white" show-reg-button="false" show-tryout-button="false" show-program-button="true"> <!-- <-- EDIT THIS: "open" or "closed" or "preparing" -->
 
     <header class="relative h-[85vh] flex items-center bg-[#111111] text-white overflow-hidden" id="home-header">
         <div class="absolute inset-0">
@@ -22,9 +37,15 @@
                     <span class="block text-7xl md:text-[140px] text-white">SUCCESS.</span>
                     <span class="block text-7xl md:text-[140px] text-white">CHARACTER.</span>
                 </h1>
+
+                
                 <div class="flex flex-wrap gap-4 mt-10">
-                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Join Tryouts</a>
-                    <a href="/programs/overview.html" class="bg-white/10 border border-white/40 px-10 py-5 font-black uppercase text-xs hover:bg-white/20 transition">Our Programs</a>
+                    <!-- Programs Button -->
+                    <a href="/programs/overview.html" class="show-program-button bg-white/10 border border-white/40 px-10 py-5 font-black uppercase text-xs hover:bg-white/20 transition">Our Programs</a>
+                    <!-- Tryouts Button -->
+                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-tryout-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Join Tryouts</a>
+                    <!-- Registration Button -->
+                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-reg-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Join Tryouts</a>
                 </div>
             </div>
         </div>

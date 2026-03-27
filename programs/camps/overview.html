@@ -21,21 +21,21 @@
             <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
                 <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Spring Break Rec Camp</h2>
                 <p class="text-gray-700 leading-relaxed mb-6 flex-grow">Our annual Spring Break camp is perfect for recreational players looking to improve their skills in a fun, positive, and engaging environment.</p>
-                <a href="/camps/spring-break-rec-camp.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">Learn More &rarr;</a>
+                <a href="/programs/camps/spring-break-rec-camp.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">Learn More &rarr;</a>
             </div>
 
             <!-- Summer Camps Card -->
             <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
                 <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Summer Camps</h2>
                 <p class="text-gray-700 leading-relaxed mb-6 flex-grow">Join us for a summer of soccer! We offer multiple camps for different age groups and skill levels, focusing on technical skills, teamwork, and fun.</p>
-                <a href="/camps/summer-camps.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">Learn More &rarr;</a>
+                <a href="/programs/camps/summer-camps.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">Learn More &rarr;</a>
             </div>
 
             <!-- Winter Academy Card -->
             <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
                 <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Winter Academy</h2>
                 <p class="text-gray-700 leading-relaxed mb-6 flex-grow">Stay sharp during the off-season! Our Winter Academy focuses on technical skills, footwork, and small-sided games in a fun, high-energy environment.</p>
-                <a href="/camps/winter-academy.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">Learn More &rarr;</a>
+                <a href="/programs/camps/winter-academy.html" class="inline-block mt-auto text-center text-gray-700 hover:text-cu-red transition-all italic text-lg font-bold">Learn More &rarr;</a>
             </div>
 
 
@@ -46,8 +46,7 @@
     <script src="/sponsors-data.js"></script>
     <script src="/news-data.js"></script>
     <script>
-        // Start the theme. "../" means assets are at the root level.
-        siteTheme.init("../");
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
     </script>
 </body>
 </html>

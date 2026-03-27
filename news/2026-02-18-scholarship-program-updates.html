@@ -12,7 +12,7 @@
     <article class="max-w-4xl mx-auto my-20 p-10 bg-white shadow-xl border-t-8 border-cu-red">
         <h1 class="text-5xl font-display font-bold uppercase mb-4 italic">Scholarship Program Updates</h1>
         <p class="text-gray-500 mb-8 font-bold uppercase tracking-widest text-xs">Feb 18, 2026 <span class="font-normal normal-case"> by Tony Stevenson</span></p>
-        <img src="/images/news//cusc.png" alt="News Image" class="w-[65%] mx-auto mb-8">
+        <img src="/images/news/cusc.png" alt="News Image" class="w-[65%] mx-auto mb-8">
         <br />
         <div class="text-gray-700 leading-relaxed text-lg">
             <p class="mb-4">Clackamas United Soccer Club is committed to making soccer accessible to all youth in our community, regardless of their financial circumstances. We believe that every child deserves the opportunity to play, learn, and grow through the beautiful game.</p>
@@ -47,8 +47,8 @@
     <script src="/sponsors-data.js"></script>
     <script src="/news-data.js"></script>
     <script>
-        // Start the theme. "../" means go up one level to find assets.
-        siteTheme.init("../");
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
+    </script>
 
         // --- Dynamic Post Navigation ---
         window.addEventListener('DOMContentLoaded', () => {

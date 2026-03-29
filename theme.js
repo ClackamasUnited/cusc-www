@@ -162,6 +162,7 @@ const siteTheme = {
                         <li><a href="/resources/policies.html" class="hover:text-[#E21E26] transition">Club Policies</a></li>
                         <li><a href="/scholarships.html" class="hover:text-[#E21E26] transition">Scholarships</a></li>
                         <li><a href="/resources/uniforms.html" class="hover:text-[#E21E26] transition">Uniforms</a></li>
+                        <li><a href="https://tursissoccer.com/collections/clackamas-united-fan-apparel" target="_blank" rel="noopener noreferrer" class="hover:text-[#E21E26] transition">Club Apparel</a></li>
                     </ul>
                 </div>
                 <div>

@@ -24,11 +24,17 @@
          * 1. By default, hide the image containers.
          * 2. Explicitly show the container that matches the data attribute on the body.
          */
-        .show-rec-uniform-image,
-        .show-classic-uniform-image { display: none; }
+        .show-prek-uniform-image,
+        .show-rec-grade-uniform-image,
+        .show-pdp-uniform-image,
+        .show-classic-uniform-image {
+            display: none;
+        }
 
         /* Show the image container when the attribute is "true" */
-        body[data-show-rec-image="true"] .show-rec-uniform-image { display: block; }
+        body[data-show-prek-image="true"] .show-prek-uniform-image { display: block; }
+        body[data-show-rec-grade-image="true"] .show-rec-grade-uniform-image { display: block; }
+        body[data-show-pdp-image="true"] .show-pdp-uniform-image { display: block; }
         body[data-show-classic-image="true"] .show-classic-uniform-image { display: block; }
     </style>
 </head>
@@ -36,7 +42,12 @@
 *** SET AN IMAGE to "true" below to show it on the page
 *** SET AN IMAGE to "false" below to hide it
 -->
-<body class="bg-slate-50" data-show-rec-image="false" data-show-classic-image="false">
+<body class="bg-slate-50" 
+    data-show-prek-image="true" 
+    data-show-rec-grade-image="true" 
+    data-show-pdp-image="true" 
+    data-show-classic-image="true"
+>
 
     <div id="page-content">
         <main class="max-w-7xl mx-auto my-20 px-6">
@@ -49,15 +60,15 @@
             <div class="space-y-12">
                 <div id="rec" class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16 scroll-mt-24">
                 <h2 class="text-4xl font-display font-bold uppercase mb-8 italic">Rec <span class="text-[#E21E26]">Uniforms</span></h2>
-                    <div class="show-rec-uniform-image mb-12">
-                        <img src="/images/uniforms/rec-uniforms.jpg" alt="Recreational Uniforms" class="w-full h-auto rounded-lg shadow-md">
-                    </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 text-lg md:items-start divide-y md:divide-y-0 divide-gray-200">
                         
                         <!-- PreK-1st Grade Uniforms-->
                         <div class="flex flex-col h-full pt-10 md:pt-0">
                             <div class="flex-grow">
                                 <strong class="w-48 shrink-0">Pre-K - 1st Grade</strong> 
+                                <div class="show-prek-uniform-image my-6">
+                                    <img src="/images/uniforms/prek-uniforms.jpg" alt="Pre-K to 1st Grade Uniform" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
                                 <p class="mb-4">Game shirts will be provided. Players should wear comfortable athletic clothing that allows them to move freely during practice. Shinguards and cleats are also required.</p>
                             </div>
                             <div class="pt-6">
@@ -69,6 +80,9 @@
                         <div class="flex flex-col h-full pt-10 md:pt-0">
                             <div class="flex-grow">
                                 <strong class="w-48 shrink-0">2nd - 8th Grade</strong> 
+                                <div class="show-rec-grade-uniform-image my-6">
+                                    <img src="/images/uniforms/rec-uniforms.jpg" alt="2nd to 8th Grade Recreational Uniform" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
                                 <p class="mb-4">Rec uniforms can be picked up in-store or ordered online through Tursi (using the button below).</p>
                                 <p class="mb-4">Required items include:</p>
                                 <ul class="icon-list my-4 space-y-1">
@@ -91,15 +105,15 @@
             <div class="space-y-12">
                 <div id="competitive" class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16 scroll-mt-24">
                 <h2 class="text-4xl font-display font-bold uppercase mb-8 italic">Competitive <span class="text-[#E21E26]">Uniforms</span></h2>
-                    <div class="show-classic-uniform-image mb-12">
-                        <img src="/images/uniforms/classic-uniforms.jpg" alt="Competitive Uniforms" class="w-full h-auto rounded-lg shadow-md">
-                    </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 text-lg md:items-start divide-y md:divide-y-0 divide-gray-200">
                         
                         <!-- PDP Uniforms-->
                         <div id="pdp" class="flex flex-col h-full pt-10 md:pt-0">
                             <div class="flex-grow">
                                 <strong class="w-48 shrink-0">Developmental</strong> 
+                                <div class="show-pdp-uniform-image my-6">
+                                    <img src="/images/uniforms/pdp-uniforms.jpg" alt="PDP Uniform" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
                                 <p class="mb-4">Required items include:</p>
                                 <ul class="icon-list my-4 space-y-1">
                                     <li>Nike red top</li>
@@ -124,6 +138,9 @@
                         <div id="classic" class="flex flex-col h-full pt-10 md:pt-0">
                             <div class="flex-grow">
                                 <strong class="w-48 shrink-0">Classic</strong> 
+                                <div class="show-classic-uniform-image my-6">
+                                    <img src="/images/uniforms/classic-uniforms.jpg" alt="Classic Uniform" class="w-full h-auto rounded-lg shadow-md">
+                                </div>
                                 <p class="mb-4">Required items include:</p>
                                 <ul class="icon-list my-4 space-y-1">
                                     <li>Nike red top</li>

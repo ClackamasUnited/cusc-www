@@ -6,6 +6,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Uniforms | Clackamas United</title>
+    <style>
+        .icon-list {
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+        }
+        .icon-list li::before {
+            font-family: "Font Awesome 6 Free";
+            content: "\f1e3"; /* Font Awesome icon for soccer ball */
+            font-weight: 900; /* Use the 'solid' style */
+            color: #E21E26; /* The club's red color */
+            margin-right: 0.75rem; /* Space between icon and text */
+        }
+    </style>
 </head>
 <body class="bg-slate-50">
 
@@ -26,7 +39,8 @@
                         <div class="flex flex-col h-full">
                             <div class="flex-grow pb-6">
                                 <strong class="w-48 shrink-0">Pre-K - 1st Grade</strong> 
-                                <p>Game shirts will be provided. Players should wear comfortable athletic clothing that allows them to move freely during practice. Shinguards and cleats are also required.</p>
+                                <p>Game shirts will be provided.</p><br />
+                                <p class="mb-4"> Players should wear comfortable athletic clothing that allows them to move freely during practice. Shinguards and cleats are also required.</p>
                             </div>
                             <div class="border-t border-gray-200 pt-6"> <!-- Divider Line -->
                                 <p class="text-gray-500 italic">No purchase neccesary.</p>
@@ -38,8 +52,16 @@
                         <div class="flex flex-col h-full">
                             <div class="flex-grow pb-6">
                                 <strong class="w-48 shrink-0">2nd - 8th Grade</strong> 
-                                <p>Rec uniforms can be picked up in-store or ordered online through Tursi (suing the button below).</p> <br />
-                                <p>Required items include a Nike red top, Nike black top, Nike black shorts, and Nike black socks. Players should wear comfortable athletic clothing that allows them to move freely during practice. Shinguards and cleats are also required.</p>
+                                <p class="mb-4">Rec uniforms can be picked up in-store or ordered online through Tursi (using the button below).</p>
+                                <p class="mb-4">Required items include:</p>
+                                <ul class="icon-list my-4 space-y-1">
+                                    <li>Nike red top</li>
+                                    <li>Nike black top</li>
+                                    <li>Nike black shorts</li>
+                                    <li>Nike black socks</li>
+                                </ul>
+                                <p>Players should wear comfortable athletic clothing that allows them to move freely during practice.</p> <br />
+                                <p>Shinguards and cleats are also required.</p>
                             </div>
                             <div class="text-center border-t border-gray-200 pt-6"> <!-- Divider Line & Centering container -->
                                 <a href="https://tursissoccer.com/collections/clackamas-united-rec" class="bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Purchase Online</a>
@@ -59,7 +81,18 @@
                         <div class="flex flex-col h-full">
                             <div class="flex-grow pb-6">
                                 <strong class="w-48 shrink-0">Developmental</strong> 
-                                <p>Required items include a Nike reversible pinnie, Nike red top, Nike black top, Nike black shorts, Nike black socks, Nike gray practice shirt, Nike soccer backpack, and a Nike hoodie.</p> <br />
+                                <p class="mb-4">Required items include:</p>
+                                <ul class="icon-list my-4 space-y-1">
+                                    <li>Nike red top</li>
+                                    <li>Nike black top</li>
+                                    <li>Nike black shorts</li>
+                                    <li>Nike black socks</li>
+                                    <li>Nike gray practice shirt</li>
+                                    <li>Nike soccer backpack</li>
+                                    <li>Nike hoodie</li>
+                                    <li>Nike reversible pinnie</li>
+                                </ul>
+                                <br />
                                 <p>Shinguards and cleats are also required.</p>
                             </div>
                             <div class="text-center border-t border-gray-200 pt-6"> <!-- Divider Line -->
@@ -71,10 +104,22 @@
                         <!-- Classic Uniforms-->
                         <div class="flex flex-col h-full">
                             <div class="flex-grow pb-6">
-                                <strong class="w-48 shrink-0">Competitive</strong> 
-                                <p>Required items include a Nike reversible pinnie, Nike red top, Nike white top, Nike red shorts, Nike black shorts, Nike black socks, Nike gray practice shirt, Nike soccer backpack, a Nike warm-up jacket or Nike hoodie, and Nike warm-up pants. Shinguards and cleats are also required. Your coach or team manager will work with you on your jersey number. </p> <br />
-                                <p>Shinguards and cleats are also required.</p> 
-                                <p class="text-gray-500 italic">Your coach or team manager will coordinate your jersey number with you.</p>
+                                <strong class="w-48 shrink-0">Developmental</strong> 
+                                <p class="mb-4">Required items include:</p>
+                                <ul class="icon-list my-4 space-y-1">
+                                    <li>Nike red top</li>
+                                    <li>Nike white top</li>
+                                    <li>Nike black shorts</li>
+                                    <li>Nike black socks</li>
+                                    <li>Nike gray practice shirt</li>
+                                    <li>Nike soccer backpack</li>
+                                    <li>Nike warm-up jacket or Nike hoodie</li>
+                                    <li>Nike warm-up pants</li>
+                                    <li>Nike reversible pinnie</li>
+                                </ul>
+                                <br />
+                                <p>Shinguards and cleats are also required.</p> <br />
+                                <p class="text-gray-500 italic">Your coach or team manager will coordinate your jersey number with you.</p> <br />
                                 <p class="text-gray-500 italic">Please <strong>do not purchase</strong> any items until your jersey number has been confirmed</p>
                             </div>
                             <div class="text-center border-t border-gray-200 pt-6"> <!-- Divider Line -->

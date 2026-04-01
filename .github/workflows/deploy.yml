@@ -3,7 +3,7 @@ name: Sync Changes to R2
 on:
   push:
     branches:
-      - main
+      - www
 
 jobs:
   deploy:

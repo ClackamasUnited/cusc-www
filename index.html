@@ -26,7 +26,7 @@
 
     <header class="relative h-[85vh] flex items-center bg-[#111111] text-white overflow-hidden" id="home-header">
         <div class="absolute inset-0">
-            <img id="bg-image" src="https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80" class="w-full h-full object-cover opacity-40 grayscale-[0.5]">
+            <img id="bg-image" src="" alt="Background image of soccer players" class="w-full h-full object-cover opacity-40 grayscale-[0.5]">
         </div>
         <div class="relative max-w-7xl mx-auto px-6 w-full flex items-start">
             <div class="w-[6px] h-[340px] md:h-[420px] bg-white mr-8 mt-2 shadow-2xl"></div>
@@ -69,16 +69,20 @@
             // Sort a copy of the news data to avoid modifying the original array
             const sortedNews = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
              const images = [
+                "/images/news/CUSC-2026-27-CompetitiveJerseys.jpeg",
                 "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80",
                 "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80"
             ];
             let currentImageIndex = 0;
             const bgImage = document.getElementById('bg-image');
 
+            // Set the initial image from the array
+            if (images.length > 0) bgImage.src = images[0];
+
             setInterval(() => {
                 currentImageIndex = (currentImageIndex + 1) % images.length;
                 bgImage.src = images[currentImageIndex];
-            }, 10000); // Change every 10 seconds
+            }, 5000); // Change every 10 seconds
         });
 
     </script>

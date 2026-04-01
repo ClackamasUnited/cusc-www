@@ -1,5 +1,5 @@
 # cusc-www 
 #
 #
-## TEST 2
-## TEST 5
+
+To test changes in newsite; commit to main (dont push) then use:  ```git push origin main:newsite``` 

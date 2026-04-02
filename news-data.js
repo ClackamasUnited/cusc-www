@@ -1,5 +1,5 @@
 const newsData = [
-    { date: "2026-04-03", publishDateTime: "2026-04-03T17:00:00Z", title: "New Jersey Designs", img: "images/news/2627-jerseys.png", excerpt: "New Jersey designs for 2026/27!", author: "Tony Stevenson", slug: "new-jerseys-202627", hidden: true },
+    { date: "2026-04-01", publishDateTime: "2026-04-01T17:00:00Z", title: "New Jersey Designs", img: "images/news/CUSC-2026-27-CompetitiveJerseys.jpeg", excerpt: "New Jersey designs for 2026/27!", author: "Tony Stevenson", slug: "new-jerseys-202627", hidden: false },
     { date: "2026-04-01", publishDateTime: "2026-04-01T17:00:00Z", title: "Seabee Construction", img: "images/sponsors/seabee.png", excerpt: "Seabee Construction sponsors Clackamas United!", author: "Tony Stevenson", slug: "seabee-construction", hidden: false },
     { date: "2026-03-25", publishDateTime: "2026-03-25T17:00:00Z", title: "2026/27 Tryouts", img: "images/club-logo.png", excerpt: "2026/27 Tryouts are coming", author: "Tony Stevenson", slug: "2026-27-tryouts", hidden: false },
     { date: "2026-02-20", publishDateTime: "2099-02-20T17:00:00Z", title: "Spring Break Rec Camp", img: "images/news/springbreak2026.png", excerpt: "Registration is now open for our annual Spring camp!", author: "Tony Stevenson", slug: "spring-break-rec-camp", hidden: true },

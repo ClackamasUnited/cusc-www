@@ -6,11 +6,28 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Tryout Schedule | Clackamas United</title>
+        <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 60vw;
+            height: 60vh;
+            transform: translate(-50%, -50%);
+            background-image: url('/images/club-logo.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.25;
+            z-index: -1;
+        }
+    </style>
 </head>
 <body class="bg-slate-50">
 
     <div id="page-content">
-        <main class="max-w-7xl mx-auto my-20 px-6">
+        <main class="max-w-7xl mx-auto my-20 px-6 relative z-10">
             <div class="text-center mb-16">
                 <h1 class="text-6xl font-display font-bold uppercase italic">Tryout <span class="text-[#E21E26]">Schedule</span></h1>
                 <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">Find your age group and session times below. Please arrive 30 minutes early for check-in.</p>

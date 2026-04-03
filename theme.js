@@ -167,7 +167,7 @@ const siteTheme = {
                 </div>
                 <div>
                     <h4 class="text-white font-bold uppercase text-[10px] tracking-[0.3em] mb-8">Contact</h4>
-                    <div class="text-xs space-y-4 font-bold uppercase tracking-widest leading-relaxed">
+                    <div id="contact-info" lass="text-xs space-y-4 font-bold uppercase tracking-widest leading-relaxed">
                         <p><i class="fas fa-phone mr-2 text-[#E21E26]"></i> (503) 550-7535</p>
                         <p class="lowercase"><i class="fas fa-envelope mr-2 text-[#E21E26]"></i> registrar@clackamasunited.com</p>
                     </div>

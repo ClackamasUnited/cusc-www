@@ -5,26 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        [data-registration-status="open"] .show-when-closed, [data-registration-status="closed"] .show-when-open { display: none; }
+    </style>
     <title>Clackamas United | Player Development Program (PDP)</title>
 </head>
-<body class="bg-slate-50">
+<body class="bg-slate-50" data-registration-status="open"> <!-- <-- EDIT THIS: "open" or "closed" -->
+    
+    <main class="max-w-7xl mx-auto my-20 px-6">
+        <div class="text-center mb-16">
+            <h1 class="text-6xl font-display font-bold uppercase italic">Player Development <span class="text-[#E21E26]">Program</span></h1>
+            <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">Our Player Developmental Program is designed for 2nd – 4th grade players who are ready for a more competitive environment beyond recreational soccer.</p> 
+            <br />
+            <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
+                <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">This program focuses on building strong technical skills, game understanding, and a love for the game in a structured, development-first setting.</p>
+                <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">Unlike Rec, this program emphasizes a higher level of commitment, skill development, and competitive play. It serves as a key pathway for players preparing to advance into our Classic program.</p>
+                <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">Teams compete in the OYSA Developmental League on Sundays during both the Fall and Spring seasons, with an 8-game schedule each season. Players train twice per week, allowing for consistent growth and progression throughout the year.</p>
+            </div>
+        </div>
 
-    <main class="max-w-5xl mx-auto my-20 p-10 bg-white shadow-xl border-t-8 border-cu-red">
-        <h1 class="text-5xl font-display font-bold uppercase mb-6 italic">Player Development Program (PDP)</h1>
-        
-        <div class="text-gray-700 leading-relaxed text-lg">
-            <h2 class="text-3xl font-display font-bold uppercase mb-6 italic text-cu-red">Program Overview</h2>
-            
-            <p class="mb-6">Our Player Developmental Program is designed for 2nd – 4th grade players who are ready for a more <span class="font-bold font-display">competitive environment</span> beyond recreational soccer. </p>
-            
-            <p class="mb-6">This program focuses on building strong <span class="font-bold font-display">technical skills</span>, <span class="font-bold font-display">game understanding</span>, and a <span class="font-bold font-display">love for the game</span> in a structured, development-first setting.</p>
-            
-            <p class="mb-6">Unlike Rec, this program emphasizes a higher level of commitment, skill development, and competitive play. It serves as a <span class="font-bold font-display">key pathway</span> for players preparing to advance into our Classic program.</p>
-            
-            <p class="mb-6">Teams compete in the <span class="font-bold font-display">OYSA Developmental League</span> on Sundays during both the Fall and Spring seasons, with an 8-game schedule each season. Players train twice per week, allowing for consistent growth and progression throughout the year.</p>
+        <!-- Program at a Glance -->
+        <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
+            <h2 class="text-4xl font-display font-bold uppercase mb-8 italic">Program at a <span>Glance</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 text-lg">
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Ages:</strong> <span class="text-gray-700">2nd Grade - 4th Grade</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Level:</strong> <span class="text-gray-700">Competitive</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Season:</strong> <span class="text-gray-700">Year-round (Fall & Spring) *</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Training:</strong> <span class="text-gray-700">2 times per week</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Coaching:</strong> <span class="text-gray-700">Licensed, professional coaches</span></div>
+                <div class="flex border-b pb-3"><strong class="w-32 shrink-0">Focus:</strong> <span class="text-gray-700">Advanced skill & tactical development</span></div>
+            </div>
+            <br />
+            <p class="text-center text-gray-600 mt-4 text-med italic"><sup class="text-gray-500">*</sup>Many of our teams also attend summer tournaments and continue training throughout the summer to stay sharp and connected.</p>
+            <p class="text-center text-gray-600 mt-4 text-med italic"><sup class="text-gray-500">*</sup>You can find more information on the upcoming <a class="underline text-[#E21E26]" href="/news/2026-01-29-us-youth-soccer-age-group-changes.html">Youth Soccer Age Group Changes</a>.</p>
+        </div>
 
-            <p class="text-center text-gray-600 mt-4 text-med italic"><sup class="text-gray-500">*</sup>You can find more informaiton on the upcoming <a class="underline text-[#E21E26]" href="/news/2026-01-29-us-youth-soccer-age-group-changes.html">Youth Soccer Age Group Changes</a>.</p>
+        <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
+            <h2 class="text-4xl font-display font-bold uppercase mb-8 italic">How to join</h2>
+            <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">Our Developmental Program uses our annual tryout process to assess players before the start of a new season to evaluate their skills to make team position decisions.</p>
+            <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">You can read our <a class="underline text-[#E21E26]" href="/resources/policies/open-and-fair-tryouts.html">Open & Fair Tryout Policy</a> for more information.</p><br />
+            <p class="text-center text-gray-600 mt-4 text-med italic"><sup class="text-gray-500">*</sup>If you are considering joining after the tryout process has concluded - please contact our Club Registrar using the <br /> contact information at <a class="underline" href="#contact-info">the bottom of this page.</a>.</p>
+        </div>
 
+        <!-- PDP Card -->
+        <div id="pdp" class=" justify-center bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+            <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">2nd - 4th Grade</h2>
+            <p class="text-gray-700 leading-relaxed mb-6 flex-grow">The first step into our competitive program, focusing on advanced technical skills and tactical understanding in a fun, challenging environment.</p>
+            <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAzNjI1MzF8MHJkUjVqcjV5ZFZnaUYydjFuNTRIVlMwQVRlWVhXZ3RuQTZJNzR5Vk9WYz0=&program_id=94481" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for tryouts now &rarr;</a>
+            <span class="show-when-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration Closed</span>
         </div>
     </main>
 

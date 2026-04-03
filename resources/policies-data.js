@@ -8,6 +8,11 @@ const policiesData = [
         title: "Concussion Protocol",
         filename: "concussion-protocol.pdf",
         lastUpdated: "2025-08-01"
+    },
+    {
+        title: "Open & Fair Tryout Process",
+        filename: "open-and-fair-tryouts.html",
+        lastUpdated: "2025-08-01"
     }
     // Add more policy objects here as needed
 ];

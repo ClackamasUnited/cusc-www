@@ -22,7 +22,7 @@
         [show-program-button="true"] .show-program-button { display: initial; }
     </style>
 </head>
-<body class="bg-white" show-reg-button="false" show-tryout-button="false" show-program-button="true"> <!-- <-- EDIT THIS: "open" or "closed" or "preparing" -->
+<body class="bg-white" show-reg-button="false" show-tryout-button="true" show-program-button="true"> <!-- <-- EDIT THIS: "open" or "closed" or "preparing" -->
 
     <header class="relative h-[85vh] flex items-center bg-[#111111] text-white overflow-hidden" id="home-header">
         <div class="absolute inset-0">
@@ -43,9 +43,9 @@
                     <!-- Programs Button -->
                     <a href="/programs/overview.html" class="show-program-button bg-white/10 border border-white/40 px-10 py-5 font-black uppercase text-xs hover:bg-white/20 transition">Our Programs</a>
                     <!-- Tryouts Button -->
-                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-tryout-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Join Tryouts</a>
+                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-tryout-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Join Tryouts &rarr;</a>
                     <!-- Registration Button -->
-                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-reg-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Join Tryouts</a>
+                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-reg-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Register &rarr;</a>
                 </div>
             </div>
         </div>
@@ -69,11 +69,11 @@
             // Sort a copy of the news data to avoid modifying the original array
             const sortedNews = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
              const images = [
-                "/images/news/CUSC-2026-27-CompetitiveJerseys.jpeg",
-                "/images/camps/IMG_0686.jpeg",
-                "/images/camps/rangers-gallery/cusc-rangers-016.jpg",
-                "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80",
-                "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80"
+                "/images/homepage/CUSC-2026-27-CompetitiveJerseys.jpeg",
+                "/images/homepage/IMG_0686.jpeg",
+                "/images/homepage/cusc-rangers-016.jpg",
+                "/images/homepage/ball-and-feet.jpeg",
+                "/images/homepage/balls-on-turf.jpeg"
             ];
             let currentImageIndex = 0;
             const bgImage = document.getElementById('bg-image');

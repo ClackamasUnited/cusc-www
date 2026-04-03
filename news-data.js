@@ -1,4 +1,6 @@
 const newsData = [
+    { date: "2026-04-03", publishDateTime: "2026-04-02T17:00:00Z", title: "Classic Tryout Schedule", img: "images/news/2026-tryouts-classic.png", excerpt: "Our 2026 Classic Tryouts Schedule is here!", author: "Tony Stevenson", slug: "2627-classic-tryout-schedule", hidden: false },
+    { date: "2026-04-03", publishDateTime: "2026-04-02T17:00:00Z", title: "Developmental Tryout Schedule", img: "images/news/2026-tryouts-pdp.png", excerpt: "Our 2026 Developmental Tryouts Schedule is here!", author: "Tony Stevenson", slug: "2627-pdp-tryout-schedule", hidden: false },
     { date: "2026-04-01", publishDateTime: "2026-04-01T17:00:00Z", title: "New Jersey Designs", img: "images/news/CUSC-2026-27-CompetitiveJerseys.jpeg", excerpt: "New Jersey designs for 2026/27!", author: "Tony Stevenson", slug: "new-jerseys-202627", hidden: false },
     { date: "2026-04-01", publishDateTime: "2026-04-01T17:00:00Z", title: "Seabee Construction", img: "images/sponsors/seabee.png", excerpt: "Seabee Construction sponsors Clackamas United!", author: "Tony Stevenson", slug: "seabee-construction", hidden: false },
     { date: "2026-03-25", publishDateTime: "2026-03-25T17:00:00Z", title: "2026/27 Tryouts", img: "images/club-logo.png", excerpt: "2026/27 Tryouts are coming", author: "Tony Stevenson", slug: "2026-27-tryouts", hidden: false },

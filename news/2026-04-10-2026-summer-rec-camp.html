@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>2026 Summer Rec Camps | Clackamas United</title>
+    <style>
+        /*
+         * Scalable Registration Status Display Logic
+         *
+         * 1. By default, hide all elements that are part of this conditional display system.
+         * 2. Explicitly show only the element that matches the current data-registration-status.
+         */
+        .show-when-open,
+        .show-when-closed,
+        .show-when-preparing { display: none; }
+
+        [data-registration-status="open"] .show-when-open { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
+        [data-registration-status="closed"] .show-when-closed { display: initial; }
+        [data-registration-status="preparing"] .show-when-preparing { display: initial; }
+    </style>
+</head>
+<body class="bg-slate-50" data-registration-status="open">
+
+    <div id="page-content">
+        <main class="max-w-4xl mx-auto my-20 px-6">
+            <article>
+                <div class="text-center mb-12">
+                    <p class="text-sm font-bold text-cu-red uppercase tracking-widest">April 10, 2026</p>
+                    <h1 class="text-5xl font-display font-bold uppercase italic mt-2">2026 <span class="text-[#E21E26]">Summer Rec </span>Camps!</h1>
+                    <p class="text-gray-600 text-lg mt-4">By Tony Stevenson</p>
+                </div>
+
+                <div class="mb-12 flex justify-center">
+                    <img src="/images/news/summerreccamp2026.jpg" alt="Summer Rec Camps" class="max-h-[500px] w-auto rounded-lg shadow-xl">
+                </div>
+
+                <div>
+                    <!-- SHOW WHEN CLOSED  -->
+                    <div class="show-when-closed">
+                        <p>Registrations for our 2026 Summer Rec Camps are currently closed. If you are interested in joining Clackamas United please contact our Club Registrar using the contact informtion at the bottom of this page.</p>
+                    </div>
+
+                    <!-- SHOW WHEN PREPARING -->
+                    <div class="show-when-preparing">
+                        <p>We are currently preparing to open our tryout registration. Please check back soon for updates.</p>
+                    </div>
+
+                    <!-- SHOW WHEN OPEN -->
+                    <div class="text-center mt-8">
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODEwNDY2MjJ8OFNzc2RmTFBNV2dFTjgrdkRycUwvLzAwajZlWUVabGRhMVBnOWVKS0R4VT0=&program_id=99201" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="prose lg:prose-xl mx-auto text-gray-800">
+                    <br /><p>Join us this summer for Clackamas United Rec Camps, where players can build skills, make friends, and enjoy the game in a fun and positive environment!</p><br />
+                    
+                    <p>Our camps are designed to focus on individual skill development and small-sided games, helping players grow their confidence while having a great time on the field. Whether your player is brand new to soccer or already loves the game, our coaches create an atmosphere that is encouraging, energetic, and age-appropriate.</p><br />
+                    
+                    <p><strong>New this year:</strong> We’re excited to introduce a <strong>3–4 year old age group</strong>, giving our youngest players a chance to learn the basics through fun, engaging activities designed just for them!</p><br />
+
+                    <p>📍<strong>Locations: </strong> Some camp locations are currently listed as TBD and will take place within the North Clackamas area. We are currently waiting for schools and parks to open their reservation systems and we will notify families as soon as locations are confirmed.</p><br />
+
+                    <h3 class="text-2xl font-display font-bold uppercase mt-2">Camp Dates & Details</h3><br />
+
+                    <div>
+                    <p><span class="text-l font-display font-bold uppercase italic mt-2"> June 22–25 (Monday–Thursday)</span>  📍 Happy Valley Park Field #3</p>
+                    <p>Ages 3–4: 9:00–10:00 am | $80</p>
+                    <p>Ages 5–6: 10:00 am–12:00 pm | $130</p>
+                    <p>Ages 7–12: 9:00 am–12:00 pm | $160</p><br />
+                    </div>
+
+                    <div>
+                    <p><span class="text-l font-display font-bold uppercase italic mt-2"> July 6-9 (Monday–Thursday)</span>  📍 TBD</p>
+                    <p>Ages 3–4: 9:00–10:00 am | $80</p>
+                    <p>Ages 5–6: 10:00 am–12:00 pm | $130</p>
+                    <p>Ages 7–12: 9:00 am–12:00 pm | $160</p><br />
+                    </div>
+
+                    <div>
+                    <p><span class="text-l font-display font-bold uppercase italic mt-2"> July 20-23 (Monday–Thursday)</span>  📍 TBD</p>
+                    <p>Ages 3–4: 9:00–10:00 am | $80</p>
+                    <p>Ages 5–6: 10:00 am–12:00 pm | $130</p>
+                    <p>Ages 7–12: 9:00 am–12:00 pm | $160</p><br />
+                    </div>
+                    
+                    <p>We look forward to a fun-filled summer of soccer with your players!</p>
+                    <br />
+                    
+                    
+                </div>
+
+                <div>
+                    <!-- SHOW WHEN CLOSED  -->
+                    <div class="show-when-closed">
+                        <p>Registrations for our 2026 Summer Rec Camps are currently closed. If you are interested in joining Clackamas United please contact our Club Registrar using the contact informtion at the bottom of this page.</p>
+                    </div>
+
+                    <!-- SHOW WHEN PREPARING -->
+                    <div class="show-when-preparing">
+                        <p>We are currently preparing to open our tryout registration. Please check back soon for updates.</p>
+                    </div>
+
+                    <!-- SHOW WHEN OPEN -->
+                    <div class="text-center mt-8">
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODEwNDY2MjJ8OFNzc2RmTFBNV2dFTjgrdkRycUwvLzAwajZlWUVabGRhMVBnOWVKS0R4VT0=&program_id=99201" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="/theme.js"></script>
+    <script src="/sponsors-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
+    </script>
+</body>
+</html>

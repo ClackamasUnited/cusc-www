@@ -15,8 +15,7 @@ const siteTheme = {
             .nav-submenu { display: none; position: absolute; top: 0; left: 100%; min-width: 240px; background: #1a1a1a; border-left: 2px solid var(--cu-red); }
             .sub-group:hover > .nav-submenu { display: block; }
             .hero-title { line-height: 0.85; letter-spacing: -0.05em; }
-            .hero-dropdown { display: none; position: absolute; top: 100%; left: 0; min-width: 100%; background: linear-gradient(to bottom, rgba(17, 17, 17, 0.85), #111111); border-top: 4px solid var(--cu-red); z-index: 50; }
-            .group:hover > .hero-dropdown { display: block; }
+            .hero-dropdown { position: absolute; top: 100%; left: 0; min-width: 100%; background: linear-gradient(to bottom, rgba(17, 17, 17, 0.85), #111111); border-top: 4px solid var(--cu-red); z-index: 50; }
             .hero-dropdown a:hover { background-color: rgba(255, 255, 255, 0.2) !important; }
 
         `;
@@ -430,5 +429,24 @@ const siteTheme = {
             const newsSection = document.getElementById('news-track').parentNode;
             newsSection.innerHTML += `<div class="w-full text-center mt-4"><a class="text-gray-600 italic font-bold text-lg" href="${basePath}news.html">Read older stories...</a></div>`;
         }            
+
+        // Hero Dropdown Toggle Logic
+        const heroDropdownToggle = document.querySelector('.hero-tryout-schedule-toggle');
+        const heroTryoutDropdown = document.getElementById('heroTryoutDropdown');
+
+        if (heroDropdownToggle && heroTryoutDropdown) {
+            heroDropdownToggle.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent document click from immediately closing it
+                heroTryoutDropdown.classList.toggle('hidden');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                // Check if the click was outside the toggle button AND outside the dropdown content
+                if (!heroDropdownToggle.contains(e.target) && !heroTryoutDropdown.contains(e.target)) {
+                    heroTryoutDropdown.classList.add('hidden');
+                }
+            });
+        }
     }
 };

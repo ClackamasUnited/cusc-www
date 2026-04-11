@@ -15,6 +15,10 @@ const siteTheme = {
             .nav-submenu { display: none; position: absolute; top: 0; left: 100%; min-width: 240px; background: #1a1a1a; border-left: 2px solid var(--cu-red); }
             .sub-group:hover > .nav-submenu { display: block; }
             .hero-title { line-height: 0.85; letter-spacing: -0.05em; }
+            .hero-dropdown { display: none; position: absolute; top: 100%; left: 0; min-width: 100%; background: linear-gradient(to bottom, rgba(17, 17, 17, 0.85), #111111); border-top: 4px solid var(--cu-red); z-index: 50; }
+            .group:hover > .hero-dropdown { display: block; }
+            .hero-dropdown a:hover { background-color: rgba(255, 255, 255, 0.2) !important; }
+
         `;
         const styleSheet = document.createElement("style");
         styleSheet.innerText = styles;

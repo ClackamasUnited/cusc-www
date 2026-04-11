@@ -15,14 +15,16 @@
          */
         .show-program-button,
         .show-reg-button,
-        .show-tryout-button { display: none; }
+        .show-tryout-button,
+        .show-tryout-schedule-button { display: none; }
 
         [show-reg-button="true"] .show-reg-button { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
         [show-tryout-button="true"] .show-tryout-button { display: initial; }
+        [show-tryout-schedule-button="true"] .show-tryout-schedule-button { display: initial; }
         [show-program-button="true"] .show-program-button { display: initial; }
     </style>
 </head>
-<body class="bg-white" show-reg-button="false" show-tryout-button="true" show-program-button="true"> <!-- <-- EDIT THIS: "open" or "closed" or "preparing" -->
+<body class="bg-white" show-reg-button="false" show-tryout-button="true" show-tryout-schedule-button="true" show-program-button="true"> <!-- <-- EDIT THIS: "open" or "closed" or "preparing" -->
 
     <header class="relative h-[85vh] flex items-center bg-[#111111] text-white" id="home-header">
         <div class="absolute inset-0">
@@ -44,13 +46,12 @@
                     <a href="/programs/overview.html" class="show-program-button bg-white/10 border border-white/40 px-10 py-5 font-black uppercase text-xs hover:bg-white/20 transition">Our Programs</a>
                     <!-- Tryout Schedule Dropdown -->
                     <div class="relative group">
-                        <button class="bg-white/10 border border-white/40 px-10 py-5 font-black uppercase text-xs hover:bg-white/20 transition">Tryout Schedule <i class="fas fa-chevron-down ml-1 text-sm"></i></button>
+                        <button class="show-tryout-schedule-button bg-white/10 border border-white/40 px-10 py-5 font-black uppercase text-xs hover:bg-white/20 transition">Tryout Schedule <i class="fas fa-chevron-down ml-1 text-sm"></i></button>
                         <div class="hero-dropdown border border-white/40">
                             <a href="/news/2026-04-03-2627-classic-tryout-schedule.html" class="block px-6 py-4 border-b border-white/5 uppercase">Classic Tryouts</a>
                             <a href="/news/2026-04-03-2627-pdp-tryout-schedule.html" class="block px-6 py-4 uppercase">Developmental Tryouts</a>
                         </div>
                     </div>
-
                     <!-- Tryouts Button -->
                     <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-tryout-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Join Tryouts &rarr;</a>
                     <!-- Registration Button -->

@@ -82,7 +82,8 @@ const siteTheme = {
                                 <div class="relative sub-group">
                                     <a href="#" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] uppercase">Swag <i class="fas fa-chevron-right text-[10px]"></i></a>
                                     <div class="nav-submenu">
-                                        <a href="https://tursissoccer.com/collections/clackamas-united-fan-apparel" target="_blank" rel="noopener noreferrer" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Tursi</a>
+                                        <a href="https://cusc.square.site/s/shop" target="_blank" rel="noopener noreferrer" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Club SWAG</a>
+                                        <a href="https://tursissoccer.com/collections/clackamas-united-fan-apparel" target="_blank" rel="noopener noreferrer" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Tursi Fan Apparel</a>
                                         <a href="https://www.oliviagracepaper.com/collections/clackamas-united-sc" target="_blank" rel="noopener noreferrer" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Olivia Grace Paper</a>
                                     </div>
                                 </div>

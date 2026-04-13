@@ -78,7 +78,14 @@ const siteTheme = {
                             <div class="nav-dropdown shadow-2xl">
                                 <a href="${basePath}resources/rangersfc.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Rangers FC Affiliation</a>
                                 <a href="${basePath}resources/policies.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Club Policies</a>
-                                <a href="${basePath}resources/uniforms.html" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Uniforms</a>
+                                <a href="${basePath}resources/uniforms.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Uniforms</a>
+                                <div class="relative sub-group">
+                                    <a href="#" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] uppercase">Swag <i class="fas fa-chevron-right text-[10px]"></i></a>
+                                    <div class="nav-submenu">
+                                        <a href="https://tursissoccer.com/collections/clackamas-united-fan-apparel" target="_blank" rel="noopener noreferrer" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Tursi</a>
+                                        <a href="https://www.oliviagracepaper.com/collections/clackamas-united-sc" target="_blank" rel="noopener noreferrer" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Olivia Grace Paper</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -134,6 +141,11 @@ const siteTheme = {
                         <a href="${basePath}resources/rangersfc.html" class="block py-3 text-xs opacity-70 uppercase">Rangers FC Affiliation</a>
                         <a href="${basePath}resources/policies.html" class="block py-3 text-xs opacity-70 uppercase">Club Policies</a>
                         <a href="${basePath}resources/uniforms.html" class="block py-3 text-xs opacity-70 uppercase">Uniforms</a>
+                        <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Swag <i class="fas fa-plus"></i></button>
+                        <div class="hidden pl-4 bg-black/20">
+                            <a href="https://tursissoccer.com/collections/clackamas-united-fan-apparel" target="_blank" rel="noopener noreferrer" class="block py-3 text-[10px] text-[#E21E26] uppercase">Tursi</a>
+                            <a href="https://oliviagraceandcompany.com/collections/clackamas-united-soccer-club" target="_blank" rel="noopener noreferrer" class="block py-3 text-[10px] text-[#E21E26] uppercase">Olivia Grace</a>
+                        </div>
                     </div>
                 </div>
                 <a href="/news.html" class="block py-4 border-b border-white/5 uppercase">News</a>

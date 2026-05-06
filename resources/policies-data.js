@@ -1,4 +1,6 @@
 const policiesData = [
+    // Add more policy objects here as needed
+
     {
         title: "Player and Parent Code of Conduct",
         url: "/resources/policies/player-parent-code-of-conduct.pdf",
@@ -34,8 +36,5 @@ const policiesData = [
         url: "/resources/policies/Referee_Abuse_Policy_531-9_Penalty Summary_2122025.pdf",
         lastUpdated: "2025-03-01",
         hidden: false
-    }
-    
-    
-    // Add more policy objects here as needed
+    }    
 ];

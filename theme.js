@@ -261,15 +261,22 @@ const siteTheme = {
             return;
         }
 
-        const policiesHTML = policiesData.map(policy => `
-            <a href="${basePath}resources/policies/${policy.filename}" target="_blank" rel="noopener noreferrer" class="block bg-white p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-cu-red group">
+        const policiesHTML = policiesData
+            .filter(policy => !policy.hidden) // Filter out hidden policies
+            .map(policy => {
+            // Check if the URL is absolute (external) or relative (local)
+            const isExternal = policy.url.startsWith('http');
+            const href = isExternal ? policy.url : `${basePath}${policy.url.startsWith('/') ? policy.url.substring(1) : policy.url}`;
+
+            return `
+            <a href="${href}" target="_blank" rel="noopener noreferrer" class="block bg-white p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-cu-red group">
                 <h3 class="text-xl font-display font-bold uppercase text-gray-900 group-hover:text-cu-red transition-colors">${policy.title}</h3>
                 <p class="text-sm text-gray-500 mt-2">Last Updated: ${policy.lastUpdated}</p>
                 <div class="mt-4 text-cu-red font-bold text-xs uppercase tracking-widest">
                     View Policy <i class="fas fa-arrow-right ml-1"></i>
                 </div>
             </a>
-        `).join('');
+        `}).join('');
 
         if (policiesHTML) {
             policiesGrid.innerHTML = policiesHTML;

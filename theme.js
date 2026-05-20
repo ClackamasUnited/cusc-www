@@ -58,8 +58,7 @@ const siteTheme = {
                                     </div>
                                 </div>
                                 <a href="${basePath}programs/fees.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Fees</a>
-                                <a href="${basePath}scholarships.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Scholarship Info</a>
-                                <a href="${basePath}programs/refereeing.html" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Refereeing</a>
+                                <a href="${basePath}scholarships.html" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Scholarship Info</a>
                             </div>
                         </div>
 
@@ -79,6 +78,13 @@ const siteTheme = {
                                 <a href="${basePath}resources/rangersfc.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Rangers FC Affiliation</a>
                                 <a href="${basePath}resources/policies.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Club Policies</a>
                                 <a href="${basePath}resources/uniforms.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Uniforms</a>
+                                <div class="relative sub-group">
+                                    <a href="#" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Refereeing <i class="fas fa-chevron-right text-[10px]"></i></a>
+                                    <div class="nav-submenu">
+                                        <a href="${basePath}resources/referees/refereeing.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Latest News</a>
+                                        <a href="${basePath}resources/referees/referee-starter-packet.html" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Starter Pack</a>
+                                    </div>
+                                </div>
                                 <div class="relative sub-group">
                                     <a href="#" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] uppercase">Swag <i class="fas fa-chevron-right text-[10px]"></i></a>
                                     <div class="nav-submenu">
@@ -125,7 +131,6 @@ const siteTheme = {
                             <a href="${basePath}programs/camps/winter-academy.html" class="block py-3 text-xs opacity-70 uppercase">Winter Academy</a>
                         </div>
                         <a href="${basePath}scholarships.html" class="block py-3 text-xs opacity-70 uppercase">Scholarship Info</a>
-                        <a href="${basePath}programs/refereeing.html" class="block py-3 text-xs opacity-70 uppercase">Refereeing</a>
                 </div>
                 <div class="border-b border-white/5">
                     <button class="w-full flex justify-between items-center py-4 accordion-trigger text-left uppercase">About <i class="fas fa-plus text-[#E21E26]"></i></button>
@@ -142,6 +147,11 @@ const siteTheme = {
                         <a href="${basePath}resources/rangersfc.html" class="block py-3 text-xs opacity-70 uppercase">Rangers FC Affiliation</a>
                         <a href="${basePath}resources/policies.html" class="block py-3 text-xs opacity-70 uppercase">Club Policies</a>
                         <a href="${basePath}resources/uniforms.html" class="block py-3 text-xs opacity-70 uppercase">Uniforms</a>
+                        <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Refereeing <i class="fas fa-plus"></i></button>
+                        <div class="hidden pl-4 bg-black/20">
+                            <a href="${basePath}resources/referees/refereeing.html" class="block py-3 text-[10px] text-[#E21E26] uppercase">Latest News</a>
+                            <a href="${basePath}resources/referees/referee-starter-packet.html" class="block py-3 text-[10px] text-[#E21E26] uppercase">Starter Pack</a>
+                        </div>
                         <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Swag <i class="fas fa-plus"></i></button>
                         <div class="hidden pl-4 bg-black/20">
                             <a href="https://tursissoccer.com/collections/clackamas-united-fan-apparel" target="_blank" rel="noopener noreferrer" class="block py-3 text-[10px] text-[#E21E26] uppercase">Tursi</a>

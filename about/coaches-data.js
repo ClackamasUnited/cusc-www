@@ -2,7 +2,6 @@ const coachesData = [
     {
         name: "John Wyllie",
         title: "Director of Coaching (DOC)",
-        photo: "/images/coaches/john-wyllie.png",
         hometown: "Glasgow, Scotland",
         favoriteTeam: "Rangers FC",
         favoriteMeal: "Steak Pie",
@@ -11,7 +10,7 @@ const coachesData = [
         philosophy: "Develop intelligent players who understand the game, are technically proficient, and play with passion and creativity.",
         email: "doc@cusc.soccer",
         hidden: false,
-        teams: ["2011 Boys Red", "2007 Boys Red"],
+        teams: ["2011 Girls Red", "2016 Boys Red"],
         isDefault: true
     },
     {
@@ -41,7 +40,7 @@ const coachesData = [
         philosophy: "Soccer should be fun! My goal is to foster a love for the game through positive reinforcement, teamwork, and skill-building activities.",
         email: "rec@cusc.soccer",
         hidden: false,
-        teams: ["2015 Girls White"],
+        teams: ["N/A"],
         isDefault: false
     },
     {

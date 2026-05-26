@@ -50,6 +50,18 @@
             const displayCoach = (coach) => {
                 const emailLink = coach.email ? `<a href="mailto:${coach.email}" class="text-sm font-medium border-b border-black/10 pb-1 hover:border-[#E21E26]">${coach.email}</a>` : '';
 
+                let photoHTML = '';
+                const clubLogoPath = '/images/club-logo.png';
+                // Check if photo is missing or is the placeholder
+                if (!coach.photo || coach.photo.includes('placeholder.jpg')) {
+                    // Use the club logo with a "watermark" style
+                    photoHTML = `<div class="flex justify-center items-center bg-slate-100 rounded-lg shadow-md w-full max-w-xs lg:max-w-full aspect-[4/5] p-8">
+                                    <img src="${clubLogoPath}" alt="Clackamas United Logo" class="w-full h-full object-contain opacity-40 grayscale">
+                                 </div>`;
+                } else {
+                    photoHTML = `<img src="${coach.photo}" alt="Photo of ${coach.name}" class="rounded-lg shadow-md w-full max-w-xs lg:max-w-full object-cover aspect-[4/5]">`;
+                }
+
                 let teamsHTML = '';
                 if (coach.teams && coach.teams.length > 0) {
                     const teamsList = coach.teams.map(team => `<li class="bg-gray-100 text-gray-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">${team}</li>`).join('');
@@ -68,8 +80,8 @@
                         </div>
                         <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-8">
                             <!-- Photo Column -->
-                            <div class="flex justify-center items-start">
-                                <img src="${coach.photo}" alt="Photo of ${coach.name}" class="rounded-lg shadow-md w-full max-w-xs lg:max-w-full object-cover aspect-[4/5]">
+                            <div class="flex justify-center items-start lg:items-center">
+                                ${photoHTML}
                             </div>
 
                             <!-- Details Columns -->

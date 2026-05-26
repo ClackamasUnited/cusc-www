@@ -48,6 +48,22 @@ const coachesData = [
         isDefault: false
     },
     {
+        name: "Thomas Knight",
+        title: "Coach",
+        slug: "thomas-knight",
+        photo: "/images/coaches/thomas-knight.jpg",
+        hometown: "East Coast, England",
+        favoriteTeam: "Middlesbrough",
+        favoriteMeal: "Suasage Rolls",
+        license: "National D License, English FA",
+        reason: "I wanted to bring my love for the sport to America.",
+        philosophy: "I work with players on their fundamentals driven through a fun, challenging, and rewarding environment.",
+        //email: "rec@cusc.soccer",
+        hidden: false,
+        teams: ["U13 Boys Red"],
+        isDefault: false
+    },
+    {
         name: "Alex Chen",
         title: "Youth Development Coach",
         slug: "alex-chen",

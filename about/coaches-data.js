@@ -2,6 +2,8 @@ const coachesData = [
     {
         name: "John Wyllie",
         title: "Director of Coaching (DOC)",
+        slug: "john-wyllie",
+        photo: "/images/coaches/john-wyllie.jpg",
         hometown: "Glasgow, Scotland",
         favoriteTeam: "Rangers FC",
         favoriteMeal: "Steak Pie",
@@ -16,6 +18,7 @@ const coachesData = [
     {
         name: "Phil Hulme",
         title: "Technical Coordinator (11v11)",
+        slug: "phil-hulme",
         photo: "/images/coaches/phil-hulme.jpg",
         hometown: "Manchester, England",
         favoriteTeam: "Manchester United",
@@ -31,7 +34,8 @@ const coachesData = [
     {
         name: "Michelle McHone",
         title: "Recreational Coordinator",
-        // photo: "/images/coaches/michelle-mchone.jpg",
+        slug: "michelle-mchone",
+        photo: "/images/coaches/michelle-mchone.jpg",
         hometown: "Portland, OR",
         favoriteTeam: "Portland Thorns",
         favoriteMeal: "Tacos",
@@ -46,6 +50,7 @@ const coachesData = [
     {
         name: "Alex Chen",
         title: "Youth Development Coach",
+        slug: "alex-chen",
         photo: "/images/coaches/placeholder.jpg", // Using a generic placeholder
         hometown: "Happy Valley, OR",
         favoriteTeam: "Liverpool FC",

@@ -118,7 +118,7 @@
                         e.preventDefault();
                         // Use 'http://' as a fallback for file:/// origins which are null
                         const origin = window.location.origin === 'null' ? 'http://cusc.pctony.com' : window.location.origin;
-                        const shareLink = `${origin}${window.location.pathname}?coach=${encodeURIComponent(coach.name)}`;
+                        const shareLink = `${origin}${window.location.pathname}?coach=${coach.slug}`;
                         const linkText = document.getElementById('share-link-text');
 
                         // Update URL in address bar without reloading
@@ -144,26 +144,26 @@
 
             // Populate the dropdown
             visibleCoaches.forEach((coach) => {
-                // The 'value' of the option will be the coach's name for easier lookup
-                const option = new Option(coach.name, coach.name);
+                // The 'value' of the option will be the coach's slug for easier lookup
+                const option = new Option(coach.name, coach.slug);
                 selector.add(option);
             });
 
             // Event listener for dropdown change
             selector.addEventListener('change', (e) => {
-                // Find the coach object that matches the selected name
-                const selectedCoach = visibleCoaches.find(c => c.name === e.target.value);
+                // Find the coach object that matches the selected slug
+                const selectedCoach = visibleCoaches.find(c => c.slug === e.target.value);
                 displayCoach(selectedCoach);
             });
 
             // --- Logic to determine which coach to display on load ---
             let coachToDisplay = null;
             const urlParams = new URLSearchParams(window.location.search);
-            const coachNameFromURL = urlParams.get('coach');
+            const coachSlugFromURL = urlParams.get('coach');
 
             // 1. Prioritize coach from URL parameter
-            if (coachNameFromURL) {
-                coachToDisplay = visibleCoaches.find(c => c.name === coachNameFromURL);
+            if (coachSlugFromURL) {
+                coachToDisplay = visibleCoaches.find(c => c.slug === coachSlugFromURL);
             }
 
             // 2. If no valid URL param, fall back to the designated default coach
@@ -173,7 +173,7 @@
 
             // Display the determined coach
             if (coachToDisplay) {
-                selector.value = coachToDisplay.name;
+                selector.value = coachToDisplay.slug;
                 displayCoach(coachToDisplay);
             }
         });

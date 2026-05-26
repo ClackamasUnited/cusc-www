@@ -1,0 +1,62 @@
+const coachesData = [
+    {
+        name: "John Wyllie",
+        title: "Director of Coaching (DOC)",
+        photo: "/images/coaches/john-wyllie.png",
+        hometown: "Glasgow, Scotland",
+        favoriteTeam: "Rangers FC",
+        favoriteMeal: "Steak Pie",
+        license: "National C License",
+        reason: "To build a club that focuses on long-term player development and creates a positive, competitive environment for the community.",
+        philosophy: "Develop intelligent players who understand the game, are technically proficient, and play with passion and creativity.",
+        email: "doc@cusc.soccer",
+        hidden: false,
+        teams: ["2011 Boys Red", "2007 Boys Red"],
+        isDefault: true
+    },
+    {
+        name: "Phil Hulme",
+        title: "Technical Coordinator (11v11)",
+        photo: "/images/coaches/phil-hulme.jpg",
+        hometown: "Manchester, England",
+        favoriteTeam: "Manchester United",
+        favoriteMeal: "Fish and Chips",
+        license: "UEFA B License & USSF D License",
+        reason: "To share my international experience and help older players transition to the full-sided game with strong tactical awareness.",
+        philosophy: "Team success is built on a foundation of individual responsibility, tactical discipline, and a collective will to win.",
+        email: null,
+        hidden: false,
+        teams: [],
+        isDefault: false
+    },
+    {
+        name: "Michelle McHone",
+        title: "Recreational Coordinator",
+        photo: "/images/coaches/michelle-mchone.jpg",
+        hometown: "Portland, OR",
+        favoriteTeam: "Portland Thorns",
+        favoriteMeal: "Tacos",
+        license: "National C License",
+        reason: "To ensure every child has a fun and safe place to fall in love with soccer, regardless of their skill level.",
+        philosophy: "Soccer should be fun! My goal is to foster a love for the game through positive reinforcement, teamwork, and skill-building activities.",
+        email: "rec@cusc.soccer",
+        hidden: false,
+        teams: ["2015 Girls White"],
+        isDefault: false
+    },
+    {
+        name: "Alex Chen",
+        title: "Youth Development Coach",
+        photo: "/images/coaches/placeholder.jpg", // Using a generic placeholder
+        hometown: "Happy Valley, OR",
+        favoriteTeam: "Liverpool FC",
+        favoriteMeal: "Sushi",
+        license: "USSF D License",
+        reason: "I grew up playing in the area and wanted to give back to the next generation of players at a club that values community.",
+        philosophy: "Focus on the fundamentals. A strong command of the basics gives players the confidence to express themselves on the field.",
+        email: null,
+        hidden: true, // This coach will not appear in the dropdown
+        teams: ["2016 Boys Red", "2016 Boys White"],
+        isDefault: false
+    }
+];

@@ -9,42 +9,115 @@
 </head>
 <body class="bg-white">
 
-    <section class="py-20 max-w-7xl mx-auto px-6">
-        <div class="mb-16 border-l-8 border-[#E21E26] pl-8">
-            <h1 class="text-6xl font-display font-bold uppercase italic italic text-[#111111]">Coaching <span class="text-[#E21E26]">Staff</span></h1>
-            <p class="text-gray-500 font-bold uppercase tracking-widest mt-2">Technical Leadership & Player Development</p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-slate-50 p-8 border-t-4 border-black hover:border-[#E21E26] transition group shadow-sm">
-                <h3 class="text-2xl font-display font-bold uppercase group-hover:text-[#E21E26]">John Wyllie</h3>
-                <p class="text-[#E21E26] font-bold text-xs uppercase tracking-tighter mb-4">Director of Coaching (DOC)</p>
-                <div class="text-[10px] font-bold uppercase text-gray-400 mb-4 tracking-widest">National C License</div>
-                <a href="mailto:doc@cusc.soccer" class="text-sm font-medium border-b border-black/10 pb-1 hover:border-[#E21E26]">doc@cusc.soccer</a>
+    <div id="page-content">
+        <section class="py-20 max-w-7xl mx-auto px-6">
+            <div class="mb-16 border-l-8 border-[#E21E26] pl-8">
+                <h1 class="text-6xl font-display font-bold uppercase italic italic text-[#111111]">Coaching <span class="text-[#E21E26]">Staff</span></h1>
+                <p class="text-gray-500 font-bold uppercase tracking-widest mt-2">Technical Leadership & Player Development</p>
             </div>
 
-
-            <div class="bg-slate-50 p-8 border-t-4 border-black hover:border-[#E21E26] transition group shadow-sm">
-                <h3 class="text-2xl font-display font-bold uppercase group-hover:text-[#E21E26]">Phil Hulme</h3>
-                <p class="text-[#E21E26] font-bold text-xs uppercase tracking-tighter mb-4">Technical Coordinator (11v11)</p>
-                <div class="text-[10px] font-bold uppercase text-gray-400 mb-4 tracking-widest">UEFA B License & USSF D License</div>
-                <div class="text-[10px] font-bold uppercase text-gray-400 mb-4 tracking-widest">International Experience</div>
+            <!-- Coach Selector -->
+            <div class="max-w-2xl mx-auto mb-12">
+                <label for="coach-selector" class="block text-sm font-medium text-gray-700 mb-2">Learn more about a coach:</label>
+                <select id="coach-selector" class="block w-full p-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-cu-red focus:border-cu-red text-lg">
+                    <!-- Options will be populated by JavaScript -->
+                </select>
             </div>
 
-            <div class="bg-slate-50 p-8 border-t-4 border-black hover:border-[#E21E26] transition group shadow-sm">
-                <h3 class="text-2xl font-display font-bold uppercase group-hover:text-[#E21E26]">Michelle McHone</h3>
-                <p class="text-[#E21E26] font-bold text-xs uppercase tracking-tighter mb-4">Recreational Coordinator</p>
-                <div class="text-[10px] font-bold uppercase text-gray-400 mb-4 tracking-widest">National C License</div>
-                <a href="mailto:rec@cusc.soccer" class="text-sm font-medium border-b border-black/10 pb-1 hover:border-[#E21E26]">rec@cusc.soccer</a>
+            <!-- Coach Details Container -->
+            <div id="coach-details" class="max-w-4xl mx-auto">
+                <!-- Coach info will be injected here -->
             </div>
 
-        </div>
-    </section>
+        </section>
+    </div>
 
     <script src="/theme.js"></script>
     <script src="/sponsors-data.js"></script>
+    <script src="/about/coaches-data.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
+        document.addEventListener('DOMContentLoaded', () => {
+            siteTheme.init("/");
+
+            const selector = document.getElementById('coach-selector');
+            const detailsContainer = document.getElementById('coach-details');
+            // Filter and sort coaches alphabetically by name
+            const visibleCoaches = coachesData
+                .filter(coach => !coach.hidden)
+                .sort((a, b) => a.name.localeCompare(b.name));
+
+            // Function to display a coach's details
+            const displayCoach = (coach) => {
+                const emailLink = coach.email ? `<a href="mailto:${coach.email}" class="text-sm font-medium border-b border-black/10 pb-1 hover:border-[#E21E26]">${coach.email}</a>` : '';
+
+                let teamsHTML = '';
+                if (coach.teams && coach.teams.length > 0) {
+                    const teamsList = coach.teams.map(team => `<li class="bg-gray-100 text-gray-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">${team}</li>`).join('');
+                    teamsHTML = `
+                        <div class="mt-8 pt-8 border-t border-gray-200">
+                            <h3 class="text-xl font-display font-bold uppercase text-center mb-4">Current Teams</h3>
+                            <ul class="flex flex-wrap justify-center">${teamsList}</ul>
+                        </div>`;
+                }
+                
+                detailsContainer.innerHTML = `
+                    <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 animate-fade-in">
+                        <div class="text-center mb-8">
+                            <h2 class="text-4xl font-display font-bold uppercase text-cu-red">${coach.name}</h2>
+                            <p class="text-gray-600 font-bold text-lg uppercase tracking-wider mt-1">${coach.title}</p>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-8">
+                            <!-- Photo Column -->
+                            <div class="flex justify-center items-start">
+                                <img src="${coach.photo}" alt="Photo of ${coach.name}" class="rounded-lg shadow-md w-full max-w-xs lg:max-w-full object-cover aspect-[4/5]">
+                            </div>
+
+                            <!-- Details Columns -->
+                            <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-gray-700 leading-relaxed">
+                                <div class="space-y-6">
+                                    <div><strong class="block text-gray-900">Hometown:</strong> ${coach.hometown}</div>
+                                    <div><strong class="block text-gray-900">Favorite Soccer Team:</strong> ${coach.favoriteTeam}</div>
+                                    <div><strong class="block text-gray-900">Favorite Meal:</strong> ${coach.favoriteMeal}</div>
+                                    <div><strong class="block text-gray-900">Coaching License:</strong> ${coach.license}</div>
+                                </div>
+                                <div class="space-y-6">
+                                    <div><strong class="block text-gray-900">Reason for Joining CUSC:</strong><p class="italic mt-1">"${coach.reason}"</p></div>
+                                    <div><strong class="block text-gray-900">Coaching Philosophy:</strong><p class="italic mt-1">"${coach.philosophy}"</p></div>
+                                </div>
+                            </div>
+                        </div>
+                        ${teamsHTML}
+                        <div class="text-center mt-10">
+                            ${emailLink}
+                        </div>
+                    </div>
+                `;
+            };
+
+            // Populate the dropdown
+            visibleCoaches.forEach((coach) => {
+                // The 'value' of the option will be the coach's name for easier lookup
+                const option = new Option(coach.name, coach.name);
+                selector.add(option);
+            });
+
+            // Event listener for dropdown change
+            selector.addEventListener('change', (e) => {
+                // Find the coach object that matches the selected name
+                const selectedCoach = visibleCoaches.find(c => c.name === e.target.value);
+                displayCoach(selectedCoach);
+            });
+
+            // Find and display the default coach, or fall back to the first in the sorted list
+            const defaultCoach = visibleCoaches.find(coach => coach.isDefault) || (visibleCoaches.length > 0 ? visibleCoaches[0] : null);
+
+            if (defaultCoach) {
+                // Set the dropdown to show the default coach
+                selector.value = defaultCoach.name;
+                // Display the default coach's details
+                displayCoach(defaultCoach);
+            }
+        });
     </script>
 </body>
 </html>

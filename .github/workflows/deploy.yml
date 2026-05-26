@@ -16,6 +16,9 @@ jobs:
         with:
           fetch-depth: 0 # Fetch all history so rclone can compare if needed
 
+      - name: Force apt-update
+        run: sudo apt-get update
+
       - name: Install Rclone
         run: sudo apt-get install -y rclone
 

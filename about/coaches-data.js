@@ -31,7 +31,7 @@ const coachesData = [
     {
         name: "Michelle McHone",
         title: "Recreational Coordinator",
-        photo: "/images/coaches/michelle-mchone.jpg",
+        // photo: "/images/coaches/michelle-mchone.jpg",
         hometown: "Portland, OR",
         favoriteTeam: "Portland Thorns",
         favoriteMeal: "Tacos",

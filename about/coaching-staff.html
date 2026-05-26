@@ -100,10 +100,46 @@
                         </div>
                         ${teamsHTML}
                         <div class="text-center mt-10">
-                            ${emailLink}
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                                ${emailLink}
+                                <a href="#" id="share-coach-link" class="text-gray-500 hover:text-cu-red transition text-sm font-semibold flex items-center gap-2">
+                                    <i class="fas fa-link"></i>
+                                    <span id="share-link-text">Link to this coach</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 `;
+
+                // --- Add event listener for the new copy-to-clipboard functionality ---
+                const shareButton = document.getElementById('share-coach-link');
+                if (shareButton) {
+                    shareButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        // Use 'http://' as a fallback for file:/// origins which are null
+                        const origin = window.location.origin === 'null' ? 'http://cusc.pctony.com' : window.location.origin;
+                        const shareLink = `${origin}${window.location.pathname}?coach=${encodeURIComponent(coach.name)}`;
+                        const linkText = document.getElementById('share-link-text');
+
+                        // Update URL in address bar without reloading
+                        window.history.pushState({}, '', shareLink);
+
+                        // Check for Clipboard API availability (requires HTTPS or localhost)
+                        if (navigator.clipboard) {
+                            navigator.clipboard.writeText(shareLink).then(() => {
+                                linkText.textContent = 'Copied to clipboard!';
+                            }).catch(err => {
+                                console.error('Failed to copy link: ', err);
+                                linkText.textContent = 'Could not copy!';
+                            });
+                        } else {
+                            // Fallback for insecure contexts (like file://)
+                            linkText.textContent = 'Please copy from address bar';
+                        }
+
+                        setTimeout(() => { linkText.textContent = 'Link to this coach'; }, 3000);
+                    });
+                }
             };
 
             // Populate the dropdown
@@ -120,14 +156,25 @@
                 displayCoach(selectedCoach);
             });
 
-            // Find and display the default coach, or fall back to the first in the sorted list
-            const defaultCoach = visibleCoaches.find(coach => coach.isDefault) || (visibleCoaches.length > 0 ? visibleCoaches[0] : null);
+            // --- Logic to determine which coach to display on load ---
+            let coachToDisplay = null;
+            const urlParams = new URLSearchParams(window.location.search);
+            const coachNameFromURL = urlParams.get('coach');
 
-            if (defaultCoach) {
-                // Set the dropdown to show the default coach
-                selector.value = defaultCoach.name;
-                // Display the default coach's details
-                displayCoach(defaultCoach);
+            // 1. Prioritize coach from URL parameter
+            if (coachNameFromURL) {
+                coachToDisplay = visibleCoaches.find(c => c.name === coachNameFromURL);
+            }
+
+            // 2. If no valid URL param, fall back to the designated default coach
+            if (!coachToDisplay) {
+                coachToDisplay = visibleCoaches.find(coach => coach.isDefault) || (visibleCoaches.length > 0 ? visibleCoaches[0] : null);
+            }
+
+            // Display the determined coach
+            if (coachToDisplay) {
+                selector.value = coachToDisplay.name;
+                displayCoach(coachToDisplay);
             }
         });
     </script>

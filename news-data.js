@@ -1,4 +1,5 @@
 const newsData = [
+    { date: "2026-06-01", publishDateTime: "2026-06-01T17:00:00Z", title: "2026 Rangers Summer Camp", img: "images/news/2026-summer-rangers-camp.jpeg", excerpt: "2026 Rangers Summer Camp", author: "Tony Stevenson", slug: "2026-rangers-summer-camp", hidden: false },    
     { date: "2026-04-10", publishDateTime: "2026-04-10T17:00:00Z", title: "2026 Summer Rec Camps", img: "images/news/summerreccamp2026.jpg", excerpt: "2026 Summer Rec Camps", author: "Tony Stevenson", slug: "2026-summer-rec-camp", hidden: false },
     { date: "2026-04-09", publishDateTime: "2026-04-08T17:00:00Z", title: "New! First Time Referee Class", img: "images/news/referee-1.png", excerpt: "First time referee class!", author: "Tony Stevenson", slug: "new-first-time-referee-class", hidden: false },
     { date: "2026-04-03", publishDateTime: "2026-04-02T17:00:00Z", title: "Classic Tryout Schedule", img: "images/news/2026-tryouts-classic.png", excerpt: "Our 2026 Classic Tryouts Schedule is here!", author: "Tony Stevenson", slug: "2627-classic-tryout-schedule", hidden: false },

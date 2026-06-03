@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>2026 Rangers Summer Camp | Clackamas United</title>
+    <style>
+        /*
+         * Scalable Registration Status Display Logic
+         *
+         * 1. By default, hide all elements that are part of this conditional display system.
+         * 2. Explicitly show only the element that matches the current data-registration-status.
+         */
+        .show-when-open,
+        .show-when-closed,
+        .show-when-preparing { display: none; }
+
+        [data-registration-status="open"] .show-when-open { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
+        [data-registration-status="closed"] .show-when-closed { display: initial; }
+        [data-registration-status="preparing"] .show-when-preparing { display: initial; }
+    </style>
+</head>
+<body class="bg-slate-50" data-registration-status="open">
+
+    <div id="page-content">
+        <main class="max-w-4xl mx-auto my-20 px-6">
+            <article>
+                <div class="text-center mb-12">
+                    <p class="text-sm font-bold text-cu-red uppercase tracking-widest">June 1, 2026</p>
+                    <h1 class="text-5xl font-display font-bold uppercase italic mt-2">2026 <span class="text-[#0000FF]">Rangers </span>Summer Camp</h1>
+                    <p class="text-gray-600 text-lg mt-4">By Tony Stevenson</p>
+                </div>
+
+                <div class="mb-12 flex justify-center">
+                    <img src="/images/news/2026-summer-rangers-camp.jpeg" alt="Rangers Summer Camp" class="max-h-[500px] w-auto rounded-lg shadow-xl">
+                </div>
+
+                <div>
+                    <!-- SHOW WHEN CLOSED  -->
+                    <div class="show-when-closed">
+                        <p>Registrations for our 2026 Rangers Summer Camps are currently closed. If you are interested in joining Clackamas United please contact our Club Registrar using the contact informtion at the bottom of this page.</p>
+                    </div>
+
+                    <!-- SHOW WHEN PREPARING -->
+                    <div class="show-when-preparing">
+                        <p>We are currently preparing to open our tryout registration. Please check back soon for updates.</p>
+                    </div>
+
+                    <!-- SHOW WHEN OPEN -->
+                    <div class="text-center mt-8">
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODU2MTI3MzF8bTJaekVsdCtDdXAzakRmaktrdm5GOTRCZ25nT3gwYjdnazM5NXRjUmQxND0=&program_id=98213" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="prose lg:prose-xl mx-auto text-gray-800">
+                    <br />
+                    <br />
+                    <p><span class="text-[#000000] font-bold">We are excited to host our 2026 Summer Rangers Academy Camp in partnership with Rangers Football Club.</span></p>
+                    <br />
+                    <p>This intensive training camp will be led by Rangers Academy coaches flying in directly from Scotland and features programs developed and delivered using the same style, philosophy, and mindset used within the Rangers Academy. Players will train for five days under a consistent curriculum focused on player development at a competitive level.</p>
+                    <br />
+                    <br />
+                    <div>
+                        <span class="text-[#E21E26] text-2xl font-bold uppercase">Camp Details</span>
+                        <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
+                        
+                            <div>
+                                <div><span class="font-bold uppercase italic">📍 Location:</span> Clackamas High School Stadium</div>
+                                <div><span class="font-bold uppercase italic">📅 Dates:</span> July 27–July 31st</div>
+                                <div><span class="font-bold uppercase italic">👕</span> Nike camp jersey included</div>
+                            </div>
+                            <br />
+                            <div>
+                                <div><span class="text-[#E21E26] font-bold uppercase">Session Times & Cost by Birth Year</span></div>
+                            </div>
+                            <div>
+                                <table class="w-full text-left border-collapse bg-white">
+                                    <thead class="bg-gray-100 uppercase text-sm tracking-widest">
+                                        <tr>
+                                            <th class="p-4">Age Group</th>
+                                            <th class="p-4 text-left">Time</th>
+                                            <th class="p-4 text-left">Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b">
+                                            <td class="p-4"><span class="font-bold ">2nd to 4th Grade</span></td>
+                                            <td class="p-4 font-bold">9:00am - 12:00pm</td>
+                                            <td class="p-4 font-bold"><span class="text-[#E21E26] font-bold uppercase">$250</span></td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="p-4"><span class="font-bold ">5th to 10th Grade</span></td>
+                                            <td class="p-4 font-bold">1:00pm - 4:00pm</td>
+                                            <td class="p-4 font-bold"><span class="text-[#E21E26] font-bold uppercase">$275</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <br />
+                        <span class="text-[#E21E26] text-1xl font-bold italic">New this year - </span> we are adding a specialized Goalkeeper Training Session, designed to provide focused, position-specific development in a small group setting.
+                        
+                    
+                            <br />
+                            <br />
+                            <div>
+                                <div><span class="text-[#E21E26] font-bold uppercase">Goalkeeper Session Details:</span></div>
+                            </div>
+                            <div>
+                                <table class="w-full text-left border-collapse bg-white">
+                                    <thead class="bg-gray-100 uppercase text-sm tracking-widest">
+                                        <tr>
+                                            <th class="p-4 text-left">Age Group</th>
+                                            <th class="p-1 text-left">Time</th>
+                                            <th class="p-4 text-left">Cost</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="border-b">
+                                            <td class="p-4"><span class="font-bold ">4th to 6th Grade</span></td>
+                                            <td class="p-4 font-bold">9:00am – 10:30am</td>
+                                            <td class="p-4 font-bold"><span class="text-[#E21E26] font-bold uppercase">$170</span></td>
+                                        </tr>
+                                        <tr class="border-b">
+                                            <td class="p-4"><span class="font-bold ">7th to 12th Grade</span></td>
+                                            <td class="p-4 font-bold">10:30am – 12:00pm</td>
+                                            <td class="p-4 font-bold"><span class="text-[#E21E26] font-bold uppercase">$175</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <p class="text-gray-600 text-center mt-4 text-med italic"><sup class="text-gray-500">*</sup> Please note that the GK sessions are limited to 10 players per session.</p>
+
+                        <br />
+                        <span class="text-[#E21E26] text-2xl font-bold uppercase">More Information</span>
+                        <br />
+                        <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
+                            <p>This camp is intended for competitive players. Players from outside of Clackamas United are invited to join.</p>
+                            <br />
+                            <p><span class="font-bold">Older Players:</span> If you are an 11th or 12th Grade player and are interested in participating, please contact our registrar using the information at the bottom of this page.</p>
+                            <br />
+                            <p>Registration & Waitlist Spots are limited. A waitlist is available, and additional capacity may be added if there is enough interest. If the camp is full, we encourage you to join the waitlist.</p>
+                            <br />
+                            <p>We look forward to welcoming players for an exciting and high-level training experience this summer!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <!-- SHOW WHEN CLOSED  -->
+                    <div class="show-when-closed">
+                        <p>Registrations for our 2026 Summer Rec Camps are currently closed. If you are interested in joining Clackamas United please contact our Club Registrar using the contact informtion at the bottom of this page.</p>
+                    </div>
+
+                    <!-- SHOW WHEN PREPARING -->
+                    <div class="show-when-preparing">
+                        <p>We are currently preparing to open our tryout registration. Please check back soon for updates.</p>
+                    </div>
+
+                    <!-- SHOW WHEN OPEN -->
+                    <div class="text-center mt-8">
+                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODU2MTI3MzF8bTJaekVsdCtDdXAzakRmaktrdm5GOTRCZ25nT3gwYjdnazM5NXRjUmQxND0=&program_id=98213" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="/theme.js"></script>
+    <script src="/sponsors-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
+    </script>
+</body>
+</html>

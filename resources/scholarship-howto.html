@@ -18,6 +18,10 @@
         .device-instructions.hidden {
             display: none;
         }
+        /* Hide the main application method sections by default */
+        .application-method.hidden {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-slate-50">
@@ -45,27 +49,55 @@
                 <section>
                     <h2 class="text-4xl font-display font-bold uppercase mb-6 italic">How to <span class="text-[#E21E26]">Apply</span></h2>
                     
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="text-2xl font-display font-bold uppercase mb-2 italic"><span class="text-[#E21E26]">Step 1:</span> Register Your Player in PlayMetrics</h3>
-                            <p>We support financial aid applications for all registered players. All applications are submitted via PlayMetrics.</p>
-                        </div>
+                    <!-- Primary Dropdown to select application method -->
+                    <p class="text-lg">There are two ways to apply for a scholarship. Please select the method that applies to you:</p>
+                    <div class="mt-4 mb-8">
+                        <select id="application-method-select" class="block w-fit mx-auto p-3 border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black text-lg bg-[#E21E26] bg-opacity-75 text-white">
+                            <option value="">-- Select an Application Method --</option>
+                            <option value="during-registration">1. During the Registration Process</option>
+                            <option value="separately">2. Independently of Registration</option>
+                        </select>
+                    </div>
 
-                        <div>
-                            <h3 class="text-2xl font-display font-bold uppercase mb-2 italic"><span class="text-[#E21E26]">Step 2:</span> Complete the Scholarship Application Form</h3>
-                            <p>Once your player is registered, you can complete the official scholarship application form. The form is located within your PlayMetrics account under the "Programs" section for your player.</p>
-                            <p class="mt-4">Please select the device you are using to see detailed instructions on how to find the application form:</p>
-                            
-                            <!-- Device selection dropdown -->
+                    <!-- Container for the secondary, device-specific dropdowns -->
+                    <div id="device-dropdown-container" class="mt-4 mb-8">
+                        <!-- Device dropdown for "Independently of Registration" (hidden by default) -->
+                        <div id="separately-device-dropdown-wrapper" class="hidden text-center">
+                            <p class="text-lg">Great! Now, please select the device you are using to see detailed instructions:</p>
                             <div class="mt-4">
-                                <select id="device-select" class="block w-full md:w-2/3 mx-auto p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-cu-red focus:border-cu-red text-lg">
+                                <select id="device-select" class="block w-fit mx-auto p-3 border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black text-lg bg-[#E21E26] bg-opacity-75 text-white">
                                     <option value="">-- Select Your Device --</option>
                                     <option value="computer">Computer / Desktop</option>
                                     <option value="iphone">iPhone</option>
                                     <option value="android">Android Phone</option>
                                 </select>
                             </div>
+                        </div>
+                        <!-- Device dropdown for "During Registration" (hidden by default) -->
+                        <div id="during-device-dropdown-wrapper" class="hidden text-center">
+                            <p class="text-lg">Great! Now, please select the device you are using to see a step-by-step guide:</p>
+                            <div class="mt-4">
+                                <select id="during-device-select" class="block w-fit mx-auto p-3 border-transparent rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black text-lg bg-[#E21E26] bg-opacity-75 text-white">
+                                    <option value="">-- Select Your Device --</option>
+                                    <option value="during-computer">Computer / Desktop</option>
+                                    <option value="during-iphone">iPhone</option>
+                                    <option value="during-android">Android Phone</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- METHOD 2: INDEPENDENTLY OF REGISTRATION (Existing Content) -->
+                    <div id="separately-instructions" class="application-method hidden space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-display font-bold uppercase mb-2 italic"><span class="text-[#E21E26]">Step 1:</span> Register Your Player in PlayMetrics</h3>
+                            <p>We support financial aid applications for all registered players. All applications are submitted via PlayMetrics.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-display font-bold uppercase mb-2 italic"><span class="text-[#E21E26]">Step 2:</span> Find the Scholarship Application Form</h3>
+                            <p>If you have already registered your player and now need to apply for a scholarship, you can find the application form within your PlayMetrics account.</p>
+                            
                             <!-- Container for all device-specific instructions -->
                             <div id="instructions-container" class="mt-8">
                                 <!-- Computer Instructions (hidden by default) -->
@@ -192,6 +224,23 @@
                         </div>
                         <p class="text-gray-600 text-center mt-4 text-med italic"><sup class="text-gray-500">*</sup> <span class="font-bold text-[#E21E26]">Please note</span> that your player will not lose their spot on a team because you have applied for financial aid.</p>
                     </div>
+
+                    <!-- METHOD 1: DURING REGISTRATION (New Content) -->
+                    <div id="during-registration-instructions" class="application-method hidden space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-display font-bold uppercase mb-2 italic"><span class="text-[#E21E26]">Step 1:</span> Begin the Registration Process</h3>
+                            <p>You can apply for financial aid directly within the player registration flow. When you reach the "Pricing and Payments" step, you will see an option to apply. The instructions below will guide you.</p>
+                        </div>
+
+                        <!-- Container for "During Registration" device-specific instructions -->
+                        <div id="during-instructions-container" class="mt-8">
+                            <!-- Placeholder content for each device. You can add images and detailed steps here later. -->
+                            <div id="during-computer-instructions" class="device-instructions hidden bg-gray-100 p-6 rounded-lg shadow-inner border"><h4 class="text-xl font-bold font-display uppercase mb-4 text-center text-[#E21E26]">Instructions for Computer</h4><p class="text-center">Instructions and screenshots coming soon!</p></div>
+                            <div id="during-iphone-instructions" class="device-instructions hidden bg-gray-100 p-6 rounded-lg shadow-inner border"><h4 class="text-xl font-bold font-display uppercase mb-4 text-center text-[#E21E26]">Instructions for iPhone</h4><p class="text-center">Instructions and screenshots coming soon!</p></div>
+                            <div id="during-android-instructions" class="device-instructions hidden bg-gray-100 p-6 rounded-lg shadow-inner border"><h4 class="text-xl font-bold font-display uppercase mb-4 text-center text-[#E21E26]">Instructions for Android</h4><p class="text-center">Instructions and screenshots coming soon!</p></div>
+                        </div>
+                    </div>
+
                 </section>
 
                 <!-- FAQ -->
@@ -234,24 +283,69 @@
             // Initialize the base theme for the site (nav, footer, etc.)
             siteTheme.init("/");
 
-            // --- Scholarship Guide Dropdown Logic ---
+            // --- Scholarship Guide Main Dropdown Logic ---
+            const methodSelect = document.getElementById('application-method-select');
+            const duringRegistrationSection = document.getElementById('during-registration-instructions');
+            const duringDeviceDropdownWrapper = document.getElementById('during-device-dropdown-wrapper');
+            const separatelySection = document.getElementById('separately-instructions');
+            const separatelyDeviceDropdownWrapper = document.getElementById('separately-device-dropdown-wrapper');
 
-            const deviceSelect = document.getElementById('device-select');
-            const allInstructions = document.querySelectorAll('.device-instructions');
+            methodSelect.addEventListener('change', (event) => {
+                const selectedMethod = event.target.value;
 
-            deviceSelect.addEventListener('change', (event) => {
-                const selectedDevice = event.target.value;
+                // --- Reset Everything on Change ---
+                // 1. Hide both main content sections
+                duringRegistrationSection.classList.add('hidden');
+                separatelySection.classList.add('hidden');
+                // 2. Hide the device dropdown wrappers
+                duringDeviceDropdownWrapper.classList.add('hidden');
+                separatelyDeviceDropdownWrapper.classList.add('hidden');
+                // 3. Hide all detailed instruction blocks
+                document.querySelectorAll('.device-instructions').forEach(div => div.classList.add('hidden'));
+                // 4. Reset the device dropdowns to their default option
+                document.getElementById('device-select').value = '';
+                document.getElementById('during-device-select').value = '';
 
-                // First, hide all instruction blocks
-                allInstructions.forEach(div => {
-                    div.classList.add('hidden');
-                });
-
-                // If a device was selected, show the corresponding instruction block
-                if (selectedDevice) {
-                    document.getElementById(`${selectedDevice}-instructions`).classList.remove('hidden');
+                // --- Show the Correct UI Elements Based on Selection ---
+                if (selectedMethod === 'during-registration') {
+                    duringRegistrationSection.classList.remove('hidden');
+                    duringDeviceDropdownWrapper.classList.remove('hidden');
+                } else if (selectedMethod === 'separately') {
+                    separatelySection.classList.remove('hidden');
+                    separatelyDeviceDropdownWrapper.classList.remove('hidden');
                 }
             });
+
+            // --- Device-Specific Dropdown Logic ---
+            // This function handles showing/hiding instructions for any device dropdown
+            function setupDeviceDropdown(selectId, containerId) {
+                const deviceSelect = document.getElementById(selectId);
+                const instructionContainer = document.getElementById(containerId);
+                if (!deviceSelect || !instructionContainer) return;
+
+                deviceSelect.addEventListener('change', (event) => {
+                    const selectedDevice = event.target.value;
+
+                    // If the main method is "Independently", also hide the "During" instructions just in case
+                    if (selectId === 'device-select') {
+                        document.querySelectorAll('#during-instructions-container .device-instructions').forEach(div => div.classList.add('hidden'));
+                    }
+
+                    // Hide all instruction blocks within this container
+                    instructionContainer.querySelectorAll('.device-instructions').forEach(div => {
+                        div.classList.add('hidden');
+                    });
+
+                    // If a device was selected, show the corresponding instruction block
+                    if (selectedDevice) {
+                        document.getElementById(`${selectedDevice}-instructions`).classList.remove('hidden');
+                    }
+                });
+            }
+
+            // Initialize both device dropdowns
+            setupDeviceDropdown('device-select', 'instructions-container'); // For "Separately"
+            setupDeviceDropdown('during-device-select', 'during-instructions-container'); // For "During Registration"
         });
     </script>
 </body>

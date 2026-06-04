@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Scholarship Application Guide | Clackamas United</title>
+    <style>
+        /*
+         * Device-Specific Instruction Display Logic
+         * -----------------------------------------
+         * 1. By default, all instruction blocks are hidden.
+         * 2. When a device is selected from the dropdown, JavaScript will
+         *    remove the 'hidden' class from the corresponding instruction block,
+         *    making it visible.
+         */
+        .device-instructions.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <div id="page-content">
+        <main class="max-w-4xl mx-auto my-20 px-6">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-display font-bold uppercase italic">Scholarship <span class="text-[#E21E26]">Application Guide</span></h1>
+                <p class="text-gray-600 text-lg mt-4 max-w-3xl mx-auto">A step-by-step guide to applying for financial assistance with Clackamas United.</p>
+            </div>
+
+            <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 space-y-12 text-gray-700 leading-relaxed">
+
+                <!-- Our Commitment -->
+                <section>
+                    <h2 class="text-4xl font-display font-bold uppercase mb-6 italic">Our <span class="text-[#E21E26]">Commitment</span></h2>
+                    <p>Clackamas United Soccer Club is dedicated to ensuring that every child in our community has the opportunity to play soccer, regardless of their family's financial situation. Our scholarship program is designed to provide assistance to families in need, helping to cover the costs of registration fees.</p>
+                    <br />
+                    <p>Before applying for a scholarship, please be sure to review our main <a class="underline" href="/scholarships.html">Scholarship </a>information page. </p>
+                    <br />
+                    <p class="text-gray-600 text-center mt-4 text-med italic"><sup class="text-gray-500">*</sup> Please note that financial aid is only applicable to registration fees for our main programs (Recreational, Developmental, or Competitive). <br />It does not include optional extra programs like camps, tournaments or futsal.</p>
+                </section>
+
+                <!-- How to Apply -->
+                <section>
+                    <h2 class="text-4xl font-display font-bold uppercase mb-6 italic">How to <span class="text-[#E21E26]">Apply</span></h2>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-2xl font-display font-bold uppercase mb-2 italic"><span class="text-[#E21E26]">Step 1:</span> Register Your Player in PlayMetrics</h3>
+                            <p>We support financial aid applications for all registered players. All applications are submitted via PlayMetrics.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-display font-bold uppercase mb-2 italic"><span class="text-[#E21E26]">Step 2:</span> Complete the Scholarship Application Form</h3>
+                            <p>Once your player is registered, you can complete the official scholarship application form. The form is located within your PlayMetrics account under the "Programs" section for your player.</p>
+                            <p class="mt-4">Please select the device you are using to see detailed instructions on how to find the application form:</p>
+                            
+                            <!-- Device selection dropdown -->
+                            <div class="mt-4">
+                                <select id="device-select" class="block w-full md:w-2/3 mx-auto p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-cu-red focus:border-cu-red text-lg">
+                                    <option value="">-- Select Your Device --</option>
+                                    <option value="computer">Computer / Desktop</option>
+                                    <option value="iphone">iPhone</option>
+                                    <option value="android">Android Phone</option>
+                                </select>
+                            </div>
+
+                            <!-- Container for all device-specific instructions -->
+                            <div id="instructions-container" class="mt-8">
+                                <!-- Computer Instructions (hidden by default) -->
+                                <div id="computer-instructions" class="device-instructions hidden bg-gray-100 p-6 rounded-lg shadow-inner border">
+                                    <h4 class="text-xl font-bold font-display uppercase mb-4 text-center text-[#E21E26]">Instructions for Computer</h4>
+                                    <p class="text-center">Follow these steps to find the scholarship application on the PlayMetrics website.</p>
+                                    <p> <img src="/images/resources/scholarship-howto-computer.png"></p>
+                                    <div>
+                                        <table class="w-full text-left border-collapse bg-white">
+                                            <thead class="bg-gray-100 uppercase text-sm tracking-widest">
+                                                <tr>
+                                                    <th class="p-4 text-left">Step</th>
+                                                    <th class="p-1 text-left"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="border-b">
+                                                    <td class="p-4"><span class="font-bold text-[#E21E26]">1</span></td>
+                                                    <td class="p-4 font-bold">Ensure you are in your "<span class="text-[#E21E26]">Player Contact</span>" role for Clackamas United.</td>
+                                                </tr>
+                                                <tr class="border-b">
+                                                    <td class="p-4"><span class="font-bold text-[#E21E26]">2</span></td>
+                                                    <td class="p-4 font-bold">Click "<span class="text-[#E21E26]">Club Programs</span>" on the left side menu.</td>
+                                                </tr>
+                                                <tr class="border-b">
+                                                    <td class="p-4"><span class="font-bold text-[#E21E26]">3</span></td>
+                                                    <td class="p-4 font-bold">Click "<span class="text-[#E21E26]">Financial Aid</span>" in the top menu.</td>
+                                                </tr>
+                                                <tr class="border-b">
+                                                    <td class="p-4"><span class="font-bold text-[#E21E26]">4</span></td>
+                                                    <td class="p-4 font-bold">Click "<span class="text-[#E21E26]">Request Financial Aid</span>" in the top right corner.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <p class="text-gray-600 text-center mt-4 text-med italic"><sup class="text-gray-500">*</sup> <span class="font-bold">Before submitting</span> your tax documentation with your application, please ensure you have masked out/hidden sensitive information such as your SSN, address, etc</p>
+                                    <p class="text-gray-600 text-center mt-4 text-med italic"><sup class="text-gray-500">*</sup> <span class="font-bold text-[#E21E26]">DO NOT</span> complete your registration and payment after submitting a financial aid application.</p>
+                                </div>
+
+                                <!-- iPhone Instructions (hidden by default) -->
+                                <div id="iphone-instructions" class="device-instructions hidden bg-gray-100 p-6 rounded-lg shadow-inner border">
+                                    <h4 class="text-xl font-bold font-display uppercase mb-4 text-center text-[#E21E26]">Instructions for iPhone</h4>
+                                    <p class="text-center">Follow these steps to find the scholarship application in the PlayMetrics iOS app.</p>
+                                    <br />
+                                    <div>
+                                        <p class="text-2xl text-left font-bold text-[#E21E26]">Page 1</p>
+                                    </div>
+                                    <p> <img src="/images/resources/scholarship-howto-iphone-1.png"></p>
+                                    <div>
+                                        <table class="w-full text-left border-collapse bg-white">
+                                            <thead class="bg-gray-100 uppercase text-sm tracking-widest">
+                                                <tr>
+                                                    <th class="p-4 text-left">Step</th>
+                                                    <th class="p-1 text-left"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="border-b">
+                                                    <td class="p-4"><span class="font-bold text-[#E21E26]">1</span></td>
+                                                    <td class="p-4 font-bold">Ensure you are in your "<span class="text-[#E21E26]">Player Contact</span>" role for Clackamas United.</td>
+                                                </tr>
+                                                <tr class="border-b">
+                                                    <td class="p-4"><span class="font-bold text-[#E21E26]">2</span></td>
+                                                    <td class="p-4 font-bold">Click "<span class="text-[#E21E26]">Programs</span>" on the bottom menu.</td>
+                                                </tr>
+                                                <tr class="border-b">
+                                                    <td class="p-4"><span class="font-bold text-[#E21E26]">3</span></td>
+                                                    <td class="p-4 font-bold">Click the "<span class="text-[#E21E26]">Programs</span>" dropdown menu.</td>
+                                                </tr>
+                                                <tr class="border-b">
+                                                    <td class="p-4"><span class="font-bold text-[#E21E26]">4</span></td>
+                                                    <td class="p-4 font-bold">Click "<span class="text-[#E21E26]"> Financial Aid</span>" in the dropdown menu.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <br />
+                                    <br />
+                                    <div>
+                                        <p class="text-2xl text-left font-bold text-[#E21E26]">Page 2</p>
+                                    </div>
+                                    <p> <img src="/images/resources/scholarship-howto-iphone-2.png"></p>
+                                    <div>
+                                        <table class="w-full text-left border-collapse bg-white">
+                                            <thead class="bg-gray-100 uppercase text-sm tracking-widest">
+                                                <tr>
+                                                    <th class="p-4 text-left">Step</th>
+                                                    <th class="p-1 text-left"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="border-b">
+                                                    <td class="p-4"><span class="font-bold text-[#E21E26]">1</span></td>
+                                                    <td class="p-4 font-bold">Click "<span class="font-bold text-[#E21E26]">+</span>" in the top right corner of the screen.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br />
+                                        In the following page select the player(s) for whom you are applying for financial aid.  Then start completing the form.
+                                    </div>
+                                    <p class="text-gray-600 text-center mt-4 text-med italic"><sup class="text-gray-500">*</sup> <span class="font-bold">Before submitting</span> your tax documentation with your application, please ensure you have masked out/hidden sensitive information such as your SSN, address, etc</p>
+                                    <p class="text-gray-600 text-center mt-4 text-med italic"><sup class="text-gray-500">*</sup> <span class="font-bold text-[#E21E26]">DO NOT</span> complete your registration and payment after submitting a financial aid application.</p>
+                                </div>
+
+                                <!-- Android Instructions (hidden by default) -->
+                                <div id="android-instructions" class="device-instructions hidden bg-gray-100 p-6 rounded-lg shadow-inner border">
+                                    <h4 class="text-xl font-bold font-display uppercase mb-4 text-center text-[#E21E26]">Instructions for Android</h4>
+                                    <p class="text-center">Follow these steps to find the scholarship application in the PlayMetrics Android app.</p>
+                                    <p> <span class="text-[#E21E26] font-bold text-center uppercase">Instructions coming soon!</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-display font-bold uppercase mb-2 italic"><span class="text-[#E21E26]">Step 3:</span> Await a Decision</h3>
+                            <p>The scholarship committee reviews all applications. You will be notified via email in PlayMetrics when: 
+                                <ul>
+                                    <li>- If we have any questions about your application.</li>
+                                    <li>- If we would like to see more documentation to support your application.</li>
+                                    <li>- Once a decision has been made on your application.</li>
+                                </ul>
+                                <br />
+                                <p>If you have been awarded financial aid, you can log back into PlayMetrics to pay any remaining balance or setup a payment plan for your player's registration.</p>
+                        </div>
+                        <p class="text-gray-600 text-center mt-4 text-med italic"><sup class="text-gray-500">*</sup> <span class="font-bold text-[#E21E26]">Please note</span> that your player will not lose their spot on a team because you have applied for financial aid.</p>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section>
+                    <h2 class="text-4xl font-display font-bold uppercase mb-6 italic">Frequently Asked <span class="text-[#E21E26]">Questions</span></h2>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-lg">When is the deadline to apply?</h4>
+                            <p>While we do not have a strict deadline, we do ask that families complete their registration within 72 hours of being awarded financial aid support.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">What does the scholarship cover?</h4>
+                            <p>Scholarships are applied directly to club registration fees, (if you elect to pay monthly it will lower your monthly payment equally across all months). Our financial aid does not typically cover uniforms, however there is a space in our application form to share more information - if uniform support is critical to you please share that with us.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Is my application confidential?</h4>
+                            <p>Yes. All applications are kept strictly confidential and are only reviewed by the scholarship committee.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Who can I contact with questions?</h4>
+                            <p>If you have any questions about the process, please contact the scholarship committee at <a href="mailto:scholarships@clackamasunited.com" class="text-[#E21E26] underline font-semibold">scholarships@clackamasunited.com</a>.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="/theme.js"></script>
+    <script src="/sponsors-data.js"></script>
+    <script src="/news-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize the base theme for the site (nav, footer, etc.)
+            siteTheme.init("/");
+
+            // --- Scholarship Guide Dropdown Logic ---
+
+            const deviceSelect = document.getElementById('device-select');
+            const allInstructions = document.querySelectorAll('.device-instructions');
+
+            deviceSelect.addEventListener('change', (event) => {
+                const selectedDevice = event.target.value;
+
+                // First, hide all instruction blocks
+                allInstructions.forEach(div => {
+                    div.classList.add('hidden');
+                });
+
+                // If a device was selected, show the corresponding instruction block
+                if (selectedDevice) {
+                    document.getElementById(`${selectedDevice}-instructions`).classList.remove('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

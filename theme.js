@@ -155,7 +155,7 @@ const siteTheme = {
                         <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Swag <i class="fas fa-plus"></i></button>
                         <div class="hidden pl-4 bg-black/20">
                             <a href="https://tursissoccer.com/collections/clackamas-united-fan-apparel" target="_blank" rel="noopener noreferrer" class="block py-3 text-[10px] text-[#E21E26] uppercase">Tursi</a>
-                            <a href="https://oliviagraceandcompany.com/collections/clackamas-united-soccer-club" target="_blank" rel="noopener noreferrer" class="block py-3 text-[10px] text-[#E21E26] uppercase">Olivia Grace</a>
+                            <a href="https://www.oliviagracepaper.com/collections/clackamas-united-sc" target="_blank" rel="noopener noreferrer" class="block py-3 text-[10px] text-[#E21E26] uppercase">Olivia Grace</a>
                         </div>
                     </div>
                 </div>

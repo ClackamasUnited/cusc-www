@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,62 +7,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Recreational Program | Clackamas United</title>
     <script>
-        // Define variables for the page here
-        //
-        // If any of the variables contain only a '#' they wont be dispalyed.  
-        // This is particualrly useful for the schedules as these come out weeks 
-        // after registration opens
-        //
-        // DO NOT USE THIS FOR THE REGISTRATION URLS
-        
         const pageVars = {
-            reg_fall: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=",
-            reg_spring: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=",
-            reg_prek: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=&program_id=84042",
-            reg_2nd: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=&program_id=84281",
-            reg_3to8: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=&program_id=84281",
-            schedule_prek: "https://playmetricssports.com/c/leagues/1006-10814-761c8c2b/divisions/34562/division_view.html",
-            schedule_1st: "https://playmetricssports.com/c/leagues/1006-10814-761c8c2b/divisions/34563/division_view.html",
-            schedule_2nd: "https://playmetricssports.com/c/leagues/1006-10814-761c8c2b/divisions/33808/division_view.html",
-            schedule_3to8: "https://oysa.sportsaffinity.com/tour/public/info/accepted_list.asp?&dropsession=true&Tournamentguid=0607DE2A-47F2-448A-BB7F-ABA959993487"
+            // Registration URLs with start and end dates.
+            // Format: YYYY-MM-DD. The script will handle timezones.
+            reg_fall:      { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=", startDate: "2026-06-22", endDate: "2026-11-31" },
+            reg_spring:    { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=", startDate: "2025-01-15", endDate: "2025-03-15" },
+            reg_prek:      { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODc0MjYxODN8cVJRZ1FmUHI4MWk1NEZRejhMRi9qS3FlNFBCUDZGT0ZONVliV1ZsL0FDND0=&program_id=111130", startDate: "2026-06-22", endDate: "2026-11-31" },
+            reg_2nd:       { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODc0MjYxODN8cVJRZ1FmUHI4MWk1NEZRejhMRi9qS3FlNFBCUDZGT0ZONVliV1ZsL0FDND0=&program_id=111096", startDate: "2026-06-22", endDate: "2026-11-31" },
+            reg_3to8:      { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODc0MjYxODN8cVJRZ1FmUHI4MWk1NEZRejhMRi9qS3FlNFBCUDZGT0ZONVliV1ZsL0FDND0=&program_id=111096", startDate: "2026-06-22", endDate: "2026-11-31" },
+
+            // Schedule URLs with start and end dates.
+            // If a URL is "#", the link will be hidden.
+            schedule_prek: { url: "https://playmetricssports.com/c/leagues/1006-10814-761c8c2b/divisions/34562/division_view.html", startDate: "2024-08-15", endDate: "2024-10-31" },
+            schedule_1st:  { url: "https://playmetricssports.com/c/leagues/1006-10814-761c8c2b/divisions/34563/division_view.html", startDate: "2024-08-15", endDate: "2024-10-31" },
+            schedule_2nd:  { url: "https://playmetricssports.com/c/leagues/1006-10814-761c8c2b/divisions/33808/division_view.html", startDate: "2024-08-15", endDate: "2024-10-31" },
+            schedule_3to8: { url: "https://oysa.sportsaffinity.com/tour/public/info/accepted_list.asp?&dropsession=true&Tournamentguid=0607DE2A-47F2-448A-BB7F-ABA959993487", startDate: "2024-08-15", endDate: "2024-10-31" }
         };
     </script>
     <style>
-        /* --- Fall Season --- */
-        body[data-fall-rec-status="closed"] .show-when-fall-open { display: none; }
-        body[data-fall-rec-status="open"] .show-when-fall-closed { display: none; }
-        body[data-fall-rec-status="open"] li.show-when-fall-open { display: list-item; }
-        body[data-fall-rec-status="open"] a.show-when-fall-open { display: inline-block; }
-        body[data-fall-rec-status="closed"] li.show-when-fall-closed { display: list-item; }
-        body[data-fall-rec-status="closed"] span.show-when-fall-closed { display: inline-block; }
+        /* Hide JS-controlled elements by default */
+        .js-hide { display: none; }
 
-        /* --- Spring Season --- */
-        body[data-spring-rec-status="closed"] .show-when-spring-open { display: none; }
-        body[data-spring-rec-status="open"] .show-when-spring-closed { display: none; }
-        body[data-spring-rec-status="open"] li.show-when-spring-open { display: list-item; }
-        body[data-spring-rec-status="open"] a.show-when-spring-open { display: inline-block; }
-        body[data-spring-rec-status="closed"] li.show-when-spring-closed { display: list-item; }
-        body[data-spring-rec-status="closed"] span.show-when-spring-closed { display: inline-block; }
+        /* Default state: show the 'closed' message and hide the 'open' button/link */
+        .show-when-open { display: none; }
+        .show-when-closed { display: inline-block; }
 
-        /* --- Individual Rec Cards --- */
-        /* Hide the 'Register' button if the card is closed OR if both main seasons are closed. */
-        [data-registration-status="closed"] .show-when-rec-open,
-        body[data-fall-rec-status="closed"][data-spring-rec-status="closed"] .show-when-rec-open { display: none; }
+        /* When open: hide the 'closed' message and show the 'open' button/link */
+        .state-open .show-when-open { display: inline-block; }
+        .state-open .show-when-closed { display: none; }
 
-        /* Show the 'Register' button only if the card is open AND at least one season is open. */
-        body[data-fall-rec-status="open"] [data-registration-status="open"] .show-when-rec-open,
-        body[data-spring-rec-status="open"] [data-registration-status="open"] .show-when-rec-open { display: inline-block; }
-
-        /* Show the 'Closed' message if the card is closed OR if both main seasons are closed. */
-        body[data-fall-rec-status="closed"][data-spring-rec-status="closed"] .show-when-rec-closed,
-        [data-registration-status="closed"] .show-when-rec-closed { display: inline-block; }
-        [data-registration-status="open"] .show-when-rec-closed { display: none; }
+        /* Special handling for list items */
+        .state-open li.show-when-open { display: list-item; }
     </style>
 </head>
 
 <!-- EDIT THESE: "open" or "closed" -->
-<body class="bg-slate-50" data-fall-rec-status="closed" data-spring-rec-status="open"> 
-
+<body class="bg-slate-50">
 
     <main class="max-w-7xl mx-auto my-20 px-6">
         <div class="text-center mb-16">
@@ -76,44 +56,34 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
 
             <!-- Fall Season Card -->
-            <div id="fall-season" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+            <div id="fall-season" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col" data-registration="reg_fall">
                 <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Fall Season</h2>
                 <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 flex-grow space-y-2">
                     <li>For players in Kindergarten - 8th Grade.</li>
                     <li>Season runs from late August to late October.</li>
                     <li>Practices are typically once a week.</li>
                     <li>Games are held on Saturdays.</li>
-                    <li class="show-when-fall-open">You can view the schedule by age group <a class="underline" href="#breakdown">below</a></li>
-                    <li class="show-when-fall-closed">The Fall Rec schedule will be posted closer to game time</li>
+                    <li class="show-when-open js-hide">You can view the schedule by age group <a class="underline" href="#breakdown">below</a></li>
+                    <li class="show-when-closed">The Fall Rec schedule will be posted closer to game time</li>
                 </ul>
-                <a href="#" data-variable-href="reg_fall" class="show-when-fall-open inline-block mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
-                <span class="show-when-fall-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
+                <a href="#" class="show-when-open mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                <span class="show-when-closed mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
             </div>
 
             <!-- Spring Season Card -->
-            <div id="spring-season" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col">
+            <div id="spring-season" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col" data-registration="reg_spring">
                 <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">Spring Season</h2>
                 <ul class="list-disc list-inside text-gray-700 leading-relaxed mb-6 flex-grow space-y-2">
                     <li>For players in Kindergarten - 8th Grade.</li>
                     <li>Season runs from early April to late May.</li>
                     <li>Practices are typically once a week.</li>
                     <li>Games are held on Saturdays.</li>
-                    <li class="show-when-spring-open">You can view the schedule by age group <a class="underline" href="#breakdown">below</a></li>
-                    <li class="show-when-spring-closed">The Spring Rec schedule will be posted closer to game time</li>
+                    <li class="show-when-open js-hide">You can view the schedule by age group <a class="underline" href="#breakdown">below</a></li>
+                    <li class="show-when-closed">The Spring Rec schedule will be posted closer to game time</li>
                 </ul>
-                <a href="#" data-variable-href="reg_spring" class="show-when-spring-open inline-block mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
-                <span class="show-when-spring-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
+                <a href="#" class="show-when-open mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register Now &rarr;</a>
+                <span class="show-when-closed mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
             </div>
-        </div>
-
-        <!-- Want to help box -->
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-display font-bold uppercase italic">Want to <span class="text-[#E21E26]">Coach ?</span></h2>
-        </div>
-
-        <div class="bg-white shadow-xl border-t-8 border-cu-red p-8 md:p-12 mb-16">
-            <p class="text-gray-600 text-lg max-w-3xl mx-auto text-center">Our recreational program is made possible by dedicated volunteer coaches who play a vital role in creating a positive and encouraging experience for every player. These coaches help teach the fundamentals of the game, foster teamwork, and ensure that every child feels included and supported.  </p><br>
-            <p class="text-gray-600 text-lg max-w-3xl mx-auto text-center">If you are interested in becoming a volunteer coach, we would love to have you involved! Please contact our Club Registrar using the information at the bottom of this page.</p>
         </div>
 
         <!-- Program Breakdown-->
@@ -124,41 +94,37 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
             <!-- PreK/1st Card -->
-            <div id="prek" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col" data-registration-status="open"> <!-- EDIT THIS: "open" or "closed" -->
+            <div id="prek" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col" data-registration="reg_prek">
                 <div class="flex-grow">
                     <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">PreK - 1st Grade</h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">Players practice once per week and participate in one game during the week. PreK/K games are typically held on Tuesdays, while 1st grade games are usually on Thursdays.</p>
-                    <p class="text-gray-700 leading-relaxed"> These age groups are coed and emphasize introduction to the game through fun, engaging activities.</p><br>
-                    <p><a class="show-when-rec-open underline text-[#E21E26]" href="#" data-variable-href="schedule_prek">View the <span class="text-[#E21E26]">PreK-K</span> game schedule for the current season</a></p><br>
-                    <p><a class="show-when-rec-open underline text-[#E21E26]" href="#" data-variable-href="schedule_1st">View the <span class="text-[#E21E26]">1st Grade</span> game schedule for the current season</a></p><br>
+                    <p class="text-gray-700 leading-relaxed mb-4">Players practice once per week and participate in one game during the week. PreK/K games are typically held on Tuesdays, while 1st grade games are usually on Thursdays. These age groups are coed and emphasize introduction to the game through fun, engaging activities.</p>
+                    <p class="js-hide mb-4" data-schedule="schedule_prek"><a class="underline text-[#E21E26]" href="#">View the <span class="text-[#E21E26]">PreK-K</span> game schedule for the current season</a></p>
+                    <p class="js-hide mb-4" data-schedule="schedule_1st"><a class="underline text-[#E21E26]" href="#">View the <span class="text-[#E21E26]">1st Grade</span> game schedule for the current season</a></p>
                 </div>
-                <a href="#" data-variable-href="reg_prek" class="show-when-rec-open mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Pre-K - 1st Grade &rarr;</a>
-                <span class="show-when-rec-closed mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
+                <a href="#" class="show-when-open mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Pre-K - 1st Grade &rarr;</a>
+                <span class="show-when-closed mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
             </div>
 
             <!-- 2nd Grade Card -->
-            <div id="2nd" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col" data-registration-status="open"> <!-- EDIT THIS: "open" or "closed" -->
+            <div id="2nd" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col" data-registration="reg_2nd">
                 <div class="flex-grow">
                     <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">2nd Grade</h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">2nd grade is an in-house program where teams practice twice per week and play games on Saturdays against other 2nd grade teams.</p>
-                    <p class="text-gray-700 leading-relaxed">During the fall season, teams are separated by gender, while the spring season is coed.</p><br>
-                    <p><a class="show-when-rec-open underline text-[#E21E26]" href="#" data-variable-href="schedule_2nd">View the game schedule for the current season</a></p>
+                    <p class="text-gray-700 leading-relaxed mb-4">2nd grade is an in-house program where teams practice twice per week and play games on Saturdays against other 2nd grade teams. During the fall season, teams are separated by gender, while the spring season is coed.</p>
+                    <p class="js-hide mb-4" data-schedule="schedule_2nd"><a class="underline text-[#E21E26]" href="#">View the game schedule for the current season</a></p>
                 </div>
-                <a href="#" data-variable-href="reg_2nd" class="show-when-rec-open inline-block mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for 2nd Grade &rarr;</a>
-                <span class="show-when-rec-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
+                <a href="#" class="show-when-open mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for 2nd Grade &rarr;</a>
+                <span class="show-when-closed mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
             </div>
 
             <!-- 3rd-8th Grade Card -->
-            <div id="3rd8th" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col" data-registration-status="open"> <!-- EDIT THIS: "open" or "closed" -->
+            <div id="3rd8th" class="bg-white shadow-xl border-t-8 border-cu-red p-8 flex flex-col" data-registration="reg_3to8">
                 <div class="flex-grow">
                     <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">3rd - 8th Grade</h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">Teams compete in the Soccer 5 League (link), practicing twice per week and playing games on Saturdays.</p>
-                    <p class="text-gray-700 leading-relaxed mb-4">The fall season consists of 8 games, while the spring season typically includes 7 games.</p>
-                    <p class="text-gray-700 leading-relaxed">All practices take place at local fields throughout North Clackamas and Happy Valley.</p><br />
-                    <p><a class="show-when-rec-open underline text-[#E21E26]" href="#" data-variable-href="schedule_3to8">View the game schedule for the current season</a></p><br>
+                    <p class="text-gray-700 leading-relaxed mb-4">Teams compete in the Soccer 5 League (link), practicing twice per week and playing games on Saturdays. The fall season consists of 8 games, while the spring season typically includes 7 games. All practices take place at local fields throughout North Clackamas and Happy Valley.</p>
+                    <p class="js-hide mb-4" data-schedule="schedule_3to8"><a class="underline text-[#E21E26]" href="#">View the game schedule for the current season</a></p>
                 </div>
-                <a href="#" data-variable-href="reg_3to8" class="show-when-rec-open inline-block mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for 3rd-8th &rarr;</a>
-                <span class="show-when-rec-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
+                <a href="#" class="show-when-open mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for 3rd-8th &rarr;</a>
+                <span class="show-when-closed mt-auto text-center bg-gray-300 text-gray-600 px-6 py-3 font-bold uppercase text-sm cursor-not-allowed">Registration is currently closed</span>
             </div>
 
         </div>
@@ -180,16 +146,44 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             siteTheme.init("/");
+            document.documentElement.classList.remove('no-js');
 
-            // Populate elements with variables
-            document.querySelectorAll('[data-variable-href]').forEach(el => {
-                const varName = el.getAttribute('data-variable-href');
-                if (pageVars[varName]) {
-                    if (pageVars[varName] === "#") {
-                        // If the variable is just "#", hide the link's parent element (e.g., the <p> or <li> tag)
-                        if (el.parentElement) el.parentElement.style.display = 'none';
-                    } else {
-                        el.href = pageVars[varName];
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Normalize to the beginning of the day
+
+            const isDateActive = (dateRange) => {
+                if (!dateRange || !dateRange.startDate || !dateRange.endDate) {
+                    return false;
+                }
+                const startDate = new Date(dateRange.startDate + 'T00:00:00');
+                const endDate = new Date(dateRange.endDate + 'T23:59:59');
+                return today >= startDate && today <= endDate;
+            };
+
+            // --- Registration Button Logic ---
+            document.querySelectorAll('[data-registration]').forEach(card => {
+                const regName = card.getAttribute('data-registration');
+                const regData = pageVars[regName];
+                if (isDateActive(regData)) {
+                    card.classList.add('state-open');
+                    // Set the href on the correct button
+                    const registerButton = card.querySelector('a.show-when-open');
+                    if (registerButton) {
+                        registerButton.href = regData.url;
+                    }
+                }
+            });
+
+            // --- Schedule Link Logic ---
+            document.querySelectorAll('[data-schedule]').forEach(p => {
+                const scheduleName = p.getAttribute('data-schedule');
+                const scheduleData = pageVars[scheduleName];
+
+                if (scheduleData && scheduleData.url !== "#") {
+                    if (isDateActive(scheduleData)) {
+                        p.classList.remove('js-hide');
+                        p.style.display = 'block'; // Ensure it's visible
+                        p.querySelector('a').href = scheduleData.url;
                     }
                 }
             });

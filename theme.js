@@ -79,6 +79,18 @@ const siteTheme = {
                                 <a href="${basePath}resources/policies.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Club Policies</a>
                                 <a href="${basePath}resources/uniforms.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Uniforms</a>
                                 <div class="relative sub-group">
+                                    <a href="#" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Partners <i class="fas fa-chevron-right text-[10px]"></i></a>
+                                    <div class="nav-submenu">
+                                        <div class="relative sub-group">
+                                            <a href="#" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] uppercase">Souter Photography <i class="fas fa-chevron-right text-[10px]"></i></a>
+                                            <div class="nav-submenu">
+                                                <a href="https://storage.googleapis.com/ugc-playmetrics-prod/c1006/message/u1787282/103756159/1775009410/397939172a27aca0e8bc97a8d003be70/SouterPhotography.png" target="_blank" rel="noopener noreferrer" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Sports Photography</a>
+                                                <a href="https://souterphotography.pixieset.com/" target="_blank" rel="noopener noreferrer" class="block px-6 py-4 hover:bg-[#E21E26] uppercase">Website</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="relative sub-group">
                                     <a href="#" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Refereeing <i class="fas fa-chevron-right text-[10px]"></i></a>
                                     <div class="nav-submenu">
                                         <a href="${basePath}resources/referees/refereeing.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Latest News</a>
@@ -151,6 +163,17 @@ const siteTheme = {
                         <div class="hidden pl-4 bg-black/20">
                             <a href="${basePath}resources/referees/refereeing.html" class="block py-3 text-[10px] text-[#E21E26] uppercase">Latest News</a>
                             <a href="${basePath}resources/referees/referee-starter-packet.html" class="block py-3 text-[10px] text-[#E21E26] uppercase">Starter Pack</a>
+                        </div>
+                        <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Partners <i class="fas fa-plus"></i></button>
+                        <div class="hidden pl-4 bg-black/20">
+                            <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Photography <i class="fas fa-plus"></i></button>
+                            <div class="hidden pl-4 bg-black/20">
+                                <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Souter Photography <i class="fas fa-plus"></i></button>
+                                <div class="hidden pl-4 bg-black/20">
+                                    <a href="https://storage.googleapis.com/ugc-playmetrics-prod/c1006/message/u1787282/103756159/1775009410/397939172a27aca0e8bc97a8d003be70/SouterPhotography.png" target="_blank" rel="noopener noreferrer" class="block py-3 text-[10px] text-[#E21E26] uppercase">Sports Photography</a>
+                                    <a href="https://souterphotography.pixieset.com/" target="_blank" rel="noopener noreferrer" class="block py-3 text-[10px] text-[#E21E26] uppercase">Website</a>
+                                </div>
+                            </div>
                         </div>
                         <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Swag <i class="fas fa-plus"></i></button>
                         <div class="hidden pl-4 bg-black/20">

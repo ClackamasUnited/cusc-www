@@ -10,7 +10,7 @@
         const pageVars = {
             // Registration URLs with start and end dates.
             // Format: YYYY-MM-DD. The script will handle timezones.
-            reg_fall:      { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=", startDate: "2026-06-22", endDate: "2026-11-31" },
+            reg_fall:      { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=", startDate: "2026-06-22", endDate: "2026-11-30" },
             reg_spring:    { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=", startDate: "2025-01-15", endDate: "2025-03-15" },
             reg_prek:      { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODc0MjYxODN8cVJRZ1FmUHI4MWk1NEZRejhMRi9qS3FlNFBCUDZGT0ZONVliV1ZsL0FDND0=&program_id=111130", startDate: "2026-06-22", endDate: "2026-11-31" },
             reg_2nd:       { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODc0MjYxODN8cVJRZ1FmUHI4MWk1NEZRejhMRi9qS3FlNFBCUDZGT0ZONVliV1ZsL0FDND0=&program_id=111096", startDate: "2026-06-22", endDate: "2026-11-31" },
@@ -98,7 +98,9 @@
                 <div class="flex-grow">
                     <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">PreK - 1st Grade</h2>
                     <p class="text-gray-700 leading-relaxed mb-4">Players practice once per week and participate in one game during the week. PreK/K games are typically held on Tuesdays, while 1st grade games are usually on Thursdays. These age groups are coed and emphasize introduction to the game through fun, engaging activities.</p>
+                    <p class="text-sm text-gray-500 italic mb-4" data-schedule-placeholder="schedule_prek">The schedule for PreK-K will be published closer to the start of the season and will be linked here.</p>
                     <p class="js-hide mb-4" data-schedule="schedule_prek"><a class="underline text-[#E21E26]" href="#">View the <span class="text-[#E21E26]">PreK-K</span> game schedule for the current season</a></p>
+                    <p class="text-sm text-gray-500 italic mb-4" data-schedule-placeholder="schedule_1st">The schedule for 1st Grade will be published closer to the start of the season and will be linked here.</p>
                     <p class="js-hide mb-4" data-schedule="schedule_1st"><a class="underline text-[#E21E26]" href="#">View the <span class="text-[#E21E26]">1st Grade</span> game schedule for the current season</a></p>
                 </div>
                 <a href="#" class="show-when-open mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for Pre-K - 1st Grade &rarr;</a>
@@ -110,6 +112,7 @@
                 <div class="flex-grow">
                     <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">2nd Grade</h2>
                     <p class="text-gray-700 leading-relaxed mb-4">2nd grade is an in-house program where teams practice twice per week and play games on Saturdays against other 2nd grade teams. During the fall season, teams are separated by gender, while the spring season is coed.</p>
+                    <p class="text-sm text-gray-500 italic mb-4" data-schedule-placeholder="schedule_2nd">The schedule for 2nd Grade will be published closer to the start of the season and will be linked here.</p>
                     <p class="js-hide mb-4" data-schedule="schedule_2nd"><a class="underline text-[#E21E26]" href="#">View the game schedule for the current season</a></p>
                 </div>
                 <a href="#" class="show-when-open mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for 2nd Grade &rarr;</a>
@@ -121,6 +124,7 @@
                 <div class="flex-grow">
                     <h2 class="text-3xl font-display font-bold uppercase mb-4 italic">3rd - 8th Grade</h2>
                     <p class="text-gray-700 leading-relaxed mb-4">Teams compete in the Soccer 5 League (link), practicing twice per week and playing games on Saturdays. The fall season consists of 8 games, while the spring season typically includes 7 games. All practices take place at local fields throughout North Clackamas and Happy Valley.</p>
+                    <p class="text-sm text-gray-500 italic mb-4" data-schedule-placeholder="schedule_3to8">The schedule for 3rd-8th Grade will be published closer to the start of the season and will be linked here.</p>
                     <p class="js-hide mb-4" data-schedule="schedule_3to8"><a class="underline text-[#E21E26]" href="#">View the game schedule for the current season</a></p>
                 </div>
                 <a href="#" class="show-when-open mt-auto text-center bg-[#E21E26] text-white px-6 py-3 font-bold uppercase text-sm hover:bg-black transition-all">Register for 3rd-8th &rarr;</a>
@@ -155,9 +159,12 @@
                 if (!dateRange || !dateRange.startDate || !dateRange.endDate) {
                     return false;
                 }
-                const startDate = new Date(dateRange.startDate + 'T00:00:00');
-                const endDate = new Date(dateRange.endDate + 'T23:59:59');
-                return today >= startDate && today <= endDate;
+                // Safari is strict about date parsing. Avoid 'YYYY-MM-DD' and use 'YYYY/MM/DD'
+                // or pass arguments directly to the constructor.
+                const startStr = dateRange.startDate.replace(/-/g, '/');
+                const endStr = dateRange.endDate.replace(/-/g, '/');
+
+                return today >= new Date(startStr) && today <= new Date(endStr);
             };
 
             // --- Registration Button Logic ---
@@ -184,6 +191,12 @@
                         p.classList.remove('js-hide');
                         p.style.display = 'block'; // Ensure it's visible
                         p.querySelector('a').href = scheduleData.url;
+
+                        // Hide the corresponding placeholder
+                        const placeholder = document.querySelector(`[data-schedule-placeholder="${scheduleName}"]`);
+                        if (placeholder) {
+                            placeholder.style.display = 'none';
+                        }
                     }
                 }
             });

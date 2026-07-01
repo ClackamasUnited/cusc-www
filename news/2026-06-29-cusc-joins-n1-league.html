@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>CUSC Joins N1 National League | Clackamas United</title>
+    <style>
+        /*
+         * Scalable Registration Status Display Logic
+         *
+         * 1. By default, hide all elements that are part of this conditional display system.
+         * 2. Explicitly show only the element that matches the current data-registration-status.
+         */
+        .show-when-open,
+        .show-when-closed,
+        .show-when-preparing { display: none; }
+
+        [data-registration-status="open"] .show-when-open { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
+        [data-registration-status="closed"] .show-when-closed { display: initial; }
+        [data-registration-status="preparing"] .show-when-preparing { display: initial; }
+    </style>
+</head>
+<body class="bg-slate-50" data-registration-status="open">
+
+    <div id="page-content">
+        <main class="max-w-4xl mx-auto my-20 px-6">
+            <article>
+                <div class="text-center mb-12">
+                    <p class="text-sm font-bold text-cu-red uppercase tracking-widest">June 29, 2026</p>
+                    <h1 class="text-5xl font-display font-bold uppercase italic mt-2"><span class="text-[#E21E26]">CUSC</span> joins the N1 National League</h1>
+                    <p class="text-gray-600 text-lg mt-4">By Tony Stevenson</p>
+                </div>
+
+                <div class="mb-12 flex justify-center">
+                    <img src="/images/news/2026-06-29-CUSC-N1-League.jpg" alt="N1 National League" class="max-h-[500px] w-auto rounded-lg shadow-xl">
+                </div>
+
+                <div class="prose lg:prose-xl mx-auto text-gray-800">
+                    <br />
+                    <br />
+                    <p><span class="text-[#000000] font-bold">Clackamas United is excited to announce that we have been accepted into the N1 National League for 2026/27.</span></p>
+                    <br />
+                    <p>This is a major milestone for our club and a testament to the hard work of our players, coaches, families, and staff. Competing in the N1 League will provide an even higher level of competition and development opportunities while continuing to build on the strong foundation of our club.</p>
+                    <br />
+                    <p>Thank you to everyone who has helped make this possible. The future is bright for Clackamas United, and we can’t wait to get started!.</p>
+                    <br />
+                    <br />
+                   
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script src="/theme.js"></script>
+    <script src="/sponsors-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => siteTheme.init("/"));
+    </script>
+</body>
+</html>

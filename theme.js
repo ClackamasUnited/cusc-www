@@ -228,22 +228,34 @@ const siteTheme = {
     },
  
     injectSponsors: function(basePath) {
+        const createRowHTML = (sponsors) => {
+            return sponsors.map(sponsor => { // Each item will be a flex item
+                const imageHTML = `<img src="${basePath}${sponsor.logo}" alt="${sponsor.name}" class="h-auto max-h-[100px] object-contain transition-opacity duration-300 group-hover:opacity-75">`;
+                if (sponsor.url) {
+                    return `<a href="${sponsor.url}" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center group p-4">${imageHTML}</a>`;
+                }
+                return `<div class="flex justify-center items-center p-4">${imageHTML}</div>`;
+            }).join('');
+        };
+
+        const sponsorsRow1 = sponsorsData.filter(s => s.row === 1);
+        const sponsorsRow2 = sponsorsData.filter(s => s.row === 2);
+
+        const row1HTML = createRowHTML(sponsorsRow1);
+        const row2HTML = createRowHTML(sponsorsRow2);
+
         const sponsorsHTML = `<section class="bg-white py-12">
             <div class="max-w-7xl mx-auto px-6">
                 <h2 class="text-3xl font-display font-bold uppercase mb-8 italic text-center">Our <span class="text-[#E21E26]">Sponsors</span><span class="text-[#111111]"> &amp; </span><span class="text-[#E21E26]">Partners</span></h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8 items-center">
-                    ${sponsorsData.map(sponsor => {
-                        const imageHTML = `<img src="${basePath}${sponsor.logo}" alt="${sponsor.name}" class="h-auto w-full max-h-[100px] object-contain transition-opacity duration-300 group-hover:opacity-75">`;
-                        
-                        if (sponsor.url) {
-                            return `
-                                <a href="${sponsor.url}" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center group">
-                                    ${imageHTML}
-                                </a>`;
-                        }
-                        // If no URL, just display the image in a div
-                        return `<div class="flex justify-center items-center">${imageHTML}</div>`;
-                    }).join('')}
+                
+                <!-- Row 1: Sponsors -->
+                <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-8">
+                    ${row1HTML}
+                </div>
+
+                <!-- Row 2: Partners -->
+                <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-8 mt-8">
+                    ${row2HTML}
                 </div>
             </div>
         </section>`;

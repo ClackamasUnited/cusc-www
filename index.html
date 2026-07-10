@@ -17,16 +17,23 @@
         .show-player-inquiry-button,
         .show-reg-button,
         .show-tryout-button,
-        .show-tryout-schedule-button { display: none; }
+        .show-tryout-schedule-button,
+        .show-rec-reg-button { display: none; }
 
         [show-reg-button="false"] .show-reg-button { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
         [show-tryout-button="closed"] .show-tryout-button { display: initial; }
         [show-player-inquiry-button="true"] .show-player-inquiry-button { display: initial; }
         [show-tryout-schedule-button="closed"] .show-tryout-schedule-button { display: initial; }
         [show-program-button="true"] .show-program-button { display: initial; }
+        [show-rec-reg-button="true"] .show-rec-reg-button { display: initial; }
     </style>
 </head>
-<body class="bg-white" show-reg-button="true" show-player-inquiry-button="true" how-tryout-button="true" show-tryout-schedule-button="true" show-program-button="true"> <!-- <-- EDIT THIS: "open" or "closed" or "preparing" -->
+
+<!-- ***********************************************
+Use the body class tag below to hide/unhide buttons 
+************************************************ -->
+
+<body class="bg-white" show-reg-button="true" show-player-inquiry-button="true" slot="true" show-tryout-schedule-button="true" show-program-button="true" show-rec-reg-button="true"> <!-- <-- EDIT THIS: "open" or "closed" or "preparing" -->
 
     <header class="relative min-h-[85vh] py-20 flex items-center bg-[#111111] text-white" id="home-header">
         <div class="absolute inset-0">
@@ -60,6 +67,8 @@
                     <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-reg-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Register &rarr;</a>
                     <!-- Player Inquiury Button -->
                     <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODQ0NzYyNzF8elpCbDVaVHVCbE5ZNGJQRU83OERacUNhSWNmV1YybDZMYWN0MHByZjZKWT0=&program_id=104435" class="show-player-inquiry-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">New Player Inquiry &rarr;</a>
+                    <!-- Rec Registration Button -->
+                    <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-rec-reg-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Register for Rec &rarr;</a>
                 </div>
             </div>
         </div>

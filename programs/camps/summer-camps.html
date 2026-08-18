@@ -12,42 +12,57 @@
 </head>
 <body class="bg-slate-50" data-registration-status="open"> <!-- <-- EDIT THIS: "open" or "closed" -->
 
-    <main class="max-w-4xl mx-auto my-20 bg-white shadow-xl border-t-8 border-cu-red overflow-hidden">
-        <img src="/images/news/summerreccamp2026.jpg" alt="Players at a summer soccer camp" class="w-full h-auto">
-        <div class="p-10">
-            <h1 class="text-5xl font-display font-bold uppercase mb-4 italic">Summer Camps</h1>
-            <p class="text-gray-500 mb-8 font-bold uppercase tracking-widest text-xs">June - August 2026</p>
-            <div class="text-gray-700 leading-relaxed text-lg">
-                <p class="mb-4">Join us for a summer of soccer! We offer multiple camps for different age groups and skill levels, focusing on technical skills, teamwork, and fun under the sun.</p>
-                
-                <h2 class="text-3xl font-display font-bold uppercase mb-4 italic mt-8">Program Details</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-xl font-display font-bold uppercase mb-2 italic">Schedule &amp; Focus</h3>
-                        <ul class="list-disc list-inside mb-4 space-y-2">
-                            <li>Multiple week-long sessions available</li>
-                            <li>Camps designed for recreational players</li>
-                            <li>Focus on technical skills and small-sided games</li>
-                            <li>Professional coaching from CUSC staff</li>
-                        </ul>
+    <main class="max-w-4xl mx-auto my-20">
+        <!-- ==================================================================
+             SHOW THIS CONTENT WHEN REGISTRATION IS "open"
+             ================================================================== -->
+        <div class="show-when-open bg-white shadow-xl border-t-8 border-cu-red overflow-hidden">
+            <img src="/images/news/summerreccamp2026.jpg" alt="Players at a summer soccer camp" class="w-full h-auto">
+            <div class="p-10">
+                <h1 class="text-5xl font-display font-bold uppercase mb-4 italic">Summer Camps</h1>
+                <p class="text-gray-500 mb-8 font-bold uppercase tracking-widest text-xs">June - August 2026</p>
+                <div class="text-gray-700 leading-relaxed text-lg">
+                    <p class="mb-4">Join us for a summer of soccer! We offer multiple camps for different age groups and skill levels, focusing on technical skills, teamwork, and fun under the sun.</p>
+                    
+                    <h2 class="text-3xl font-display font-bold uppercase mb-4 italic mt-8">Program Details</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-display font-bold uppercase mb-2 italic">Schedule &amp; Focus</h3>
+                            <ul class="list-disc list-inside mb-4 space-y-2">
+                                <li>Multiple week-long sessions available</li>
+                                <li>Camps designed for recreational players</li>
+                                <li>Focus on technical skills and small-sided games</li>
+                                <li>Professional coaching from CUSC staff</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-display font-bold uppercase mb-2 italic">What to Bring</h3>
+                            <ul class="list-disc list-inside mb-4 space-y-2">
+                                <li>Soccer ball</li>
+                                <li>Shin guards (required)</li>
+                                <li>Water bottle, and plenty of water</li>
+                                <li>Sunscreen</li>
+                                <li>Snacks</li>
+                                <li>Cleats are <span class="text-[#E21E26] underline">not</span> required for summer camps</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="text-xl font-display font-bold uppercase mb-2 italic">What to Bring</h3>
-                        <ul class="list-disc list-inside mb-4 space-y-2">
-                            <li>Soccer ball</li>
-                            <li>Shin guards (required)</li>
-                            <li>Water bottle, and plenty of water</li>
-                            <li>Sunscreen</li>
-                            <li>Snacks</li>
-                            <li>Cleats are <span class="text-[#E21E26] underline">not</span> required for summer camps</li>
-                        </ul>
+                    
+                    <div class="text-center mt-8">
+                        <a href="/news/2026-04-10-2026-summer-rec-camp.html" class="inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Read More &rarr;</a>
                     </div>
                 </div>
-                
-                <div class="text-center mt-8">
-                    <a href="/news/2026-04-10-2026-summer-rec-camp.html" class="show-when-open inline-block mt-auto text-center bg-[#E21E26] text-white px-10 py-4 font-bold uppercase text-sm hover:bg-black transition-all">Read More &rarr;</a>
-                    <span class="show-when-closed inline-block mt-auto text-center bg-gray-300 text-gray-600 px-10 py-4 font-bold uppercase text-sm cursor-not-allowed">Registration Currently Closed</span>
-                </div>
+            </div>
+        </div>
+
+        <!-- ==================================================================
+             SHOW THIS CONTENT WHEN REGISTRATION IS "closed"
+             ================================================================== -->
+        <div class="show-when-closed bg-white shadow-xl border-t-8 border-cu-red p-12 text-center">
+            <h1 class="text-4xl font-display font-bold uppercase mb-4 italic">Summer Camps Have Concluded</h1>
+            <div class="text-gray-700 leading-relaxed text-lg max-w-2xl mx-auto">
+                <p>Thank you for a great summer! Our camps have now finished for the season. We look forward to seeing you on the field next year.</p>
+                <p class="mt-4">Please check back in the spring for information about next summer's camps!</p>
             </div>
         </div>
     </main>

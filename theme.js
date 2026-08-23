@@ -77,6 +77,7 @@ const siteTheme = {
                             <div class="nav-dropdown shadow-2xl">
                                 <a href="${basePath}resources/rangersfc.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Rangers FC Affiliation</a>
                                 <a href="${basePath}resources/policies.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Club Policies</a>
+                                <a href="${basePath}resources/health-safety.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Health &amp; Safety</a>
                                 <a href="${basePath}resources/uniforms.html" class="block px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Uniforms</a>
                                 <div class="relative sub-group">
                                     <a href="#" class="flex justify-between items-center px-6 py-4 hover:bg-[#E21E26] border-b border-white/5 uppercase">Partners <i class="fas fa-chevron-right text-[10px]"></i></a>
@@ -158,6 +159,7 @@ const siteTheme = {
                     <div class="hidden pl-4 bg-white/5">
                         <a href="${basePath}resources/rangersfc.html" class="block py-3 text-xs opacity-70 uppercase">Rangers FC Affiliation</a>
                         <a href="${basePath}resources/policies.html" class="block py-3 text-xs opacity-70 uppercase">Club Policies</a>
+                        <a href="${basePath}resources/health-safety.html" class="block py-3 text-xs opacity-70 uppercase">Health &amp; Safety</a>
                         <a href="${basePath}resources/uniforms.html" class="block py-3 text-xs opacity-70 uppercase">Uniforms</a>
                         <button class="w-full flex justify-between items-center py-3 text-xs opacity-70 sub-accordion-trigger uppercase">Refereeing <i class="fas fa-plus"></i></button>
                         <div class="hidden pl-4 bg-black/20">
@@ -209,6 +211,7 @@ const siteTheme = {
                     <ul class="space-y-4 text-xs font-bold uppercase tracking-widest leading-loose">
                         <li><a href="/resources/rangersfc.html" class="hover:text-[#E21E26] transition">Rangers FC Affiliation</a></li>
                         <li><a href="/resources/policies.html" class="hover:text-[#E21E26] transition">Club Policies</a></li>
+                        <li><a href="/resources/health-safety.html" class="hover:text-[#E21E26] transition">Health &amp; Safety</a></li>
                         <li><a href="/scholarships.html" class="hover:text-[#E21E26] transition">Scholarships</a></li>
                         <li><a href="/resources/uniforms.html" class="hover:text-[#E21E26] transition">Uniforms</a></li>
                         <li><a href="https://tursissoccer.com/collections/clackamas-united-fan-apparel" target="_blank" rel="noopener noreferrer" class="hover:text-[#E21E26] transition">Club Apparel</a></li>
@@ -328,6 +331,35 @@ const siteTheme = {
         }
     },
 
+    injectHealthSafetyList: function(basePath) {
+        const healthSafetyGrid = document.getElementById('health-safety-grid');
+        if (!healthSafetyGrid || typeof healthSafetyData === 'undefined') {
+            return;
+        }
+
+        const healthSafetyHTML = healthSafetyData
+            .filter(item => !item.hidden) // Filter out hidden items
+            .map(item => {
+            // Check if the URL is absolute (external) or relative (local)
+            const isExternal = item.url.startsWith('http');
+            const href = isExternal ? item.url : `${basePath}${item.url.startsWith('/') ? item.url.substring(1) : item.url}`;
+
+            return `
+            <a href="${href}" target="_blank" rel="noopener noreferrer" class="block bg-white p-6 shadow-lg hover:shadow-xl transition-shadow border-l-4 border-cu-red group">
+                <h3 class="text-xl font-display font-bold uppercase text-gray-900 group-hover:text-cu-red transition-colors">${item.title}</h3>
+                ${item.description ? `<p class="text-sm text-gray-600 mt-2">${item.description}</p>` : ''}
+                <p class="text-sm text-gray-500 mt-2">Last Updated: ${item.lastUpdated}</p>
+                <div class="mt-4 text-cu-red font-bold text-xs uppercase tracking-widest">
+                    View Resource <i class="fas fa-arrow-right ml-1"></i>
+                </div>
+            </a>
+        `}).join('');
+
+        if (healthSafetyHTML) {
+            healthSafetyGrid.innerHTML = healthSafetyHTML;
+        }
+    },
+
     injectNewsGrid: function(basePath) {
         const newsGrid = document.getElementById('news-grid');
         if (!newsGrid || typeof newsData === 'undefined') {
@@ -444,6 +476,11 @@ const siteTheme = {
         // Policies list is only needed if the data exists
         if (typeof policiesData !== 'undefined') {
             this.injectPoliciesList(basePath);
+        }
+
+        // Health & Safety list is only needed if the data exists
+        if (typeof healthSafetyData !== 'undefined') {
+            this.injectHealthSafetyList(basePath);
         }
 
         // Rangers gallery is only needed if the data exists

@@ -34,12 +34,12 @@
         body .show-tryout-schedule-button,
         body .show-rec-reg-button { display: none; }
 
-        [data-show-reg-button="true"] .show-reg-button { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
-        [data-show-tryout-button="true"] .show-tryout-button { display: initial; }
-        [data-show-player-inquiry-button="true"] .show-player-inquiry-button { display: initial; }
-        [data-show-tryout-schedule-button="true"] .show-tryout-schedule-button { display: initial; }
-        [data-show-program-button="true"] .show-program-button { display: initial; }
-        [data-show-rec-reg-button="true"] .show-rec-reg-button { display: initial; }
+        [data-show-reg-button="true"] .show-reg-button { display: revert; } /* 'revert' restores this element's true browser-default display (block for div/p, inline for a/span) -- 'initial' looks similar but is NOT the same: per the CSS spec, 'initial' always resolves display to plain 'inline' regardless of tag, which silently breaks block-level elements like <div>/<p> (their background/border/shadow get fragmented across line-boxes). 'revert' is what we actually want here. */
+        [data-show-tryout-button="true"] .show-tryout-button { display: revert; }
+        [data-show-player-inquiry-button="true"] .show-player-inquiry-button { display: revert; }
+        [data-show-tryout-schedule-button="true"] .show-tryout-schedule-button { display: revert; }
+        [data-show-program-button="true"] .show-program-button { display: revert; }
+        [data-show-rec-reg-button="true"] .show-rec-reg-button { display: revert; }
     </style>
 </head>
 

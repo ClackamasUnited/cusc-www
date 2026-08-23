@@ -27,9 +27,9 @@
         body .show-when-closed,
         body .show-when-preparing { display: none; }
 
-        [data-registration-status="open"] .show-when-open { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
-        [data-registration-status="closed"] .show-when-closed { display: initial; }
-        [data-registration-status="preparing"] .show-when-preparing { display: initial; }
+        [data-registration-status="open"] .show-when-open { display: revert; } /* 'revert' restores this element's true browser-default display (block for div/p, inline for a/span) -- 'initial' looks similar but is NOT the same: per the CSS spec, 'initial' always resolves display to plain 'inline' regardless of tag, which silently breaks block-level elements like <div>/<p> (their background/border/shadow get fragmented across line-boxes). 'revert' is what we actually want here. */
+        [data-registration-status="closed"] .show-when-closed { display: revert; }
+        [data-registration-status="preparing"] .show-when-preparing { display: revert; }
     </style>
 </head>
 <!--

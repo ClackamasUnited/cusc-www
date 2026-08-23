@@ -7,17 +7,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Recreational Program | Clackamas United</title>
     <script>
+        /*
+            ============================================================
+             CONTENT VISIBILITY CONTROLS -- read before editing
+            ============================================================
+             Unlike most other pages on this site, this page does NOT use
+             a body[data-*] attribute you edit by hand. Instead, real
+             JavaScript (at the bottom of this file) computes each
+             section's open/closed state automatically, by comparing
+             today's date against the startDate/endDate below.
+
+             To change when a season or schedule shows as "open", edit
+             the startDate / endDate values below. Dates are inclusive,
+             in "YYYY-MM-DD" format. Nothing else needs to change.
+
+             How it's wired together:
+               - Each registration card in the HTML has a
+                 data-registration="<key>" attribute (e.g. "reg_fall")
+                 that points at one of the entries below.
+               - Each schedule paragraph has a data-schedule="<key>"
+                 attribute that points at one of the schedule_* entries.
+               - On page load, the script at the bottom of this file
+                 checks isDateActive() for every one of those entries
+                 and shows/hides the matching "open"/"closed" content
+                 with the .show-when-open / .show-when-closed CSS
+                 classes defined below (see the <style> block).
+            ============================================================
+        */
         const pageVars = {
-            // Registration URLs with start and end dates.
-            // Format: YYYY-MM-DD. The script will handle timezones.
             reg_fall:      { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=", startDate: "2026-06-22", endDate: "2026-11-30" },
             reg_spring:    { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODAxMDQ2Mjh8dHBWeXZWS3JqRXRDYXN1SFFMWGdxKzdOTXMxd0xnSXoyUmtzN2luV3Z2WT0=", startDate: "2025-01-15", endDate: "2025-03-15" },
             reg_prek:      { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODc0MjYxODN8cVJRZ1FmUHI4MWk1NEZRejhMRi9qS3FlNFBCUDZGT0ZONVliV1ZsL0FDND0=&program_id=111130", startDate: "2026-06-22", endDate: "2026-11-31" },
             reg_2nd:       { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODc0MjYxODN8cVJRZ1FmUHI4MWk1NEZRejhMRi9qS3FlNFBCUDZGT0ZONVliV1ZsL0FDND0=&program_id=111096", startDate: "2026-06-22", endDate: "2026-11-31" },
             reg_3to8:      { url: "https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODc0MjYxODN8cVJRZ1FmUHI4MWk1NEZRejhMRi9qS3FlNFBCUDZGT0ZONVliV1ZsL0FDND0=&program_id=111096", startDate: "2026-06-22", endDate: "2026-11-31" },
-
-            // Schedule URLs with start and end dates.
-            // If a URL is "#", the link will be hidden.
             schedule_prek: { url: "https://playmetricssports.com/c/leagues/1006-10814-761c8c2b/divisions/34562/division_view.html", startDate: "2024-08-15", endDate: "2024-10-31" },
             schedule_1st:  { url: "https://playmetricssports.com/c/leagues/1006-10814-761c8c2b/divisions/34563/division_view.html", startDate: "2024-08-15", endDate: "2024-10-31" },
             schedule_2nd:  { url: "https://playmetricssports.com/c/leagues/1006-10814-761c8c2b/divisions/33808/division_view.html", startDate: "2024-08-15", endDate: "2024-10-31" },
@@ -25,12 +47,45 @@
         };
     </script>
     <style>
-        /* Hide JS-controlled elements by default */
-        .js-hide { display: none; }
+        /*
+            ============================================================
+             CONTENT VISIBILITY CONTROLS (continued) -- read before editing
+            ============================================================
+             These rules do the actual showing/hiding. They react to the
+             "state-open" class and to inline styles that the JavaScript
+             at the bottom of this file applies at page load -- there is
+             nothing here for a human to edit by hand.
+
+             .js-hide           : elements whose visibility is decided
+                                   entirely by JavaScript (schedule links).
+                                   Hidden by default; the script removes
+                                   this class / sets display directly once
+                                   it determines the schedule is live.
+             .show-when-open    : hidden by default, shown once the
+                                   script marks a card's container with
+                                   the "state-open" class (registration
+                                   window is currently active).
+             .show-when-closed  : the reverse -- shown by default, hidden
+                                   once "state-open" is applied.
+
+             The "body " ancestor qualifier on the default-state rules
+             below is defensive only: it raises these rules' specificity
+             just enough to reliably beat same-specificity Tailwind
+             utility classes (e.g. .inline-block) that the Tailwind CDN
+             script injects into the page AFTER this stylesheet loads.
+             This page doesn't currently combine a show-when-* class with
+             a conflicting Tailwind display utility on the same element,
+             so it isn't exposed to that bug today -- but the qualifier
+             is added here anyway to match the hardening applied to the
+             rest of the site, so this file stays safe if that ever
+             changes.
+            ============================================================
+        */
+        body .js-hide { display: none; }
 
         /* Default state: show the 'closed' message and hide the 'open' button/link */
-        .show-when-open { display: none; }
-        .show-when-closed { display: inline-block; }
+        body .show-when-open { display: none; }
+        body .show-when-closed { display: inline-block; }
 
         /* When open: hide the 'closed' message and show the 'open' button/link */
         .state-open .show-when-open { display: inline-block; }
@@ -41,7 +96,17 @@
     </style>
 </head>
 
-<!-- EDIT THESE: "open" or "closed" -->
+<!--
+    ============================================================
+     CONTENT VISIBILITY CONTROL -- nothing to edit here
+    ============================================================
+     This page's open/closed state is computed automatically by
+     JavaScript from the registration/schedule dates defined in
+     the pageVars object above -- there is no attribute on this
+     <body> tag to hand-edit. To change what shows as open or
+     closed, edit the dates in pageVars instead.
+    ============================================================
+-->
 <body class="bg-slate-50">
 
     <main class="max-w-7xl mx-auto my-20 px-6">
@@ -148,6 +213,23 @@
     <script src="/sponsors-data.js"></script>
     <script src="/news-data.js"></script>
     <script>
+        /*
+            ============================================================
+             CONTENT VISIBILITY CONTROLS (continued) -- read before editing
+            ============================================================
+             This is the JavaScript that actually decides open vs.
+             closed for every card and schedule link on this page, by
+             comparing today's date against the date ranges in pageVars
+             (defined near the top of this file). It runs once, on page
+             load.
+
+             You should NOT need to edit anything in this script to
+             change what's open or closed -- change the dates in
+             pageVars instead. This script is only here for reference,
+             or if the underlying show/hide mechanism itself ever needs
+             to change.
+            ============================================================
+        */
         document.addEventListener('DOMContentLoaded', () => {
             siteTheme.init("/");
             document.documentElement.classList.remove('no-js');
@@ -173,7 +255,6 @@
                 const regData = pageVars[regName];
                 if (isDateActive(regData)) {
                     card.classList.add('state-open');
-                    // Set the href on the correct button
                     const registerButton = card.querySelector('a.show-when-open');
                     if (registerButton) {
                         registerButton.href = regData.url;
@@ -189,10 +270,9 @@
                 if (scheduleData && scheduleData.url !== "#") {
                     if (isDateActive(scheduleData)) {
                         p.classList.remove('js-hide');
-                        p.style.display = 'block'; // Ensure it's visible
+                        p.style.display = 'block';
                         p.querySelector('a').href = scheduleData.url;
 
-                        // Hide the corresponding placeholder
                         const placeholder = document.querySelector(`[data-schedule-placeholder="${scheduleName}"]`);
                         if (placeholder) {
                             placeholder.style.display = 'none';

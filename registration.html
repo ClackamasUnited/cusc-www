@@ -8,90 +8,87 @@
     <title>Clackamas United | Registration</title>
     <style>
         /*
-         * Scalable Registration Status Display Logic
-         *
-         * 1. By default, hide all elements that are part of this conditional display system.
-         * 2. Explicitly show only the element that matches the current data-registration-status.
-         */
+            ============================================================
+             CONTENT VISIBILITY CONTROLS -- read before editing
+            ============================================================
+             This page shows/hides each program's registration link,
+             and each section's "No Programs Available" message,
+             automatically based on the data-show-* attributes set on
+             <body> below. This is done with plain CSS -- there is no
+             JavaScript involved, so a change here takes effect the
+             moment the page reloads.
+
+             Each of the 11 flags below is "open" | "closed":
+                 "open"   -> shows that program's registration link
+                 "closed" -> hides it
+             If every flag in a section (Competitive / Recreational /
+             Camps & Academies) is "closed", that section automatically
+             shows a "No Programs Available" message instead.
+            ============================================================
+        */
         .show-classic-tryouts,
-        .show-classic-tryouts-closed,
         .show-classic-reg,
         .show-pdp-tryouts,
-        .show-pdp-tryouts-closed,
         .show-pdp-reg,
-        .show-pdp-reg-closed,
         .show-rec-fall,
-        .show-rec-fall-closed,
         .show-rec-spring,
-        .show-rec-spring-closed,
         .show-camp-summer,
-        .show-camp-summer-closed,
         .show-camp-spring,
-        .show-camp-spring-closed,
         .show-rangers-summer,
-        .show-rangers-summer-closed,
         .show-rangers-spring,
-        .show-rangers-spring-closed,
-        .show-winter-academy,
-        .show-winter-academy-closed { display: none; }
+        .show-winter-academy { display: none; }
 
         /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
         /* Show the "open" button/link when the attribute is open */
-        [show-classic-tryouts="open"] .show-classic-tryouts { display: flex; }
-        [show-classic-reg="open"] .show-classic-reg { display: flex; }
-        [show-pdp-tryouts="open"] .show-pdp-tryouts { display: flex; }
-        [show-pdp-reg="open"] .show-pdp-reg { display: flex; }
-        [show-rec-fall="open"] .show-rec-fall { display: flex; }
-        [show-rec-spring="open"] .show-rec-spring { display: flex; }
-        [show-camp-summer="open"] .show-camp-summer { display: flex; }
-        [show-camp-spring="open"] .show-camp-spring { display: flex; }
-        [show-rangers-summer="open"] .show-rangers-summer { display: flex; }
-        [show-rangers-spring="open"] .show-rangers-spring { display: flex; }
-        [show-winter-academy="open"] .show-winter-academy { display: flex; }
-
-        /* Show the "closed" message when the attribute is false */
-        [show-pdp-tryouts="closed"] .show-pdp-tryouts-closed { display: flex; }
-        [show-pdp-reg="closed"] .show-pdp-reg-closed { display: flex; }
-        [show-rec-fall="closed"] .show-rec-fall-closed { display: flex; }
-        [show-rec-spring="closed"] .show-rec-spring-closed { display: flex; }
-        [show-camp-summer="closed"] .show-camp-summer-closed { display: flex; }
-        [show-camp-spring="closed"] .show-camp-spring-closed { display: flex; }
-        [show-rangers-summer="closed"] .show-rangers-summer-closed { display: flex; }
-        [show-rangers-spring="closed"] .show-rangers-spring-closed { display: flex; }
-        [show-winter-academy="closed"] .show-winter-academy-closed { display: flex; }
+        [data-show-classic-tryouts="open"] .show-classic-tryouts { display: flex; }
+        [data-show-classic-reg="open"] .show-classic-reg { display: flex; }
+        [data-show-pdp-tryouts="open"] .show-pdp-tryouts { display: flex; }
+        [data-show-pdp-reg="open"] .show-pdp-reg { display: flex; }
+        [data-show-rec-fall="open"] .show-rec-fall { display: flex; }
+        [data-show-rec-spring="open"] .show-rec-spring { display: flex; }
+        [data-show-camp-summer="open"] .show-camp-summer { display: flex; }
+        [data-show-camp-spring="open"] .show-camp-spring { display: flex; }
+        [data-show-rangers-summer="open"] .show-rangers-summer { display: flex; }
+        [data-show-rangers-spring="open"] .show-rangers-spring { display: flex; }
+        [data-show-winter-academy="open"] .show-winter-academy { display: flex; }
 
         /* Logic for "No Programs Available" messages */
         /* By default, hide the 'no programs' message. */
         .no-programs-message { display: none; }
 
         /* If ALL programs in a section are closed, show the message for that section. */
-        body[show-classic-tryouts="closed"][show-classic-reg="closed"][show-pdp-tryouts="closed"][show-pdp-reg="closed"] .competitive-programs .no-programs-message { display: block; }
+        body[data-show-classic-tryouts="closed"][data-show-classic-reg="closed"][data-show-pdp-tryouts="closed"][data-show-pdp-reg="closed"] .competitive-programs .no-programs-message { display: block; }
 
-        body[show-rec-fall="closed"][show-rec-spring="closed"] .rec-programs .no-programs-message { display: block; }
+        body[data-show-rec-fall="closed"][data-show-rec-spring="closed"] .rec-programs .no-programs-message { display: block; }
 
-        body[show-camp-summer="closed"][show-camp-spring="closed"][show-winter-academy="closed"][show-rangers-summer="closed"][show-rangers-spring="closed"] .camps-programs .no-programs-message { display: block; }
+        body[data-show-camp-summer="closed"][data-show-camp-spring="closed"][data-show-winter-academy="closed"][data-show-rangers-summer="closed"][data-show-rangers-spring="closed"] .camps-programs .no-programs-message { display: block; }
 
     </style>
 </head>
 <!--
-
-*** SET A PROGRAM to "open" below to show the registration link button"
-*** SET A PROGRAM to "closed" below to hide the registraion button and show a 'closed'  message
-
+    ============================================================
+     CONTENT VISIBILITY CONTROL -- read before editing
+    ============================================================
+     Each flag below is "open" | "closed":
+         "open"   -> shows that program's registration link
+         "closed" -> hides it (and shows a "No Programs Available"
+                     message if every flag in its section is closed)
+     (Controlled with plain CSS in <head> above -- no JavaScript.)
+    ============================================================
 -->
 
-<body class="bg-slate-50" 
-    show-classic-tryouts="open"
-    show-classic-reg="closed" 
-    show-pdp-tryouts="open" 
-    show-pdp-reg="closed" 
-    show-rec-fall="closed" 
-    show-rec-spring="open" 
-    show-camp-summer="closed" 
-    show-camp-spring="closed" 
-    show-winter-academy="closed"
-    show-rangers-summer="closed"
-    show-rangers-spring="closed">
+<body class="bg-slate-50"
+    data-show-classic-tryouts="open"
+    data-show-classic-reg="closed"
+    data-show-pdp-tryouts="open"
+    data-show-pdp-reg="closed"
+    data-show-rec-fall="closed"
+    data-show-rec-spring="open"
+    data-show-camp-summer="closed"
+    data-show-camp-spring="closed"
+    data-show-winter-academy="closed"
+    data-show-rangers-summer="closed"
+    data-show-rangers-spring="closed">
 
     <main class="max-w-7xl mx-auto my-20 px-6">
         <div class="text-center mb-16">

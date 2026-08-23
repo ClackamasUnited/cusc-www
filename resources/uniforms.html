@@ -20,10 +20,23 @@
         }
 
         /*
-         * Scalable Uniform Image Display Logic
-         * 1. By default, hide the image containers.
-         * 2. Explicitly show the container that matches the data attribute on the body.
-         */
+            ============================================================
+             CONTENT VISIBILITY CONTROLS -- read before editing
+            ============================================================
+             This page shows/hides each uniform image automatically
+             based on the data-show-*-image attributes set on <body>
+             below. This is done with plain CSS -- there is no
+             JavaScript involved, so a change here takes effect the
+             moment the page reloads.
+
+             data-show-prek-image      : "true" | "false"
+             data-show-rec-grade-image : "true" | "false"
+             data-show-pdp-image       : "true" | "false"
+             data-show-classic-image   : "true" | "false"
+                 "true"  -> shows that uniform's image
+                 "false" -> hides it (this is also the default/fail-safe)
+            ============================================================
+        */
         .show-prek-uniform-image,
         .show-rec-grade-uniform-image,
         .show-pdp-uniform-image,
@@ -39,10 +52,17 @@
     </style>
 </head>
 <!--
-*** SET AN IMAGE to "true" below to show it on the page
-*** SET AN IMAGE to "false" below to hide it
+    ============================================================
+     CONTENT VISIBILITY CONTROL -- read before editing
+    ============================================================
+     data-show-prek-image / data-show-rec-grade-image /
+     data-show-pdp-image / data-show-classic-image : "true" | "false"
+         "true"  -> shows that uniform's image
+         "false" -> hides it
+     (Controlled with plain CSS in <head> above -- no JavaScript.)
+    ============================================================
 -->
-<body class="bg-slate-50" 
+<body class="bg-slate-50"
     data-show-prek-image="false" 
     data-show-rec-grade-image="false" 
     data-show-pdp-image="false" 

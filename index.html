@@ -8,11 +8,25 @@
     <title>Clackamas United | Home</title>
     <style>
         /*
-         * Scalable Registration Status Display Logic
-         *
-         * 1. By default, hide all elements that are part of this conditional display system.
-         * 2. Explicitly show only the element that matches the current data-registration-status.
-         */
+            ============================================================
+             CONTENT VISIBILITY CONTROLS -- read before editing
+            ============================================================
+             This page shows/hides each hero CTA button automatically
+             based on the data-show-* attributes set on <body> below.
+             This is done with plain CSS -- there is no JavaScript
+             involved, so a change here takes effect the moment the
+             page reloads.
+
+             data-show-program-button         : "true" | "false"
+             data-show-player-inquiry-button  : "true" | "false"
+             data-show-reg-button             : "true" | "false"
+             data-show-tryout-button          : "true" | "false"
+             data-show-tryout-schedule-button : "true" | "false"
+             data-show-rec-reg-button         : "true" | "false"
+                 "true"  -> shows that button
+                 "false" -> hides it (this is also the default/fail-safe)
+            ============================================================
+        */
         .show-program-button,
         .show-player-inquiry-button,
         .show-reg-button,
@@ -20,20 +34,29 @@
         .show-tryout-schedule-button,
         .show-rec-reg-button { display: none; }
 
-        [show-reg-button="false"] .show-reg-button { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
-        [show-tryout-button="closed"] .show-tryout-button { display: initial; }
-        [show-player-inquiry-button="true"] .show-player-inquiry-button { display: initial; }
-        [show-tryout-schedule-button="closed"] .show-tryout-schedule-button { display: initial; }
-        [show-program-button="true"] .show-program-button { display: initial; }
-        [show-rec-reg-button="true"] .show-rec-reg-button { display: initial; }
+        [data-show-reg-button="true"] .show-reg-button { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
+        [data-show-tryout-button="true"] .show-tryout-button { display: initial; }
+        [data-show-player-inquiry-button="true"] .show-player-inquiry-button { display: initial; }
+        [data-show-tryout-schedule-button="true"] .show-tryout-schedule-button { display: initial; }
+        [data-show-program-button="true"] .show-program-button { display: initial; }
+        [data-show-rec-reg-button="true"] .show-rec-reg-button { display: initial; }
     </style>
 </head>
 
-<!-- ***********************************************
-Use the body class tag below to hide/unhide buttons 
-************************************************ -->
+<!--
+    ============================================================
+     CONTENT VISIBILITY CONTROL -- read before editing
+    ============================================================
+     data-show-program-button / data-show-player-inquiry-button /
+     data-show-reg-button / data-show-tryout-button /
+     data-show-tryout-schedule-button / data-show-rec-reg-button
+         "true"  -> shows that button
+         "false" -> hides it
+     (Controlled with plain CSS in <head> above -- no JavaScript.)
+    ============================================================
+-->
 
-<body class="bg-white" show-reg-button="true" show-player-inquiry-button="true" slot="true" show-tryout-schedule-button="true" show-program-button="true" show-rec-reg-button="true"> <!-- <-- EDIT THIS: "open" or "closed" or "preparing" -->
+<body class="bg-white" data-show-reg-button="false" data-show-player-inquiry-button="true" data-show-tryout-button="false" data-show-tryout-schedule-button="false" data-show-program-button="true" data-show-rec-reg-button="true">
 
     <header class="relative min-h-[85vh] py-20 flex items-center bg-[#111111] text-white" id="home-header">
         <div class="absolute inset-0">

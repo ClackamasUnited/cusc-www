@@ -7,10 +7,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Goalkeeper Training | Clackamas United</title>
     <style>
-        [data-registration-status="open"] .show-when-closed, [data-registration-status="closed"] .show-when-open { display: none; }
+        /*
+            ============================================================
+             CONTENT VISIBILITY CONTROLS -- read before editing
+            ============================================================
+             This page shows/hides sections automatically based on the
+             data-registration-status value set on <body> below. This
+             is done with plain CSS -- there is no JavaScript involved,
+             so a change here takes effect the moment the page reloads.
+
+             data-registration-status : "open" | "closed"
+                 "open"   -> shows the .show-when-open content
+                 "closed" -> shows the .show-when-closed content
+             Any other or missing value hides both blocks (fails safe).
+            ============================================================
+        */
+        .show-when-open,
+        .show-when-closed { display: none; }
+        [data-registration-status="open"] .show-when-open { display: initial; }
+        [data-registration-status="closed"] .show-when-closed { display: initial; }
     </style>
 </head>
-<body class="bg-slate-50" data-registration-status="open"> <!-- <-- EDIT THIS: "open" or "closed" -->
+<!--
+    ============================================================
+     CONTENT VISIBILITY CONTROL -- read before editing
+    ============================================================
+     data-registration-status : "open" | "closed"
+         "open"   -> shows the registration-open content below
+         "closed" -> shows the "closed" message below
+     (Controlled with plain CSS in <head> above -- no JavaScript.)
+    ============================================================
+-->
+<body class="bg-slate-50" data-registration-status="open">
 
     <main class="max-w-7xl mx-auto my-20 px-6">
         <div class="text-center mb-16">

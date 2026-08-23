@@ -8,11 +8,21 @@
     <title>2026-27 Tryouts | Clackamas United</title>
     <style>
         /*
-         * Scalable Registration Status Display Logic
-         *
-         * 1. By default, hide all elements that are part of this conditional display system.
-         * 2. Explicitly show only the element that matches the current data-registration-status.
-         */
+            ============================================================
+             CONTENT VISIBILITY CONTROLS -- read before editing
+            ============================================================
+             This page shows/hides sections automatically based on the
+             data-registration-status value set on <body> below. This
+             is done with plain CSS -- there is no JavaScript involved,
+             so a change here takes effect the moment the page reloads.
+
+             data-registration-status : "open" | "closed" | "preparing"
+                 "open"      -> shows the .show-when-open content
+                 "closed"    -> shows the .show-when-closed content
+                 "preparing" -> shows the .show-when-preparing content
+             Any other or missing value hides all three (fails safe).
+            ============================================================
+        */
         .show-when-open,
         .show-when-closed,
         .show-when-preparing { display: none; }
@@ -22,7 +32,18 @@
         [data-registration-status="preparing"] .show-when-preparing { display: initial; }
     </style>
 </head>
-<body class="bg-slate-50" data-registration-status="preparing"> <!-- <-- EDIT THIS: "open" or "closed" or "preparing" -->
+<!--
+    ============================================================
+     CONTENT VISIBILITY CONTROL -- read before editing
+    ============================================================
+     data-registration-status : "open" | "closed" | "preparing"
+         "open"      -> shows the registration-open content below
+         "closed"    -> shows the "closed" message below
+         "preparing" -> shows the "coming soon" message below
+     (Controlled with plain CSS in <head> above -- no JavaScript.)
+    ============================================================
+-->
+<body class="bg-slate-50" data-registration-status="preparing">
 
     <div id="page-content">
         <main class="max-w-4xl mx-auto my-20 px-6">

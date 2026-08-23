@@ -27,12 +27,12 @@
                  "false" -> hides it (this is also the default/fail-safe)
             ============================================================
         */
-        .show-program-button,
-        .show-player-inquiry-button,
-        .show-reg-button,
-        .show-tryout-button,
-        .show-tryout-schedule-button,
-        .show-rec-reg-button { display: none; }
+        body .show-program-button,
+        body .show-player-inquiry-button,
+        body .show-reg-button,
+        body .show-tryout-button,
+        body .show-tryout-schedule-button,
+        body .show-rec-reg-button { display: none; }
 
         [data-show-reg-button="true"] .show-reg-button { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
         [data-show-tryout-button="true"] .show-tryout-button { display: initial; }

@@ -23,9 +23,9 @@
              Any other or missing value hides all three (fails safe).
             ============================================================
         */
-        .show-when-open,
-        .show-when-closed,
-        .show-when-preparing { display: none; }
+        body .show-when-open,
+        body .show-when-closed,
+        body .show-when-preparing { display: none; }
 
         [data-registration-status="open"] .show-when-open { display: initial; } /* 'initial' reverts to element's default display (e.g., block for p, inline-block for a) */
         [data-registration-status="closed"] .show-when-closed { display: initial; }

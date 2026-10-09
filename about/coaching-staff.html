@@ -118,7 +118,7 @@
                     shareButton.addEventListener('click', (e) => {
                         e.preventDefault();
                         // Use 'http://' as a fallback for file:/// origins which are null
-                        const origin = window.location.origin === 'null' ? 'http://cusc.pctony.com' : window.location.origin;
+                        const origin = window.location.origin === 'null' ? 'https://www.clackamasunited.com' : window.location.origin;
                         const shareLink = `${origin}${window.location.pathname}?coach=${coach.slug}`;
                         const linkText = document.getElementById('share-link-text');
 

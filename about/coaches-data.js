@@ -3,7 +3,7 @@ const coachesData = [
         name: "John Wyllie",
         title: "Director of Coaching (DOC)",
         slug: "john-wyllie",
-        photo: "/images/coaches/john-wyllie.jpg",
+        photo: "/images/coaches/placeholder.jpg",
         hometown: "Glasgow, Scotland",
         favoriteTeam: "Rangers FC",
         favoriteMeal: "Steak Pie",

@@ -35,7 +35,7 @@ const coachesData = [
         name: "Michelle McHone",
         title: "Recreational Coordinator",
         slug: "michelle-mchone",
-        photo: "/images/coaches/michelle-mchone.jpg",
+        photo: "/images/coaches/placeholder.jpg",
         hometown: "Portland, OR",
         favoriteTeam: "Portland Thorns",
         favoriteMeal: "Tacos",

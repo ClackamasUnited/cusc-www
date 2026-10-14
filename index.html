@@ -23,6 +23,8 @@
              data-show-tryout-button          : "true" | "false"
              data-show-tryout-schedule-button : "true" | "false"
              data-show-rec-reg-button         : "true" | "false"
+             data-show-hs-tryout-button       : "true" | "false"
+             data-show-winter-academy-button  : "true" | "false"
                  "true"  -> shows that button
                  "false" -> hides it (this is also the default/fail-safe)
             ============================================================
@@ -32,7 +34,9 @@
         body .show-reg-button,
         body .show-tryout-button,
         body .show-tryout-schedule-button,
-        body .show-rec-reg-button { display: none; }
+        body .show-rec-reg-button,
+        body .show-hs-tryout-button,
+        body .show-winter-academy-button { display: none; }
 
         [data-show-reg-button="true"] .show-reg-button { display: revert; } /* 'revert' restores this element's true browser-default display (block for div/p, inline for a/span) -- 'initial' looks similar but is NOT the same: per the CSS spec, 'initial' always resolves display to plain 'inline' regardless of tag, which silently breaks block-level elements like <div>/<p> (their background/border/shadow get fragmented across line-boxes). 'revert' is what we actually want here. */
         [data-show-tryout-button="true"] .show-tryout-button { display: revert; }
@@ -40,6 +44,8 @@
         [data-show-tryout-schedule-button="true"] .show-tryout-schedule-button { display: revert; }
         [data-show-program-button="true"] .show-program-button { display: revert; }
         [data-show-rec-reg-button="true"] .show-rec-reg-button { display: revert; }
+        [data-show-hs-tryout-button="true"] .show-hs-tryout-button { display: revert; }
+        [data-show-winter-academy-button="true"] .show-winter-academy-button { display: revert; }
     </style>
 </head>
 
@@ -49,14 +55,15 @@
     ============================================================
      data-show-program-button / data-show-player-inquiry-button /
      data-show-reg-button / data-show-tryout-button /
-     data-show-tryout-schedule-button / data-show-rec-reg-button
+     data-show-tryout-schedule-button / data-show-rec-reg-button /
+     data-show-hs-tryout-button / data-show-winter-academy-button
          "true"  -> shows that button
          "false" -> hides it
      (Controlled with plain CSS in <head> above -- no JavaScript.)
     ============================================================
 -->
 
-<body class="bg-white" data-show-reg-button="false" data-show-player-inquiry-button="true" data-show-tryout-button="false" data-show-tryout-schedule-button="false" data-show-program-button="true" data-show-rec-reg-button="true">
+<body class="bg-white" data-show-reg-button="false" data-show-player-inquiry-button="false" data-show-tryout-button="false" data-show-tryout-schedule-button="false" data-show-program-button="true" data-show-rec-reg-button="false" data-show-hs-tryout-button="true" data-show-winter-academy-button="true">
 
     <header class="relative min-h-[85vh] py-20 flex items-center bg-[#111111] text-white" id="home-header">
         <div class="absolute inset-0">
@@ -90,6 +97,10 @@
                     <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-reg-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Register &rarr;</a>
                     <!-- Player Inquiury Button -->
                     <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3ODQ0NzYyNzF8elpCbDVaVHVCbE5ZNGJQRU83OERacUNhSWNmV1YybDZMYWN0MHByZjZKWT0=&program_id=104435" class="show-player-inquiry-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">New Player Inquiry &rarr;</a>
+                    <!-- High School Tryouts Button -->
+                    <a href="https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3OTY3MDU4NDl8b29ZbThrTkM1eTU3NFNkVjUwb25DWjg1SmdKSzhEZEdValhXN1hQckNuMD0=&program_id=126821" class="show-hs-tryout-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">High School Tryouts &rarr;</a>
+                    <!-- Winter Academy Button -->
+                    <a href="https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3OTY3MDU4NDl8b29ZbThrTkM1eTU3NFNkVjUwb25DWjg1SmdKSzhEZEdValhXN1hQckNuMD0=&program_id=124403" class="show-winter-academy-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Winter Academy &rarr;</a>
                     <!-- Rec Registration Button -->
                     <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-rec-reg-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Register for Rec &rarr;</a>
                 </div>

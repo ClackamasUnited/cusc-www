@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.pctony.arr-autostart</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/sh</string>
+    <string>/Users/admin/bin/arr-autostart.sh</string>
+  </array>
+
+  <!-- start at login -->
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!-- give containers time to stop cleanly at shutdown (default is 20s) -->
+  <key>ExitTimeOut</key>
+  <integer>60</integer>
+
+  <key>StandardOutPath</key>
+  <string>/Users/admin/Library/Logs/arr-autostart.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/admin/Library/Logs/arr-autostart.log</string>
+</dict>
+</plist>

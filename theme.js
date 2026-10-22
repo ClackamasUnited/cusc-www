@@ -110,7 +110,7 @@ const siteTheme = {
                         </div>
 
                         <a href="/news.html" class="hover:text-[#E21E26] transition font-black uppercase">News</a>
-                        <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="bg-[#E21E26] px-8 py-3 hover:bg-white hover:text-black transition-all uppercase text-[11px] font-black">Register</a>
+                        <a href="https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="bg-[#E21E26] px-8 py-3 hover:bg-white hover:text-black transition-all uppercase text-[11px] font-black">Register</a>
                     </div>
                     
                     <div class="flex items-center space-x-6 ml-[100px] border-l border-white/10 pl-6">
@@ -185,7 +185,7 @@ const siteTheme = {
                     </div>
                 </div>
                 <a href="/news.html" class="block py-4 border-b border-white/5 uppercase">News</a>
-                <a href="https://playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="block bg-[#E21E26] p-4 text-center mt-6 font-black tracking-widest">Register Now</a>
+                <a href="https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="block bg-[#E21E26] p-4 text-center mt-6 font-black tracking-widest">Register Now</a>
                 
                 <div class="flex items-center justify-center space-x-6 mt-8">
                     <a href="https://www.facebook.com/clackamasunitedsoccerclub" class="text-white hover:text-cu-red transition text-2xl"><i class="fab fa-facebook"></i></a>

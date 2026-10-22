@@ -7,3 +7,6 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# AI Tools
+.claude

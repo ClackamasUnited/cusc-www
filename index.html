@@ -65,7 +65,7 @@
 
 <body class="bg-white" data-show-reg-button="false" data-show-player-inquiry-button="false" data-show-tryout-button="false" data-show-tryout-schedule-button="false" data-show-program-button="true" data-show-rec-reg-button="false" data-show-hs-tryout-button="true" data-show-winter-academy-button="true">
 
-    <header class="relative min-h-[85vh] pt-12 pb-20 flex items-start bg-[#111111] text-white" id="home-header">
+    <header class="relative min-h-[85vh] pt-12 pb-32 flex items-start bg-[#111111] text-white" id="home-header">
         <div class="absolute inset-0">
             <img id="bg-image" src="" alt="Background image of soccer players" class="w-full h-full object-cover opacity-40 grayscale-[0.5]">
         </div>
@@ -78,9 +78,12 @@
                     <span class="block text-7xl md:text-[100px] text-white">SUCCESS.</span>
                     <span class="block text-7xl md:text-[100px] text-white">CHARACTER.</span>
                 </h1>
+            </div>
+        </div>
 
-                <!-- Homepage Major Buttons -->
-                <div class="flex flex-wrap gap-4 mt-20">
+        <!-- Homepage Major Buttons (pinned to bottom-right of hero) -->
+        <div class="absolute bottom-12 left-0 right-0 px-6 md:px-12">
+            <div class="flex flex-wrap justify-end gap-4">
                     <!-- Programs Button -->
                     <a href="/programs/overview.html" class="show-program-button bg-white/10 border border-white/40 px-10 py-5 font-black uppercase text-xs hover:bg-white/20 transition">Our Programs</a>
                     <!-- Tryout Schedule Dropdown -->
@@ -103,7 +106,6 @@
                     <a href="/news/2026-10-08-winter-academy-2026.html" class="show-winter-academy-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Winter Academy &rarr;</a>
                     <!-- Rec Registration Button -->
                     <a href="https://app.playmetrics.com/signup?clubToken=TG9naW4tQ2x1Yi52MS0xMDA2LTE3NzY4NDEzOTB8VUhKdmR4TFFjNGlwclRyUytON2tQOTRQdUwwREVkcmJnSURHL0tvSjljVT0=" class="show-rec-reg-button bg-[#E21E26] text-white px-10 py-5 font-black uppercase text-xs hover:bg-white hover:text-black transition-all">Register for Rec &rarr;</a>
-                </div>
             </div>
         </div>
     </header>
